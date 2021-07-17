@@ -1,0 +1,26 @@
+{
+  "name": "swebble-nuxt",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "preview": "nuxt build && nuxt generate && nuxt start"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.12.5",
+    "@nuxtjs/style-resources": "^1.0.0",
+    "@nuxtjs/svg": "^0.1.12",
+    "core-js": "^3.6.5",
+    "node-sass": "^5.0.0",
+    "nuxt": "^2.14.6",
+    "nuxt-compress": "^4.1.0",
+    "prismic-dom": "^2.2.4",
+    "prismic-javascript": "^3.0.2",
+    "sass": "^1.30.0",
+    "sass-loader": "^10.1.0"
+  },
+  "devDependencies": {}
+}

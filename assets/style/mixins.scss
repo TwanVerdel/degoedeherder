@@ -1,0 +1,33 @@
+@import 'functions.scss';
+
+:root {
+    --outer: #{desktop-vw(120px)};
+
+    @media($tablet-landscape){
+        --outer: #{tablet-vw(64px)};
+    }
+
+    @media($tablet-portrait){
+        --outer: #{tablet-vw(48px)};
+    }
+
+    @media($phone){
+        --outer: #{phone-vw(24px)};
+    }
+}
+
+
+@mixin Outer($top: 0px, $bottom: $top) {
+    box-sizing: border-box;
+    padding-top: desktop-vw($top);
+    padding-bottom: desktop-vw($bottom);
+    width: 100%;
+
+    padding-left: var(--outer);
+    padding-right: var(--outer);
+
+    @media($tablet-portrait){
+        padding-top: phone-vw($top);
+        padding-bottom: phone-vw($bottom);
+    }
+}

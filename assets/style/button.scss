@@ -1,0 +1,69 @@
+@import 'functions.scss';
+
+.btn, ::v-deep .btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    padding: 0px desktop-vw(32px);
+    height: desktop-vw(56px);
+    min-height: desktop-vw(56px);
+    border: 0;
+    border-radius: desktop-vw(56px);
+    background: $primary;
+    color: $white;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    user-select: none;
+    cursor: pointer;
+
+    &:hover {
+        background: $black;
+    }
+    
+    &.unavailable {
+        opacity: 0.75;
+        cursor: default;
+        pointer-events: none;
+    }
+
+    &.white-border {
+        border: desktop-vw(4px) solid $white;
+        background: transparent;
+        color: $white;
+
+        @media($tablet-portrait){
+            border: tablet-vw(4px) solid $white;
+        }
+
+        @media($phone){
+            border: phone-vw(4px) solid $white;
+        }
+
+        &:hover {
+            background: $white;
+            color: $black;
+        }
+    }
+
+    @media($desktop-1440) {
+        height: desktop-vw(56px);
+        min-height: desktop-vw(56px);
+        padding: 0px desktop-vw(32px);
+    }
+
+    @media($tablet-portrait){
+        padding: 0px tablet-vw(32px);
+        height: tablet-vw(56px);
+        min-height: tablet-vw(56px);
+        border-radius: tablet-vw(56px);
+    }
+
+    @media($phone){
+        padding: 0px phone-vw(32px);
+        height: phone-vw(56px);
+        min-height: phone-vw(56px);
+        border-radius: phone-vw(56px);
+    }
+}

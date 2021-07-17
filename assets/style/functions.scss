@@ -1,0 +1,11 @@
+@function desktop-vw($px: 0px) {   
+    @return 100vw * $px / 1920px;
+}
+
+@function tablet-vw($px: 0px) {   
+    @return 100vw * $px / 912px;
+}
+
+@function phone-vw($px: 0px) {   
+    @return 100vw * $px / 520px;
+}
