@@ -2,15 +2,24 @@
 @import 'fonts.scss';
 
 * {
-    font-family: DMsans, Arial, sans-serif;
+    font-family: Roboto, Arial, sans-serif;
+}
+
+h1, h2 {
+    font-family: Roboto Slab;
+    font-weight: bold;
 }
 
 h1 {
-    font-size: desktop-vw(72px);
+    font-size: desktop-vw(80px);
     line-height: 120%;
 
     @media($tablet-portrait) {
-        font-size: phone-vw(36px);
+        font-size: tablet-vw(64px);
+    }
+
+    @media($phone) {
+        font-size: phone-vw(28px);
     }
 }
 
@@ -24,27 +33,31 @@ h2 {
 }
 
 p {
-    font-size: desktop-vw(20px);
+    font-size: desktop-vw(18px);
     line-height: 150%;
 
     @media($tablet-portrait) {
-        font-size: tablet-vw(20px);
+        font-size: tablet-vw(18px);
     }
 
     @media($phone) {
-        font-size: phone-vw(20px);
+        font-size: phone-vw(18px);
     }
 }
 
 a, div, b, button {
-    font-size: desktop-vw(20px);
+    font-size: desktop-vw(18px);
     font-weight: normal;
 
     @media($tablet-portrait) {
-        font-size: tablet-vw(20px);
+        font-size: tablet-vw(18px);
     }
 
     @media($phone) {
-        font-size: phone-vw(20px);
+        font-size: phone-vw(18px);
     }
+}
+
+.arabic {
+    font-family: Almarai;
 }

@@ -3,9 +3,9 @@
 }
 
 @function tablet-vw($px: 0px) {   
-    @return 100vw * $px / 912px;
+    @return 100vw * $px / 800px;
 }
 
 @function phone-vw($px: 0px) {   
-    @return 100vw * $px / 520px;
+    @return 100vw * $px / 360px;
 }

@@ -1,6 +1,48 @@
+/* Roboto Slab */
+
 @font-face {
-    font-family: 'Bebas Neue';
+    font-family: 'Roboto Slab';
+    src: url('~assets/fonts/roboto_slab/RobotoSlab-VariableFont_wght.ttf') format('truetype');
+    font-display: swap;
+}
+
+
+/* Roboto */
+
+@font-face {
+    font-family: 'Roboto';
     font-weight: normal;
-    src: url('~assets/fonts/BebasNeue-Regular.ttf') format('truetype');
+    src: url('~assets/fonts/roboto/Roboto-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-weight: bold;
+    src: url('~assets/fonts/roboto/Roboto-Bold.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    src: url('~assets/fonts/roboto/Roboto-Italic.ttf') format('truetype');
+    font-display: swap;
+}
+
+
+/* Almarai */
+
+@font-face {
+    font-family: 'Almarai';
+    font-weight: normal;
+    src: url('~assets/fonts/almarai/Almarai-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Almarai';
+    font-weight: bold;
+    src: url('~assets/fonts/almarai/Almarai-Bold.ttf') format('truetype');
     font-display: swap;
 }

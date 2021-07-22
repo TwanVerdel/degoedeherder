@@ -1,12 +1,16 @@
 <template>
     <main class="page">
-        De pagina!
+        <hero />
     </main>
 </template>
 
 <script>
+    import Hero from '../components/Hero.vue'
+
     export default {
-        components: {},
+        components: {
+            Hero
+        },
     }
 </script>
 
