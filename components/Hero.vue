@@ -1,19 +1,17 @@
 <template>
     <header class="hero" ref="hero">
         <div class="text-container">
-            <h1>
-                Vindplaats voor het <br> christelijk geloof.
-            </h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis lectus sed nisi iaculis auctor. Donec eu nibh rhoncus, pulvinar massa eget, gravida purus. Aenean lobortis sem ex, vel fermentum eros egestas quis. 
-            </p>
+            <h1 v-text="title" />
+            <p v-text="paragraph" />
             <div class="btn-row">
-                <button class="btn">
-                    Wordt lid
-                </button>
+                <a v-if="buttonUrl && buttonText"
+                    class="btn" 
+                    :href="buttonUrl"
+                >
+                    {{ buttonText }}
+                </a>
                 <button class="discover" @click="scrollToNext()">
                     Ontdek meer
-
                     <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M11.0001 4.5H13.0001V16.5L18.5001 11L19.9201 12.42L12.0001 20.34L4.08008 12.42L5.50008 11L11.0001 16.5V4.5Z" fill="#1F2326"/>
                     </svg>
@@ -21,8 +19,8 @@
             </div>
         </div>
         <picture>
-            <img src="@/assets/images/beeld.png" 
-                 alt="Een standbeeld in een kerk binnen De Goede Herder parochie"
+            <img :src="imgUrl" 
+                 :alt="imgAlt"
                  loading="lazy"/>
         </picture>
     </header>
@@ -30,6 +28,36 @@
 
 <script>
     export default {
+        props: {
+            title: {
+                type: String,
+                default: ''
+            },
+            paragraph: {
+                type: String,
+                default: ''
+            },
+            buttonText: {
+                type: String,
+                default: ''
+            },
+            buttonUrl: {
+                type: String,
+                default: ''
+            },
+            discoverMore: {
+                type: Boolean,
+                default: false
+            },
+            imgUrl: {
+                type: String,
+                default: ''
+            },
+            imgAlt: {
+                type: String,
+                default: 'Dit is een afbeelding op de site van de Goede Herder Parochie Emmen'
+            },
+        },
         methods: {
             scrollToNext() {
                 var dist = this.$refs.hero.offsetHeight

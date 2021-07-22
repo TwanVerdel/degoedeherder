@@ -199,7 +199,6 @@
         }
 
         .languages {
-            // margin-top: auto;
             display: grid;
             grid-auto-flow: column;
             grid-auto-rows: max-content;
