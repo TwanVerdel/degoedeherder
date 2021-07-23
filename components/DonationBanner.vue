@@ -24,8 +24,12 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        /*Variables*/
         background: $secondary;
         width: 100%;
+
+        /*Padding*/
         padding-top: desktop-vw(80px);
         padding-bottom: desktop-vw(72px);
 
@@ -38,12 +42,14 @@ export default {
             padding-top: phone-vw(80px);
             padding-bottom: phone-vw(72px);
         }
-        
+
         p{
+            text-align: center;
+
+            /*Margin + Width*/
             margin-top: desktop-vw(24px);
             margin-bottom: desktop-vw(32px);
             max-width: desktop-vw(664px);
-            text-align: center;
 
             @media($tablet-portrait){
                 margin-top: tablet-vw(24px);

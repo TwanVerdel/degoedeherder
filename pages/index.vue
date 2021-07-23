@@ -11,6 +11,7 @@
         />
 
         <donation-banner/>
+        <alternate-content/>
     </main>
 </template>
 
