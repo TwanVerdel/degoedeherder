@@ -6,6 +6,9 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultricies efficitur lacus. Etiam tincidunt magna diam, porta dignissim sapien suscipit quis. Vestibulum pharetra finibus dolor, at malesuada mauris varius nec. Aenean facilisis metus sem, ut luctus lectus imperdiet in. Integer feugiat erat felis.</p>
       <button class="btn">Agenda bekijken</button>
       <!-- Er moet hier een plaatje -->
+      <picture>
+          
+      </picture>
   </section>
 </template>
 
@@ -59,7 +62,7 @@ export default {
 
         p{
             text-align: left;
-            
+
             /*Margin + Width*/
             margin-top: desktop-vw(24px);
             margin-bottom: desktop-vw(40px);
