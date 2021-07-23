@@ -9,15 +9,19 @@
             :imgUrl="'/images/beeld.png'"
             :imgAlt="'Mooi beeld'"
         />
+
+        <donation-banner/>
     </main>
 </template>
 
 <script>
+import DonationBanner from '../components/DonationBanner.vue'
     import Hero from '../components/Hero.vue'
 
     export default {
         components: {
-            Hero
+            Hero,
+                DonationBanner
         },
     }
 </script>
