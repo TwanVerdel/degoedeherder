@@ -11,17 +11,21 @@
         />
 
         <history-component />
+        <donation-banner/>
+        <alternate-content/>
     </main>
 </template>
 
 <script>
+import DonationBanner from '../components/DonationBanner.vue'
     import Hero from '../components/Hero.vue'
 import HistoryComponent from '../components/HistoryComponent.vue'
 
     export default {
         components: {
             Hero,
-                HistoryComponent
+            HistoryComponent,
+            DonationBanner,
         },
     }
 </script>
