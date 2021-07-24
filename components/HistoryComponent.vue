@@ -198,13 +198,17 @@
                     height: desktop-vw(400px);
                     object-fit: cover;
 
+                    box-shadow: 0px 0px desktop-vw(16px) rgba(0, 0, 0, 0.2);
+
                     @media($tablet-portrait) {
                         width: 100%;
                         height: tablet-vw(240px);
+                        box-shadow: 0px 0px tablet-vw(16px) rgba(0, 0, 0, 0.2);
                     }
 
                     @media($phone) {
                         height: phone-vw(160px);
+                        box-shadow: 0px 0px phone-vw(16px) rgba(0, 0, 0, 0.2);
                     }
                 }
 
