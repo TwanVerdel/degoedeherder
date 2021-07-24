@@ -9,15 +9,19 @@
             :imgUrl="'/images/beeld.png'"
             :imgAlt="'Mooi beeld'"
         />
+
+        <history-component />
     </main>
 </template>
 
 <script>
     import Hero from '../components/Hero.vue'
+import HistoryComponent from '../components/HistoryComponent.vue'
 
     export default {
         components: {
-            Hero
+            Hero,
+                HistoryComponent
         },
     }
 </script>
