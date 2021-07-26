@@ -11,11 +11,11 @@ export default {
         htmlAttrs: {
             lang: 'nl'
         },
-        title: 'Custom Rigs',
+        title: 'De Goede Herder Parochie Emmen',
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-            { hid: 'description', name: 'description', content: 'Een eigen samengestelde desktop PC, game PC of server? Kies voor Custom Rigs' }
+            { hid: 'description', name: 'description', content: 'Een vindplaats voor het katholieke/christelijk geloof. Welkom op de website van de Goede Herder Parochie Emmen' }
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }
