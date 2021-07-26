@@ -171,7 +171,6 @@ export default {};
                 }
 
                 @media ($phone) {
-                    // font-size: phone-vw(20px);
                     margin-bottom: phone-vw(40px);
                 }
             }
@@ -213,7 +212,6 @@ export default {};
 
             @media ($tablet-portrait) {
                 max-width: tablet-vw(480px);
-                // text-align: center;
                 font-size: tablet-vw(36px);
             }
 
