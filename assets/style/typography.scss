@@ -31,7 +31,7 @@ h2 {
         font-size: tablet-vw(36px);
     }
 
-    @media($tablet-portrait) {
+    @media($phone) {
         font-size: phone-vw(28px);
     }
 }
