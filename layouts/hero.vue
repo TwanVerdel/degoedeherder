@@ -1,6 +1,6 @@
 <template>
     <div>
-        <main-navigation :neverTransparent="true"/>
+        <main-navigation />
         <Nuxt/>
         <main-footer/>
         <post-footer />

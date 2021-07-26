@@ -18,7 +18,7 @@
 
 <script>
 import DonationBanner from '../components/DonationBanner.vue'
-    import Hero from '../components/Hero.vue'
+import Hero from '../components/Hero.vue'
 import HistoryComponent from '../components/HistoryComponent.vue'
 
     export default {
@@ -27,6 +27,7 @@ import HistoryComponent from '../components/HistoryComponent.vue'
             HistoryComponent,
             DonationBanner,
         },
+        layout: 'hero',
     }
 </script>
 
