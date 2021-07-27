@@ -36,13 +36,40 @@ export default {
 
 <style lang="scss" scoped>
     .badge {
-        position: absolute;
+        position: fixed;
+        z-index: 5;
+
+        background: $white;
+        box-sizing: content-box;
 
         height: desktop-vw(104px);
         width: desktop-vw(104px);
+        bottom: desktop-vw(64px);
+        right: desktop-vw(64px);
+        border-radius: desktop-vw(104px);
+        padding: desktop-vw(8px);
+        box-shadow: 0 0 desktop-vw(16px) rgba($black, 0.3);
+        overflow: hidden;
 
-        top: desktop-vw(776px);
-        left: desktop-vw(64px);
+        @media($tablet-portrait) {
+            height: tablet-vw(104px);
+            width: tablet-vw(104px);
+            bottom: tablet-vw(40px);
+            right: tablet-vw(48px);
+            border-radius: tablet-vw(104px);
+            padding: tablet-vw(8px);
+            box-shadow: 0 0 tablet-vw(16px) rgba($black, 0.3);
+        }
+
+        @media($phone) {
+            height: phone-vw(64px);
+            width: phone-vw(64px);
+            bottom: phone-vw(24px);
+            right: phone-vw(24px);
+            border-radius: phone-vw(104px);
+            padding: phone-vw(4px);
+            box-shadow: 0 0 phone-vw(16px) rgba($black, 0.3);
+        }
 
         .text {
             position: absolute;
@@ -56,6 +83,18 @@ export default {
             left: 50%;
 
             transform: translate(-50%, -50%);
+
+            @media($tablet-portrait) {
+                width: tablet-vw(64px);
+                font-size: tablet-vw(12px);
+            }
+
+            @media($phone) {
+                width: phone-vw(48px);
+                background: $white;
+                font-size: phone-vw(8px);
+                z-index: 2;
+            }
         }
 
         svg {
