@@ -6,6 +6,9 @@
         <div class="lists-container">
             <div class="list">
                 <ul aria-label="Initiatieven">
+                    <li class="heading">
+                        Initiatieven
+                    </li>
                     <li>
                         <a href="#">PCI</a>
                     </li>
@@ -19,6 +22,9 @@
             </div>
             <div class="list">
                 <ul aria-label="Overige informatie">
+                    <li class="heading">
+                        Overige informatie
+                    </li>
                     <li>
                         <a href="#">Gedragscode</a>
                     </li>
@@ -29,6 +35,9 @@
             </div>
             <div class="list">
                 <ul aria-label="De parochie">
+                    <li class="heading">
+                        De parochie
+                    </li>
                     <li>
                         <a href="#">Over ons</a>
                     </li>
@@ -48,8 +57,11 @@
             </div>
             <div class="list">
                 <ul aria-label="Introductie">
+                    <li class="heading">
+                        Introductie
+                    </li>
                     <li>
-                        <a href="#">عربى</a>
+                        <a class="arabic" href="#">عربى</a>
                     </li>
                     <li>
                         <a href="#">Français</a>
@@ -99,10 +111,11 @@ footer {
 
     .lists-container {
         display: grid;
-        width: 50%;
+        width: max-content;
         // justify-content: space-between;
         // flex-wrap: wrap;
-        grid-template-columns: repeat(4, minmax(min-content, max-content));
+        grid-auto-columns: 1fr;
+        grid-auto-flow: column;
         column-gap: 40px;
 
         @media ($tablet-portrait) {
@@ -120,16 +133,43 @@ footer {
             color: $white;
             margin-bottom: 32px;
 
-            ul:before {
-                content: attr(aria-label);
-                font-weight: bold;
-                width: 25%;                
+            ul {
+                li {
+                    list-style-type: none;
+                    font-size: desktop-vw(16px);
+                    line-height: 150%;
+
+                    font-size: desktop-vw(16px);
+                    margin-bottom: desktop-vw(8px);
+                    opacity: 0.8;
+                    transition: opacity 0.2s;
+
+                    &:last-child {
+                        margin-bottom: none;
+                    }
+
+                    &.heading {
+                        margin-bottom: desktop-vw(16px);
+                        font-size: desktop-vw(18px);
+                        color: $white;
+                        font-weight: bold;
+                        opacity: 1;
+                    }
+
+                    &:not(.heading) {
+                        &:hover {
+                            opacity: 0.4;
+                        }
+                    }
+
+                    a {
+                        color: $white;
+                    }
+                }
+
             }
 
-            li {
-                list-style-type: none;
-                margin-top: 8px;
-            }
+
         }
     }
 }
