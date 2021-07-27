@@ -1,11 +1,9 @@
 <template>
     <div class="thumbnail">
-        <div class="gradient">
-            <img src="../assets/images/placeholder-img.png" alt="Placeholder" />
-            <div class="text">
-                <div class="date">15 december 2021</div>
-                <div class="title">Dit zijn de werkgroepen voor het jaar 2022</div>
-            </div>
+        <img src="../assets/images/placeholder-img.png" alt="Placeholder" />
+        <div class="text">
+            <div class="date">{{date}}</div>
+            <div class="title">{{title}}</div>
         </div>
     </div>
 </template>
@@ -13,18 +11,17 @@
 <script>
 export default {
     data() {
-        return {
-            props: {
-                date: {
-                    type: String,
-                    default: ""
-                },
-                title: {
-                    type: String,
-                    default: ""
-                }
-            }
-        };
+        return {};
+    },
+    props: {
+        date: {
+            type: String,
+            default: ""
+        },
+        title: {
+            type: String,
+            default: ""
+        }
     },
     methods: {}
 };
@@ -41,20 +38,28 @@ export default {
         rgba(0, 0, 0, 0.72) 0%,
         rgba(0, 0, 0, 0.5158438375350141) 100%
     );
+    max-height: desktop-vw(320px);
+
+    @media ($tablet-portrait) {
+        width: 100%;
+        max-height: phone-vw(320px);
+    }
+
+    @media ($phone) {
+        width: 100%;
+        max-height: tablet-vw(320px);
+    }
 
     img {
         position: relative;
         z-index: -1;
         display: block;
 
-        width: auto;
-        height: auto;
-        max-width: 100%;
-        max-height: 100%;
-    }
-
-    @media ($phone) {
         width: 100%;
+        height: auto;
+        object-fit: cover;
+
+        // 
     }
 
     .text {
@@ -62,21 +67,25 @@ export default {
         color: $white;
         bottom: 0;
         padding: 16px;
+        max-height: 75%;
+        overflow: hidden;
 
         .date {
             color: $white;
             font-weight: 500;
             font-size: desktop-vw(20px);
             line-height: 120%;
-            margin-bottom: 8px;
+            margin-bottom: desktop-vw(8px);
             opacity: 0.8;
 
             @media ($tablet-portrait) {
-                font-size: tablet-vw(64px);
+                font-size: tablet-vw(24px);
+                margin-bottom: tablet-vw(8px);
             }
 
             @media ($phone) {
-                font-size: phone-vw(28px);
+                font-size: phone-vw(16px);
+                margin-bottom: phone-vw(8px);
             }
         }
 
@@ -86,10 +95,8 @@ export default {
             font-size: desktop-vw(28px);
             line-height: 140%;
 
-            
-
             @media ($tablet-portrait) {
-                font-size: tablet-vw(64px);
+                font-size: tablet-vw(24px);
             }
 
             @media ($phone) {

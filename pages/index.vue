@@ -9,7 +9,7 @@
             :imgUrl="'/images/beeld.png'"
             :imgAlt="'Mooi beeld'"
         />
-        <news-articles />
+        <news-articles :amountOfArticles="3" />
         <history-component />
         <donation-banner />
         <alternate-content />
