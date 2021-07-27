@@ -9,7 +9,8 @@
             :imgUrl="'/images/beeld.png'"
             :imgAlt="'Mooi beeld'"
         />
-        <news-articles :amountOfArticles="3" />
+        <article-grid showThree/>
+        <article-grid />
         <history-component />
         <donation-banner />
         <alternate-content />
@@ -20,14 +21,14 @@
 import DonationBanner from "../components/DonationBanner.vue";
 import Hero from "../components/Hero.vue";
 import HistoryComponent from "../components/HistoryComponent.vue";
-import NewsArticles from "../components/NewsArticles.vue";
+import ArticleGrid from "../components/ArticleGrid.vue";
 
 export default {
     components: {
         Hero,
         HistoryComponent,
         DonationBanner,
-        NewsArticles
+        ArticleGrid
     }
 };
 </script>

@@ -24,7 +24,7 @@ h1 {
 }
 
 h2 {
-    font-size: desktop-vw(64px);
+    font-size: desktop-vw(48px);
     line-height: 120%;
 
     @media($tablet-portrait) {
@@ -32,7 +32,7 @@ h2 {
     }
 
     @media($phone) {
-        font-size: phone-vw(28px);
+        font-size: phone-vw(24px);
     }
 }
 
