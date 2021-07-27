@@ -48,7 +48,7 @@ export default {
         right: desktop-vw(64px);
         border-radius: desktop-vw(104px);
         padding: desktop-vw(8px);
-        box-shadow: 0 0 desktop-vw(16px) rgba($black, 0.3);
+        box-shadow: 0 0 desktop-vw(16px) rgba($black, 0.2);
         overflow: hidden;
 
         @media($tablet-portrait) {
@@ -58,7 +58,7 @@ export default {
             right: tablet-vw(48px);
             border-radius: tablet-vw(104px);
             padding: tablet-vw(8px);
-            box-shadow: 0 0 tablet-vw(16px) rgba($black, 0.3);
+            box-shadow: 0 0 tablet-vw(16px) rgba($black, 0.2);
         }
 
         @media($phone) {
@@ -68,7 +68,7 @@ export default {
             right: phone-vw(24px);
             border-radius: phone-vw(104px);
             padding: phone-vw(4px);
-            box-shadow: 0 0 phone-vw(16px) rgba($black, 0.3);
+            box-shadow: 0 0 phone-vw(16px) rgba($black, 0.2);
         }
 
         .text {
