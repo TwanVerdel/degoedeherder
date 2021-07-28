@@ -33,7 +33,8 @@
             ANBIBadge,
             ArticleGrid
         },
-    };
+        layout: 'hero',
+    }
 </script>
 
 <style lang="scss" scoped>
