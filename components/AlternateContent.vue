@@ -7,17 +7,16 @@
       <button class="btn">Agenda bekijken</button>
       <!-- Er moet hier een plaatje -->
       <picture>
-          
-      </picture>
+            <img src="~/assets/images/01 detailfoto Maria, OLV Onbevlekt Ontvangen.jpg"
+                 alt="Detailfoto Maria"
+                 loading="lazy"/>
+        </picture>
   </section>
 </template>
 
 <!-- JavaScript -->
 
 <script>
-export default {
-
-}
 </script>
 
 <!-- Scss -->
@@ -78,6 +77,27 @@ export default {
                 margin-top: phone-vw(24px);
                 margin-bottom: phone-vw(40px);
                 max-width: phone-vw(664px);
+            }
+        }
+
+        img{
+            max-width: desktop-vw(480px);
+            max-height: desktop-vw(320px);
+            margin-top: desktop-vw(24px);
+            margin-bottom: desktop-vw(40px);
+
+            @media($tablet-portrait){
+                margin-top: tablet-vw(24px);
+                margin-bottom: tablet-vw(40px);
+                max-width: tablet-vw(480px);
+                max-height: tablet-vw(320px);
+            }
+
+            @media($phone){
+                margin-top: phone-vw(24px);
+                margin-bottom: phone-vw(40px);
+                max-width: phone-vw(664px);
+                max-height: phone-vw(320px);
             }
         }
     }

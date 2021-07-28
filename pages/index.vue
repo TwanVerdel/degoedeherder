@@ -1,6 +1,7 @@
 <template>
     <main class="page">
-        <hero
+        <anbi-badge />
+        <hero 
             :title="'Vindplaats voor het christelijk geloof.'"
             :paragraph="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis lectus sed nisi iaculis auctor. Donec eu nibh rhoncus, pulvinar massa eget, gravida purus. Aenean lobortis sem ex, vel fermentum eros egestas quis. '"
             :buttonUrl="'https://nu.nl'"
@@ -18,19 +19,22 @@
 </template>
 
 <script>
-import DonationBanner from "../components/DonationBanner.vue";
-import Hero from "../components/Hero.vue";
-import HistoryComponent from "../components/HistoryComponent.vue";
-import ArticleGrid from "../components/ArticleGrid.vue";
 
-export default {
-    components: {
-        Hero,
-        HistoryComponent,
-        DonationBanner,
-        ArticleGrid
-    }
-};
+    import ArticleGrid from "../components/ArticleGrid.vue";
+    import ANBIBadge from '../components/ANBIBadge.vue'
+    import DonationBanner from '../components/DonationBanner.vue'
+    import Hero from '../components/Hero.vue'
+    import HistoryComponent from '../components/HistoryComponent.vue'
+
+    export default {
+        components: {
+            Hero,
+            HistoryComponent,
+            DonationBanner,
+            ANBIBadge,
+            ArticleGrid
+        },
+    };
 </script>
 
 <style lang="scss" scoped>
