@@ -1,8 +1,9 @@
 <template>
     <footer>
-        <div class="logo">
-            <img src="../assets/images/logo.svg" alt="Logo" />
-        </div>
+        <a href="/" class="logo">
+            <img src="../assets/images/logo.svg" 
+                alt="Logo" />
+        </a>
         <div class="lists-container">
             <div class="list">
                 <ul aria-label="Initiatieven">
@@ -23,7 +24,7 @@
             <div class="list">
                 <ul aria-label="Overige informatie">
                     <li class="heading">
-                        Overige informatie
+                        Overig
                     </li>
                     <li>
                         <a href="#">Gedragscode</a>
@@ -95,38 +96,48 @@ footer {
     flex-direction: column;
     background: #000000;
 
+    @media ($tablet-portrait) {
+        padding-top: vw(88px);
+        padding-bottom: vw(64px);
+    }
+
     .logo {
-        height: desktop-vw(32px);
-        margin-bottom: 40px;
-        width: auto;
+        margin-bottom: vw(40px);
+        width: max-content;
+        transition: opacity 0.2s;
 
         @media ($tablet-portrait) {
-            height: tablet-vw(40px);
+            margin-bottom: vw(48px);
         }
 
         @media ($phone) {
-            height: phone-vw(40px);
+            margin-bottom: vw(64px);
+        }
+
+        &:hover {
+            opacity: 0.6;
+        }
+
+        img {
+            height: vw(48px);
         }
     }
 
     .lists-container {
         display: grid;
         width: max-content;
-        // justify-content: space-between;
-        // flex-wrap: wrap;
         grid-auto-columns: 1fr;
         grid-auto-flow: column;
-        column-gap: 40px;
+        gap: vw(40px);
 
         @media ($tablet-portrait) {
             width: 100%;
+            row-gap: vw(24px);
         }
 
         @media ($phone) {
-            width: 100%;
-            grid-template-columns: repeat(2, minmax(min-content, 1fr));
-
-            // justify-content: flex-start;
+            grid-template-columns: 1fr 1fr;
+            grid-auto-flow: row;
         }
 
         .list {
@@ -136,11 +147,11 @@ footer {
             ul {
                 li {
                     list-style-type: none;
-                    font-size: desktop-vw(16px);
+                    font-size: vw(16px);
                     line-height: 150%;
 
-                    font-size: desktop-vw(16px);
-                    margin-bottom: desktop-vw(8px);
+                    font-size: vw(16px);
+                    margin-bottom: vw(8px);
                     opacity: 0.8;
                     transition: opacity 0.2s;
 
@@ -149,8 +160,8 @@ footer {
                     }
 
                     &.heading {
-                        margin-bottom: desktop-vw(16px);
-                        font-size: desktop-vw(18px);
+                        margin-bottom: vw(16px);
+                        font-size: vw(18px);
                         color: $white;
                         font-weight: bold;
                         opacity: 1;
