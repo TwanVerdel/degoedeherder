@@ -13,6 +13,7 @@
         <history-component />
         <donation-banner/>
         <alternate-content/>
+        <pastors-content/>
     </main>
 </template>
 
