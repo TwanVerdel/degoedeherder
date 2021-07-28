@@ -77,6 +77,8 @@
             },
             close() {
                 this.isOpen = false
+
+                this.$emit('close')
             }
         }
     }

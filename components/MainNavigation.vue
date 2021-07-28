@@ -1,9 +1,9 @@
 <template>
     <nav class="nav" 
         :class="{ 
-            'atTop' : atTop || $refs.mobileMenu.isOpen,
+            'atTop' : (atTop && !neverTransparent) || mobileMenuIsOpen,
         }">
-        <mobile-menu ref="mobileMenu"/>
+        <mobile-menu ref="mobileMenu" @close="mobileMenuIsOpen = false"/>
 
         <div class="secondary">
             <ul>
@@ -40,7 +40,7 @@
             </ul>
         </div> 
         <div class="primary">
-            <button class="hamburger" @click="$refs.mobileMenu.open()">
+            <button class="hamburger" @click="openMobileMenu()">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 4.5H21V7H3V4.5ZM3 10.75H21V13.25H3V10.75ZM3 17H21V19.5H3V17Z" fill="#F4F4F4"/>
                 </svg>
@@ -90,10 +90,17 @@
         components: { 
             MobileMenu 
         },
+        props: {
+            neverTransparent: {
+                type: Boolean,
+                default: false,
+            }
+        },
         data() {
             return {
                 scroll: 0,
                 atTop: true,
+                mobileMenuIsOpen: false,
             }
         },
         mounted() {
@@ -101,6 +108,13 @@
                 var scroll = window.scrollY
 
                 this.atTop = scroll < 64
+            }
+        },
+        methods: {
+            openMobileMenu() {
+                this.mobileMenuIsOpen = true
+
+                this.$refs.mobileMenu.open()
             }
         }
     }
@@ -117,6 +131,7 @@
         background: $white;
         transition: background-color 0.2s, transform 0.2s;
         box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+        max-width: 100vw;
 
         @media($tablet-portrait){         
             height: tablet-vw(72px);

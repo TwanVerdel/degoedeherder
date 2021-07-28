@@ -18,9 +18,9 @@
 </template>
 
 <script>
-    import ANBIBadge from '../components/ANBIBadge.vue'
     import DonationBanner from '../components/DonationBanner.vue'
     import Hero from '../components/Hero.vue'
+    import ANBIBadge from '../components/ANBIBadge.vue'
     import HistoryComponent from '../components/HistoryComponent.vue'
 
     export default {
@@ -30,6 +30,7 @@
             DonationBanner,
             ANBIBadge,
         },
+        layout: 'hero',
     }
 </script>
 
