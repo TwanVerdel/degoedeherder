@@ -10,17 +10,19 @@
             :imgUrl="'/images/beeld.png'"
             :imgAlt="'Mooi beeld'"
         />
-
+        <article-grid showThree/>
+        <article-grid />
         <history-component />
-        <donation-banner/>
-        <alternate-content/>
+        <donation-banner />
+        <alternate-content />
     </main>
 </template>
 
 <script>
+    import ArticleGrid from "../components/ArticleGrid.vue";
+    import ANBIBadge from '../components/ANBIBadge.vue'
     import DonationBanner from '../components/DonationBanner.vue'
     import Hero from '../components/Hero.vue'
-    import ANBIBadge from '../components/ANBIBadge.vue'
     import HistoryComponent from '../components/HistoryComponent.vue'
 
     export default {
@@ -29,13 +31,14 @@
             HistoryComponent,
             DonationBanner,
             ANBIBadge,
+            ArticleGrid
         },
         layout: 'hero',
     }
 </script>
 
 <style lang="scss" scoped>
-    .page {
-        min-height: 100vh;
-    }
+.page {
+    min-height: 100vh;
+}
 </style>
