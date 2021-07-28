@@ -19,7 +19,6 @@
 </template>
 
 <script>
-
     import ArticleGrid from "../components/ArticleGrid.vue";
     import ANBIBadge from '../components/ANBIBadge.vue'
     import DonationBanner from '../components/DonationBanner.vue'
