@@ -106,6 +106,7 @@
             }
 
             h1 {
+                @include fadeUpAnimation(0.4s);
                 max-width: desktop-vw(808px);
 
                 @media($tablet-portrait) {
@@ -118,6 +119,7 @@
             }
 
             p {
+                @include fadeUpAnimation(0.4s, 0.2s);
                 margin-top: desktop-vw(40px);
                 max-width: desktop-vw(544px);
 
@@ -133,6 +135,7 @@
             }
 
             .btn-row {
+                @include fadeUpAnimation(0.4s, 0.4s);
                 display: grid;
                 grid-auto-flow: column;
                 grid-auto-rows: max-content;
