@@ -33,6 +33,7 @@
             background: transparent;
             color: $white;
             transition: transform 0.2s;
+            cursor: pointer;
 
             &:hover {
                 transform: translateY(vw(-8px))
