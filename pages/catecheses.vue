@@ -2,12 +2,13 @@
     <main class="page">
         <h2>Catecheses.</h2>
         <div class="slider">
-            <!-- Hier kunnen de buttons komen -->
-            <div class="btn-left"></div>
-            <div class="btn-right"></div>
             <div v-for="slide in catecheses" :key="slide">
                 <catechese />
             </div>
+            
+            <!-- Hier kunnen de buttons komen -->
+            <div class="btn-left"></div>
+            <div class="btn-right"></div>
         </div>
     </main>
 </template>
@@ -57,7 +58,7 @@ export default {
     .slider {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: vw(32px);
+        // gap: vw(32px);
 
         .btn-left{
 
