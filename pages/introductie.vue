@@ -7,7 +7,7 @@
             </h1>
         </div>
         <div class="banner">
-            <img src="https://picsum.photos/1000" alt="placeholder">
+            <img src="https://picsum.photos/1000" alt="placeholder" />
         </div>
         <div class="grid">
             <introduction-text-block :hasButton="true" />
@@ -33,18 +33,30 @@ export default {
     flex-direction: column;
     width: 100%;
 
-    .header{
-        text-align: center;
-        margin-top: vw(64px);
-        margin-bottom: vw(96px);
+     @media($tablet-portrait) {
+        height: auto;
+        padding-top: vw(88px);
+        padding-bottom: vw(88px);
+        // margin-top: vw(72px);
     }
 
-    .banner{
+    @media($phone) {
+        padding-top: vw(56px);
+        padding-bottom: vw(72px);
+    }
+
+    .header {
+        text-align: center;
+        margin-bottom: vw(96px);
+        margin-top: vw(64px);
+    }
+
+    .banner {
         position: relative;
         height: vw(368px);
         margin-bottom: vw(80px);
 
-        img{
+        img {
             position: absolute;
             left: calc(var(--outer) * -1);
             width: 100vw;
