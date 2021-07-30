@@ -8,7 +8,7 @@
       varius nec. Aenean facilisis metus sem, ut luctus lectus imperdiet in.
       Integer feugiat erat felis.
     </p>
-    <button class="discover" @click="scrollToNext()">
+    <!--<button class="discover" @click="scrollToNext()">
       Ontdek meer
       <svg
         width="24"
@@ -22,7 +22,7 @@
           fill="#1F2326"
         />
       </svg>
-    </button>
+    </button>-->
     <picture>
       <img
         src="~/assets/images/01 detailfoto Maria, OLV Onbevlekt Ontvangen.jpg"
@@ -43,21 +43,54 @@
 
 <script>
 export default {
-    methods: {
+  /*methods: {
             scrollToNext() {
-                var dist = this.$refs.hero.offsetHeight
+                var dist = this.$refs.PastorsContent.offsetHeight
 
                 window.scrollTo({
                     top: dist,
                     behavior: 'smooth'
                 });
             }
-        }
+        }*/
 };
 </script>
 
 <style lang="scss" scoped>
-.discover {
+.pastors-content {
+  @include Outer;
+
+  /*Variables*/
+  background: $white;
+  width: 100%;
+
+  /*Padding*/
+  padding-top: desktop-vw(152px);
+  padding-bottom: desktop-vw(152px);
+
+  @media ($tablet-portrait) {
+    padding-top: tablet-vw(152px);
+    padding-bottom: tablet-vw(152px);
+  }
+
+  @media ($phone) {
+    padding-top: phone-vw(152px);
+    padding-bottom: phone-vw(152px);
+  }
+  h2 {
+    max-width: 480px;
+    max-height: 128px;
+  }
+  p {
+    max-width: 568px;
+    max-height: 80px;
+  }
+  img {
+    max-width: 240px;
+    max-height: 320px;
+  }
+}
+/*.discover {
                     display: grid;
                     grid-auto-flow: column;
                     grid-auto-columns: max-content;
@@ -78,5 +111,5 @@ export default {
                         font-size: phone-vw(18px);
                         gap: phone-vw(8px);
                     }
-}
+}*/
 </style>
