@@ -287,7 +287,7 @@ export default {
 
         .church-details{
             position: absolute;
-            height: 100%;
+            height: max-content;
             width: 100%;
             top: 0;
             left: 0;
@@ -311,8 +311,9 @@ export default {
             @media($phone) {
                 grid-template-columns: 100%;
                 grid-auto-flow: row;
+                grid-auto-rows: max-content;
                 margin-top: vw(96px);
-                gap: vw(24px);
+                // gap: vw(16px);
             }
 
             &.selected {
