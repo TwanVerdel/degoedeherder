@@ -343,6 +343,7 @@ export default {
                 grid-auto-flow: row;
                 gap: vw(24px);
                 margin-top: vw(96px);
+                gap: vw(24px);
             }
 
             &.selected {
