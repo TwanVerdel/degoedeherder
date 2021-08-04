@@ -196,7 +196,7 @@
                 gap: vw(32px);
 
                 overflow-x: scroll;
-                scroll-snap-type: x mandatory;
+                scroll-snap-type: x proximity;
                 
                 width: 100%;
 
