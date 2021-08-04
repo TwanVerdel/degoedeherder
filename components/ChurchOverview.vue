@@ -70,36 +70,6 @@
                     {{ church.name }}
                 </span>
             </li>
-            <!-- <li class="church-icon">
-                <picture>
-                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.0001 3.99805L20.0001 9.99805V21.998H15.0001V14.998H9.00012V21.998H4.00012V9.99805L12.0001 3.99805Z" fill="#1F2326"/>
-                    </svg>
-                </picture>
-                <span>
-                    Barger-Oosterveld
-                </span>
-            </li>
-            <li class="church-icon">
-                <picture>
-                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.00012 11.502H4.00012H6.00012H8.00012H10.0001H12.0001H14.0001V8.50195L18.0001 4.50195L22.0001 8.50195V20.502H11.0001V17.502C11.0001 16.9715 10.7894 16.4628 10.4143 16.0877C10.0393 15.7127 9.53056 15.502 9.00012 15.502C8.46969 15.502 7.96098 15.7127 7.58591 16.0877C7.21084 16.4628 7.00012 16.9715 7.00012 17.502V20.502H2.00012V11.502ZM18.0001 8.50195C17.4501 8.50195 17.0001 9.04195 17.0001 9.70195V11.502H19.0001V9.70195C19.0001 9.04195 18.5501 8.50195 18.0001 8.50195Z" fill="#1F2326"/>
-                    </svg>
-                </picture>
-                <span>
-                    Erica
-                </span>
-            </li>
-            <li class="church-icon">
-                <picture>
-                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.0001 3.99805L3.00012 9.19805V21.998H9.00012L11.9001 18.998L15.0001 21.998H21.0001V9.19805L12.0001 3.99805ZM7.90012 20.998V14.998L10.9001 17.998L7.90012 20.998ZM8.90012 13.998H14.9001L11.9001 16.998L8.90012 13.998ZM15.9001 20.998L12.9001 17.998L15.9001 14.998V20.998ZM15.0001 11.998H8.80012V9.99805H15.0001V11.998Z" fill="#1F2326"/>
-                    </svg>
-                </picture>
-                <span>
-                    Emmerschans
-                </span>
-            </li> -->
         </ul>
         <div class="church-info">
             <div class="church-details"
@@ -331,7 +301,7 @@ export default {
             transform: translateY(vw(32px));
             pointer-events: none;
             
-            transition: opacity 0.2s, transform 0.4s;
+            transition: opacity 0.4s, transform 0.6s;
 
             @media($tablet-portrait) {
                 gap: vw(48px);
@@ -339,9 +309,8 @@ export default {
             }
 
             @media($phone) {
-                grid-template-columns: 1fr;
+                grid-template-columns: 100%;
                 grid-auto-flow: row;
-                gap: vw(24px);
                 margin-top: vw(96px);
             }
 
@@ -363,6 +332,7 @@ export default {
 
                 @media($phone) {
                     height: vw(200px);
+                    margin-bottom: vw(24px);
                 }
             }
 
