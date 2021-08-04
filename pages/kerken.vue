@@ -1,19 +1,27 @@
 <template>
     <main>
         <church-overview />
+
+        <catechesis-slider />
+
+        <workgroup-slider />
     </main>
 </template>
 
 <script>
-    import ChurchOverview from '../components/ChurchOverview.vue'
+    import CatechesisSlider from '../components/CatechesisSlider.vue';
+    import ChurchOverview from "../components/ChurchOverview.vue";
+    import WorkgroupSlider from '../components/WorkgroupSlider.vue';
 
     export default {
         components: {
-            ChurchOverview
-        }
-    }
+            ChurchOverview,
+            CatechesisSlider,
+            WorkgroupSlider,
+        },
+    };
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 </style>
