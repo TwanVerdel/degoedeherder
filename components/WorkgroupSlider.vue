@@ -38,7 +38,7 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-    padding: vw(64px) 0;
+    padding: vw(104px) 0;
 
     h1 {
         @include Outer;

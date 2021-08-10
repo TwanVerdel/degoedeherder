@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="page">
         <main-navigation :neverTransparent="true"/>
         <Nuxt/>
         <main-footer/>
@@ -28,5 +28,9 @@
         box-sizing: border-box;
         padding: 0;
         margin: 0;
+    }
+
+    .page {
+        margin-top: vw(112px);
     }
 </style>

@@ -1,6 +1,5 @@
 <template>
-    <main class="page">
-        <anbi-badge />
+    <main>
         <hero 
             :title="'Vindplaats voor het christelijk geloof.'"
             :paragraph="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis lectus sed nisi iaculis auctor. Donec eu nibh rhoncus, pulvinar massa eget, gravida purus. Aenean lobortis sem ex, vel fermentum eros egestas quis. '"
@@ -10,34 +9,21 @@
             :imgUrl="'/images/beeld.png'"
             :imgAlt="'Mooi beeld'"
         />
-        <article-grid showThree/>
-        <history-component />
-        <donation-banner />
-        <alternate-content />
+        <workgroup-slider />
     </main>
 </template>
 
 <script>
-    import ArticleGrid from "../components/ArticleGrid.vue";
-    import ANBIBadge from '../components/ANBIBadge.vue'
-    import DonationBanner from '../components/DonationBanner.vue'
-    import Hero from '../components/Hero.vue'
-    import HistoryComponent from '../components/HistoryComponent.vue'
+    import WorkgroupSlider from '../components/WorkgroupSlider.vue';
 
     export default {
         components: {
-            Hero,
-            HistoryComponent,
-            DonationBanner,
-            ANBIBadge,
-            ArticleGrid
+            WorkgroupSlider,
         },
         layout: 'hero',
-    }
+    };
 </script>
 
 <style lang="scss" scoped>
-.page {
-    min-height: 100vh;
-}
+
 </style>
