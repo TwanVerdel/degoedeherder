@@ -14,6 +14,7 @@
         <history-component />
         <donation-banner />
         <alternate-content />
+        <board-banner :hasMembers="true"/>
     </main>
 </template>
 
@@ -23,6 +24,7 @@
     import DonationBanner from '../components/DonationBanner.vue'
     import Hero from '../components/Hero.vue'
     import HistoryComponent from '../components/HistoryComponent.vue'
+    import BoardBanner from '../components/BoardBanner.vue'
 
     export default {
         components: {
@@ -30,7 +32,8 @@
             HistoryComponent,
             DonationBanner,
             ANBIBadge,
-            ArticleGrid
+            ArticleGrid,
+            BoardBanner
         },
         layout: 'hero',
     }
