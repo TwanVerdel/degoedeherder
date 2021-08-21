@@ -8,8 +8,10 @@
         </div>
 
         <div v-if="hasMembers" class="member-container">
-            <img src="~assets/images/double-quote.svg" alt="Quote" />
-            <div v-for="member in members" :key="member" class="boxed">{{member}}</div>
+            <div class="members">
+                <img src="~assets/images/double-quote.svg" alt="Quote" />
+                <div v-for="member in members" :key="member" class="boxed">{{member}}</div>
+            </div>
         </div>
         <div v-if="!hasMembers" class="member-container">
             <img src="~assets/images/double-quote.svg" alt="Quote" />
@@ -44,14 +46,7 @@ export default {
                 "B. Gerrits",
                 "T. Verdel",
                 "J. Brans",
-                "B. Gerrits",
-                "T. Verdel",
-                "J. Brans",
-                "B. Gerrits",
-                "T. Verdel",
-                "J. Brans",
-                "B. Gerrits",
-                "T. Verdel"
+                "B. Gerrits"
             ]
         };
     }
@@ -137,12 +132,25 @@ export default {
 
         width: 50%;
         flex-wrap: wrap;
+        padding-left: 5%;
+        padding-right: 5%;
 
         @media ($tablet-portrait) {
             width: 100%;
+            padding-left: 0%;
+            padding-right: 0%;
+        }
+
+        .members {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: vw(300px);
         }
 
         img {
+            display: flex;
             width: vw(16px);
             height: vw(16px);
         }
@@ -164,7 +172,6 @@ export default {
         }
 
         .text {
-            
             p {
                 margin-bottom: vw(8px);
                 text-align: center;
