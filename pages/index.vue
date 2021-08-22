@@ -11,6 +11,7 @@
             :imgAlt="'Mooi beeld'"
         />
         <article-grid showThree/>
+        <faq :title="'Veelgestelde vragen'"/>
         <history-component />
         <donation-banner />
         <alternate-content />
@@ -23,6 +24,7 @@
     import DonationBanner from '../components/DonationBanner.vue'
     import Hero from '../components/Hero.vue'
     import HistoryComponent from '../components/HistoryComponent.vue'
+    import FAQ from '../components/FAQ.vue'
 
     export default {
         components: {
@@ -30,7 +32,8 @@
             HistoryComponent,
             DonationBanner,
             ANBIBadge,
-            ArticleGrid
+            ArticleGrid,
+            FAQ
         },
         layout: 'hero',
     }
