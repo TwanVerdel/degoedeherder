@@ -11,6 +11,7 @@
             :imgAlt="'Mooi beeld'"
         />
         <article-grid showThree/>
+        <pastors-content/>
         <history-component />
         <donation-banner />
         <alternate-content />
@@ -19,6 +20,7 @@
 
 <script>
     import ArticleGrid from "../components/ArticleGrid.vue";
+    import PastorsContent from "../components/PastorsContent.vue";
     import ANBIBadge from '../components/ANBIBadge.vue'
     import DonationBanner from '../components/DonationBanner.vue'
     import Hero from '../components/Hero.vue'
@@ -30,7 +32,8 @@
             HistoryComponent,
             DonationBanner,
             ANBIBadge,
-            ArticleGrid
+            ArticleGrid,
+            PastorsContent
         },
         layout: 'hero',
     }
