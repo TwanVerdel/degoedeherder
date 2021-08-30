@@ -51,14 +51,14 @@ export default {
         },
         faqs: {
             type: Array,
-            default: [
+            default: _ => [
                 {
                     question: "Mag ik mijn hond meenemen?",
                     answer:
                         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at dolor sit amet nibh egestas vehicula. Morbi id nibh id lorem tristique bibendum. Donec vel lectus placerat, efficitur neque ut, efficitur nisl. "
                 },
                 {
-                    question: "Mag ik mijn hond meenemen?",
+                    question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at dolor sit amet nibh egestas vehicula?",
                     answer:
                         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at dolor sit amet nibh egestas vehicula. Morbi id nibh id lorem tristique bibendum. Donec vel lectus placerat, efficitur neque ut, efficitur nisl. "
                 },
@@ -97,13 +97,13 @@ export default {
     background-color: $secondary;
 
     @media ($tablet-portrait) {
-        padding-top: tablet-vw(104px);
-        padding-bottom: tablet-vw(152px);
+        padding-top: tablet-vw(80px);
+        padding-bottom: tablet-vw(80px);
     }
 
     @media ($phone) {
-        padding-top: phone-vw(104px);
-        padding-bottom: phone-vw(152px);
+        padding-top: phone-vw(80px);
+        padding-bottom: phone-vw(80px);
     }
 
     .collaps-items {
@@ -140,9 +140,9 @@ export default {
                 width: 100%;
 
                 h3 {
-                    font-size: vw(20px);
+                    font-size: vw(24px);
 
-                    max-width: 65%;
+                    max-width: vw(800px);
                     line-height: 140%;
 
                     @media ($tablet-portrait) {
