@@ -12,6 +12,7 @@
         />
         <article-grid showThree/>
         <faq :title="'Veelgestelde vragen'"/>
+        <pastors-content/>
         <history-component />
         <donation-banner />
         <alternate-content />
@@ -20,6 +21,7 @@
 
 <script>
     import ArticleGrid from "../components/ArticleGrid.vue";
+    import PastorsContent from "../components/PastorsContent.vue";
     import ANBIBadge from '../components/ANBIBadge.vue'
     import DonationBanner from '../components/DonationBanner.vue'
     import Hero from '../components/Hero.vue'
@@ -33,7 +35,8 @@
             DonationBanner,
             ANBIBadge,
             ArticleGrid,
-            FAQ
+            FAQ,
+            PastorsContent,
         },
         layout: 'hero',
     }
