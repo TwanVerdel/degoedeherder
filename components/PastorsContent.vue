@@ -2,9 +2,12 @@
     <main class="main" ref="main">
         <div class="text-container" ref="textcontainer">
             <h2 class="title">De Goede Herder Parochie in Emmen</h2>
-            <p
-                class="text"
-            >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at dolor sit amet nibh egestas vehicula. Morbi id nibh id lorem tristique bibendum. Donec vel lectus placerat, efficitur neque ut, efficitur nisl.</p>
+            <p class="text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                at dolor sit amet nibh egestas vehicula. Morbi id nibh id lorem
+                tristique bibendum. Donec vel lectus placerat, efficitur neque
+                ut, efficitur nisl.
+            </p>
 
             <button class="discover" @click="scrollToNext()">
                 Ontdek meer
@@ -48,10 +51,10 @@ export default {
 
             window.scrollTo({
                 top: dist + top,
-                behavior: "smooth"
+                behavior: "smooth",
             });
-        }
-    }
+        },
+    },
 };
 </script>
 
@@ -68,7 +71,7 @@ export default {
     @include Outer(160px, 204px);
 
     @media ($tablet-portrait) {
-        @include Outer(104px, 152px);
+        @include Outer(64px, 64px);
         flex-direction: column-reverse;
     }
 
@@ -81,12 +84,21 @@ export default {
 
         @media ($tablet-portrait) {
             width: 100%;
+            margin-top: vw(40px);
+        }
+
+        @media ($phone) {
+            margin-top: 0;
         }
 
         .title {
             max-width: vw(480px);
 
             @media ($tablet-portrait) {
+                max-width: vw(400px);
+            }
+
+            @media ($phone) {
                 max-width: unset;
             }
         }
@@ -96,7 +108,7 @@ export default {
             padding-bottom: vw(24px);
             max-width: vw(568px);
 
-            @media ($tablet-portrait) {
+            @media ($phone) {
                 max-width: unset;
             }
         }
@@ -203,10 +215,11 @@ export default {
                 }
 
                 .desc {
+                    font-family: Roboto Slab;
                     font-weight: bold;
-                    font-size: 16px;
                     opacity: 0.6;
                     padding-left: vw(8px);
+                    font-size: vw(16px);
                 }
             }
             .margin-top {
