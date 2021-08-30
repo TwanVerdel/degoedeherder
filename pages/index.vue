@@ -16,6 +16,7 @@
         <history-component />
         <donation-banner />
         <alternate-content />
+        <board-banner :hasMembers="true"/>
     </main>
 </template>
 
@@ -26,6 +27,7 @@
     import DonationBanner from '../components/DonationBanner.vue'
     import Hero from '../components/Hero.vue'
     import HistoryComponent from '../components/HistoryComponent.vue'
+    import BoardBanner from '../components/BoardBanner.vue'
     import FAQ from '../components/FAQ.vue'
 
     export default {
@@ -35,6 +37,7 @@
             DonationBanner,
             ANBIBadge,
             ArticleGrid,
+            BoardBanner,
             FAQ,
             PastorsContent,
         },
