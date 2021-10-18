@@ -1,12 +1,9 @@
 <template>
     <main class="main" ref="main">
         <div class="text-container" ref="textcontainer">
-            <h2 class="title">De Goede Herder Parochie in Emmen</h2>
+            <h2 class="title">{{title}}</h2>
             <p class="text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                at dolor sit amet nibh egestas vehicula. Morbi id nibh id lorem
-                tristique bibendum. Donec vel lectus placerat, efficitur neque
-                ut, efficitur nisl.
+               {{description}}
             </p>
 
             <button class="discover" @click="scrollToNext()">
@@ -28,14 +25,14 @@
         <div class="pastors-container">
             <div class="pastors-content">
                 <div class="pastor margin-top">
-                    <img src="https://picsum.photos/1000" alt="Pastoor" />
-                    <h3>P. Stiekema 1</h3>
+                    <img :src="leftPastorImage" alt="Pastoor" />
+                    <h3>{{leftPastorName}}</h3>
                     <p class="desc">Pastoor</p>
                 </div>
                 <div class="pastor">
-                    <img src="https://picsum.photos/1000" alt="Pastoor" />
-                    <h3>P. Stiekema 2</h3>
-                    <p class="desc">Pastoor</p>
+                    <img :src="rightPastorImage" alt="Pastoor" />
+                    <h3>{{rightPastorName}}</h3>
+                    <p class="desc">Pastores</p>
                 </div>
             </div>
         </div>
@@ -44,6 +41,32 @@
 
 <script>
 export default {
+    props:{
+        title:{
+            type: String,
+            default: "De Goede Herder Parochie"
+        },
+        description:{
+            type: String,
+            default: ""
+        },
+        leftPastorName:{
+             type: String,
+            default: ""
+        },
+        leftPastorImage:{
+             type: String,
+            default: ""
+        },
+        rightPastorName:{
+             type: String,
+            default: ""
+        },
+        rightPastorImage:{
+             type: String,
+            default: ""
+        }
+    },
     methods: {
         scrollToNext() {
             var top = this.$refs.textcontainer.offsetTop;

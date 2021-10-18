@@ -10,12 +10,14 @@ export default async ({$graphcms}) => {
                 heroes{
                   title,
                   description{
+                    html,
                     text
                   },
                   image {
                     id,
                     width,
-                    height
+                    height,
+                    url
                   },
                   buttonsVisible,
                   urlRoundedButton,

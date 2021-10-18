@@ -2,9 +2,9 @@
 
 <template>
   <section class="donation-banner">
-      <h2>Kerkbijdrage</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultricies efficitur lacus. Etiam tincidunt magna diam, porta dignissim sapien suscipit quis. Vestibulum pharetra finibus dolor, at malesuada mauris varius nec. Aenean facilisis metus sem, ut luctus lectus imperdiet in. Integer feugiat erat felis.</p>
-      <button class="btn">Nu doneren</button>
+      <h2>{{title}}</h2>
+      <p>{{description}}</p>
+      <button class="btn">{{buttonText}}</button>
   </section>
 </template>
 
@@ -12,7 +12,20 @@
 
 <script>
 export default {
-
+    props:{
+        title:{
+            type: String,
+            default: "Kerkbijdrage"
+        },
+        description:{
+            type: String,
+            default: "Iets over de kerkbijdrage"
+        },
+        buttonText:{
+            type: String,
+            default: "Doneren"
+        },
+    }
 }
 </script>
 

@@ -13,12 +13,14 @@ export default async ({$graphcms}) => {
                   leftPastorName,
                   leftPastorImage{
                     width,
-                    height
+                    height,
+                    url
                   }
                   rightPastorName,
                   rightPastorImage{
                     width,
-                    height
+                    height,
+                    url
                   }
                 }
               }

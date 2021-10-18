@@ -2,7 +2,7 @@
     <header class="hero" ref="hero">
         <div class="text-container">
             <h1 v-text="title" />
-            <p v-text="paragraph" />
+            <p v-html="paragraph" />
             <div class="btn-row">
                 <a v-if="buttonUrl && buttonText"
                     class="btn" 
