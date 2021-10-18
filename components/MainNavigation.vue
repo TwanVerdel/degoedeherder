@@ -23,19 +23,19 @@
 
             <ul>
                 <li>
-                    <a href="/">Gedragscode</a>
+                    <a href="/gedragscode">Gedragscode</a>
                 </li>
                 <li>
-                    <a href="/">PCI</a>
+                    <a href="/pci">PCI</a>
                 </li>
                 <li>
-                    <a href="/">Diakonie</a>
+                    <a href="/diakonie">Diakonie</a>
                 </li>
                 <li>
-                    <a href="/">Catecheses</a>
+                    <a href="/catecheses">Catecheses</a>
                 </li>
                 <li>
-                    <a href="/">Fincanciën</a>
+                    <a href="/financien">Fincanciën</a>
                 </li>
             </ul>
         </div> 
@@ -63,19 +63,19 @@
 
             <ul>
                 <li>
-                    <a href="/">Over ons</a>
+                    <a href="/over">Over ons</a>
                 </li>
                 <li>
-                    <a href="/">Kerken</a>
+                    <a href="/kerken">Kerken</a>
                 </li>
                 <li>
-                    <a href="/">Blogs</a>
+                    <a href="/blogs">Blogs</a>
                 </li>
                 <li>
-                    <a href="/">Nieuws</a>
+                    <a href="/nieuws">Nieuws</a>
                 </li>
                 <li>
-                    <a href="/">Evenementen</a>
+                    <a href="/evenementen">Evenementen</a>
                 </li>
             </ul>
         </div>

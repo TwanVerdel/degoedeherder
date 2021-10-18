@@ -10,8 +10,7 @@
     export default {
         components: {
             ArticleGrid
-        },
-        layout: 'hero',
+        }
     }
 </script>
 

@@ -7,8 +7,8 @@
 </template>
 
 <script>
-    import AlternateContent from '../components/AlternateContent.vue';
-    import CatechesisSlider from '../components/CatechesisSlider.vue';
+    import AlternateContent from '../../components/AlternateContent.vue';
+    import CatechesisSlider from '../../components/CatechesisSlider.vue';
 
     export default {
         components: {

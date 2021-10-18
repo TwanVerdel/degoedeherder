@@ -1,16 +1,14 @@
 <template>
     <main class="page">
-        <article-grid />
     </main>
 </template>
 
 <script>
-    import ArticleGrid from "@/components/ArticleGrid.vue";
 
     export default {
         components: {
-            ArticleGrid
-        }
+            
+        },
     }
 </script>
 
