@@ -25,7 +25,7 @@
         <donation-banner
             :title="donationBanner.title"
             :description="donationBanner.description"
-            :buttontext="donationBanner.buttonText"
+            :buttonText="donationBanner.buttonText"
         />
         <alternate-content />
         <board-banner :hasMembers="true" />
