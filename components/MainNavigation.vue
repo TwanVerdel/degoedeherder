@@ -63,7 +63,7 @@
 
             <ul>
                 <li>
-                    <a href="/over">Over ons</a>
+                    <a href="/parochie">Parochie</a>
                 </li>
                 <li>
                     <a href="/kerken">Kerken</a>

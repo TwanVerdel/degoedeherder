@@ -1,10 +1,10 @@
 <template>
     <section :class="{ 'showThree' : showThree }">
         <template v-if="showThree">
-            <h2>Nieuws vanuit de parochie.</h2>
+            <h2>{{title}}</h2>
         </template>
         <template v-else>
-            <h1>Nieuws vanuit de parochie.</h1>
+            <h1>{{title}}</h1>
         </template>
 
         <div class="article-container">
@@ -57,6 +57,10 @@
             showThree:{
                 type: Boolean,
                 default: false
+            },
+            title:{
+                type: String,
+                default: "Nieuws vanuit de parochie."
             }
         }
     };

@@ -40,16 +40,16 @@
                         De parochie
                     </li>
                     <li>
-                        <a href="#">Over ons</a>
+                        <a href="/parochie">Parochie</a>
                     </li>
                     <li>
-                        <a href="#">Kerken</a>
+                        <a href="/kerken">Kerken</a>
                     </li>
                     <li>
-                        <a href="#">Blogs</a>
+                        <a href="/blogs">Blogs</a>
                     </li>
                     <li>
-                        <a href="#">Nieuws</a>
+                        <a href="/nieuws">Nieuws</a>
                     </li>
                     <li>
                         <a href="#">Evenementen</a>

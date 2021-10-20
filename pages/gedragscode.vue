@@ -1,11 +1,14 @@
 <template>
     <main class="page">
         <h1>{{codeOfConduct.title}}</h1>
-        <p v-html="codeOfConduct.codeOfConduct.html" />
+        <div class="logo">
+            <img src="@/static/images/meldpunt.png" alt />
+        </div>
+        <p class="text" v-html="codeOfConduct.codeOfConduct.html" />
         <p>
             Een melding maken kan op
             <a
-                :href="'https://' + codeOfConduct.hotlineUrl"
+                :href="codeOfConduct.hotlineUrl"
             >www.meldpuntgrensoverschrijdendgedragrkk.nl/</a>
         </p>
     </main>
@@ -40,6 +43,29 @@ export default {
     display: flex;
     flex-direction: column;
 
+    ::v-deep .text > p {
+        margin-bottom: vw(24px);
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+
+        img {
+            max-width: 400px;
+            margin-bottom: vw(24px);
+
+            @media ($tablet-portrait) {
+                max-width: tablet-vw(520px);
+            }
+
+            @media ($phone) {
+                @include Outer;
+                max-width: 100vw;
+            }
+        }
+    }
+
     h1 {
         @include Outer;
         margin: 0 auto;
@@ -65,15 +91,18 @@ export default {
     }
 
     p {
-        margin-top: vw(24px);
-        @media ($tablet-portrait) {
-            max-width: vw(584px);
-        }
+        margin-bottom: vw(24px);
+        word-wrap: break-word;
+        width: 100%;
 
-        @media ($phone) {
-            
-            max-width: phone-vw(744px);
-        }
+        // @media ($tablet-portrait) {
+        //     max-width: vw(584px);
+        // }
+
+        // @media ($phone) {
+
+        //     max-width: phone-vw(744px);
+        // }
     }
 }
 </style>

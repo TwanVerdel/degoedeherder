@@ -11,24 +11,24 @@
             :imgAlt="'Mooi beeld'"
         />
         <article-grid showThree />
-        <faq :title="'Veelgestelde vragen'" :faqs="faq" />
-        <pastors-content
+        <article-grid showThree :title="'Pastoorblogs'"/>
+        <!-- <faq :title="'Veelgestelde vragen'" :faqs="faq" /> -->
+        <!-- <pastors-content
             :title="pastorBanner.title"
             :description="pastorBanner.description"
             :leftPastorImage="pastorBanner.leftPastorImage.url"
             :leftPastorName="pastorBanner.leftPastorName"
             :rightPastorImage="pastorBanner.rightPastorImage.url"
             :rightPastorName="pastorBanner.rightPastorName"
-        />
+        /> -->
 
-        <history-component />
-        <donation-banner
+        <!-- <donation-banner
             :title="donationBanner.title"
             :description="donationBanner.description"
             :buttonText="donationBanner.buttonText"
-        />
-        <alternate-content />
-        <board-banner :hasMembers="true" />
+        /> -->
+        <alternate-content title="Bisdomnieuws" description="De parochies van Erica, Barger-Oosterveld, Emmerschans en Emmen maken deel uit van het bisdom Groningen-Leeuwarden. Klik hieronder voor het laatste nieuws." buttonText="Bisdomnieuws" buttonURL="https://bisdomgl.nl/categorie/nieuws/"/>
+        <!-- <board-banner :hasMembers="true" /> -->
     </main>
 </template>
 

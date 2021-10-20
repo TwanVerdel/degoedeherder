@@ -3,14 +3,11 @@
 <template>
     <section class="alternate-content">
         <div class="container">
-            <h2>De parochie agenda</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-                ultricies efficitur lacus. Etiam tincidunt magna diam, porta
-                dignissim sapien suscipit quis. Vestibulum pharetra finibus
-                dolor, at malesuada mauris varius nec.
-            </p>
-            <button class="btn">Agenda bekijken</button>
+            <h2>{{title}}</h2>
+            <p>{{description}}</p>
+            <button class="btn">
+                <a :href="buttonURL">{{buttonText}}</a>
+            </button>
         </div>
         <!-- Er moet hier een plaatje -->
         <div class="container image">
@@ -26,6 +23,31 @@
 <!-- JavaScript -->
 
 <script>
+export default {
+    props: {
+        title: {
+            type: String,
+            default: "Nieuws vanuit de parochie."
+        },
+        description: {
+            type: Boolean,
+            default: ""
+        },
+        image: {
+            type: String,
+            default:
+                "~/assets/images/01 detailfoto Maria, OLV Onbevlekt Ontvangen.jpg"
+        },
+        buttonText: {
+            type: String,
+            default: ""
+        },
+        buttonURL: {
+            type: String,
+            default: ""
+        }
+    }
+};
 </script>
 
 <!-- Scss -->
@@ -45,8 +67,9 @@
     }
 
     @media ($phone) {
-        grid-template-areas: "top" 
-                    "bottom";
+        grid-template-areas:
+            "top"
+            "bottom";
         grid-template-columns: 100%;
         grid-template-rows: max-content max-content;
         gap: vw(24px);
@@ -84,6 +107,13 @@
                 height: vw(240px);
             }
         }
+
+        a,
+        a:visited,
+        a:hover,
+        a:active {
+            color: white;
+        }
     }
 
     .container.image {
@@ -91,6 +121,5 @@
             grid-area: top;
         }
     }
-
 }
 </style>
