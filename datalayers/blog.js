@@ -1,34 +1,38 @@
 import { gql } from 'graphql-request';
 
-export default async ({ $graphcms }) => {
-    let result = undefined
+export default async ({ $graphcms }, params) => {
+  let result = undefined
 
-    try {
-        result = (await $graphcms.request(
-            gql`
-            {
-                pastorBlogs {
-                  id
-                  title
-                  blogText {
-                    html
-                    text
-                  }
-                  thumbnail {
-                    id
-                    width
-                    height
-                    url
-                  }
-                  date
+  // console.log("blog.js")
+  // console.log(params.params)
+
+  try {
+    result = (await $graphcms.request(
+      gql`
+            query($uid: ID!){
+              pastorBlog( where: {id: $uid}){
+                id
+                title
+                blogText {
+                  html
+                  text
                 }
+                thumbnail {
+                  id
+                  width
+                  height
+                  url
+                }
+                date
               }
-            `,
-        ))
-    }
-    catch (e) {
-        result = null
-    }
-
-    return result
+            }
+            `, {"uid": params.uid}
+    ))
+  }
+  catch (e) {
+    console.log(e)
+    result = null
+  }
+  console.log("Result")
+  return result
 }

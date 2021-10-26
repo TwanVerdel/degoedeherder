@@ -12,7 +12,7 @@
                 v-for="(article, index) in allArticle"
                 :key="`article-cell-${index}`"
                 class="thumbnail"
-                :href="'blogs/post?id='+article.id"
+                :href="'blogs/'+article.id"
             >
                 <img :src="article.thumbnail.url" alt="Placeholder" />
                 <div class="text">
@@ -29,9 +29,6 @@ export default {
     computed: {
         allArticle() {
             const articles = this.articles || [];
-
-            console.log(typeof articles[0].date)
-
             return this.showThree ? articles.slice(0, 3) : articles;
         },
        
