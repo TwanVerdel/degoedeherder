@@ -8,14 +8,16 @@
         </template>
 
         <div class="article-container">
-            <a v-for="(article, index) in allArticle"
+            <a
+                v-for="(article, index) in allArticle"
                 :key="`article-cell-${index}`"
                 class="thumbnail"
-                href="https://nu.nl">
-                <img src="https://picsum.photos/1000" alt="Placeholder" />
+                :href="'blogs/post?id='+article.id"
+            >
+                <img :src="article.thumbnail.url" alt="Placeholder" />
                 <div class="text">
-                    <div class="date">27 juli 2021</div>
-                    <h3 class="title">Dit zijn de werkgroepen voor het jaar 2022</h3>
+                    <div class="date">{{ getDateString(article.date) }}</div>
+                    <h3 class="title">{{article.title}}</h3>
                 </div>
             </a>
         </div>
@@ -23,47 +25,64 @@
 </template>
 
 <script>
-    export default {
-        computed: {
-            allArticle() {
-                const articles = this.articles || []
+export default {
+    computed: {
+        allArticle() {
+            const articles = this.articles || [];
 
-                return this.showThree ? articles.slice(0, 3) : articles
-            }  
+            console.log(typeof articles[0].date)
+
+            return this.showThree ? articles.slice(0, 3) : articles;
         },
-        data() {
-            return {
-                articles: [
-                    {
-                        title: "Dit zijn de werkgroepen voor 2022",
-                        date: "27 juli 2021"
-                    },
-                    {
-                        title: "Een hele ontzettend lange titel van een artikel die niet op de regel past",
-                        date: "27 juli 2021"
-                    },
-                    {
-                        title: "Titel 3",
-                        date: "27 juli 2021"
-                    },
-                    {
-                        title: "Titel 4",
-                        date: "27 juli 2021"
-                    }
-                ]
-            };
-        },
-        props:{
-            showThree:{
-                type: Boolean,
-                default: false
-            },
-            title:{
-                type: String,
-                default: "Nieuws vanuit de parochie."
-            }
+       
+    },
+    methods:{
+         getDateString(dateString){
+            var timestamp = Date.parse(dateString)
+            var dateObject = new Date(timestamp)
+            var month = new Intl.DateTimeFormat('nl-NL', { month: 'long'}).format(dateObject)
+
+            return dateObject.getDate() + " " + month + " " + dateObject.getFullYear()
         }
-    };
+    },
+    // data() {
+    //     return {
+    //         articles: [
+    //             {
+    //                 title: "Dit zijn de werkgroepen voor 2022",
+    //                 date: "27 juli 2021"
+    //             },
+    //             {
+    //                 title:
+    //                     "Een hele ontzettend lange titel van een artikel die niet op de regel past",
+    //                 date: "27 juli 2021"
+    //             },
+    //             {
+    //                 title: "Titel 3",
+    //                 date: "27 juli 2021"
+    //             },
+    //             {
+    //                 title: "Titel 4",
+    //                 date: "27 juli 2021"
+    //             }
+    //         ]
+    //     };
+    // },
+    props: {
+        showThree: {
+            type: Boolean,
+            default: false
+        },
+        title: {
+            type: String,
+            default: "Nieuws vanuit de parochie."
+        },
+        articles: {
+            type: Array,
+            default: []
+        }
+    }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -140,11 +159,11 @@ section {
             gap: phone-vw(16px);
         }
 
-
         // Slider spacings
-        &::before, &::after {
+        &::before,
+        &::after {
             @media ($tablet-portrait) {
-                content: '';
+                content: "";
                 width: calc(var(--outer) - #{tablet-vw(24px)});
             }
 
@@ -171,7 +190,7 @@ section {
             }
 
             &::before {
-                content: '';
+                content: "";
 
                 position: absolute;
                 z-index: 2;
@@ -181,7 +200,11 @@ section {
                 height: 100%;
                 width: 100%;
 
-                background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.75) 100%);
+                background: linear-gradient(
+                    180deg,
+                    rgba(0, 0, 0, 0.2) 0%,
+                    rgba(0, 0, 0, 0.75) 100%
+                );
             }
 
             img {
@@ -251,11 +274,8 @@ section {
                 transform: scale(1.05);
             }
         }
-
-
     }
 }
-
 
 // Showing all articles
 
@@ -279,7 +299,8 @@ section:not(.showThree) {
             gap: phone-vw(24px);
         }
 
-        &::before, &::after {
+        &::before,
+        &::after {
             content: unset;
         }
 
@@ -295,6 +316,5 @@ section:not(.showThree) {
             }
         }
     }
-
 }
 </style>

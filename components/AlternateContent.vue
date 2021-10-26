@@ -30,7 +30,7 @@ export default {
             default: "Nieuws vanuit de parochie."
         },
         description: {
-            type: Boolean,
+            type: String,
             default: ""
         },
         image: {

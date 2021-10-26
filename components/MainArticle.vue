@@ -1,63 +1,45 @@
 <template>
     <section class="article-page">
-        <h1>Dit zijn de werkgroepen voor het jaar 2022.</h1>
+        <h1>{{title}}</h1>
 
         <article>
             <img
                 class="banner-image"
-                src="https://picsum.photos/1000"
+                :src="imageSrc"
                 alt="Header afbeelding voor een blog van de Goede Herder Parochie"
             />
-            <div class="content">
-                <h2>Even voorstellen..</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Proin facilisis lectus sed nisi iaculis auctor. Donec eu
-                    nibh rhoncus, pulvinar massa eget, gravida purus. Aenean
-                    lobortis sem ex, vel fermentum eros egestas quis.
-                </p>
-                <h3>Dit is een heading 3</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Proin facilisis lectus sed nisi iaculis auctor. Donec eu
-                    nibh rhoncus, pulvinar massa eget, gravida purus. Aenean
-                    lobortis sem ex, vel fermentum eros egestas quis.
-                </p>
-                <h3>Dit is een heading 3</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Integer at dolor sit amet nibh egestas vehicula. Morbi id
-                    nibh id lorem tristique bibendum. Donec vel lectus placerat,
-                    efficitur neque ut, efficitur nisl. Maecenas dictum massa
-                    volutpat placerat eleifend. Curabitur metus arcu, vehicula
-                    ac ipsum id, fermentum lacinia ipsum.
-                    <br />
-                    <br />
-                    Integer efficitur justo vitae maximus faucibus. Pellentesque
-                    posuere, ante sed bibendum volutpat, purus lorem placerat
-                    quam, ac semper lacus nunc tempor massa. Vivamus mi odio,
-                    gravida id feugiat et, porttitor sit amet mauris. Quisque
-                    pulvinar augue nec felis sodales pellentesque. Donec
-                    pharetra rutrum facilisis. Nulla et est id dolor mollis
-                    aliquam.
-                </p>
-            </div>
+            <div class="content" v-html="text" />
         </article>
 
         <div class="pre-footer">
             <h2>Nog meer artikelen ontdekken?</h2>
 
             <div class="btn-row">
-                <a class="btn"> Meer nieuws </a>
+                <a class="btn">Meer nieuws</a>
 
-                <a class="scd"> Blogs lezen </a>
+                <a class="scd">Blogs lezen</a>
             </div>
         </div>
     </section>
 </template>
 
 <script>
-export default {};
+export default {
+    props: {
+        title: {
+            type: String,
+            default: ""
+        },
+        imageSrc: {
+            type: String,
+            default: ""
+        },
+        text: {
+            type: String,
+            default: ""
+        }
+    }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -173,6 +155,15 @@ export default {};
                 @media ($phone) {
                     margin-bottom: phone-vw(40px);
                 }
+            }
+
+            ::v-deep p {
+                margin-bottom: vw(16px);
+            }
+            
+            ::v-deep img {
+                max-width: 100%;
+                height: auto;
             }
 
             > *:last-child {

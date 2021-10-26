@@ -13,14 +13,7 @@
         <article-grid showThree />
         <article-grid showThree :title="'Pastoorblogs'"/>
         <!-- <faq :title="'Veelgestelde vragen'" :faqs="faq" /> -->
-        <!-- <pastors-content
-            :title="pastorBanner.title"
-            :description="pastorBanner.description"
-            :leftPastorImage="pastorBanner.leftPastorImage.url"
-            :leftPastorName="pastorBanner.leftPastorName"
-            :rightPastorImage="pastorBanner.rightPastorImage.url"
-            :rightPastorName="pastorBanner.rightPastorName"
-        /> -->
+       
 
         <!-- <donation-banner
             :title="donationBanner.title"
@@ -34,7 +27,6 @@
 
 <script>
 import HeroComponentData from "@/datalayers/hero.js";
-import PastorData from "@/datalayers/pastorBanner.js";
 import FAQComponentData from "@/datalayers/FAQ.js";
 import DonationBannerData from "@/datalayers/churchContributionBanner.js";
 
@@ -62,9 +54,6 @@ export default {
         hero() {
             return this.heroData.heroes[0];
         },
-        pastorBanner() {
-            return this.pastorData.pastorBanners[0];
-        },
         faq() {
             return this.FAQData.fAQs;
         },
@@ -76,13 +65,11 @@ export default {
 
     async asyncData(ctx) {
         const heroData = await HeroComponentData(ctx);
-        const pastorData = await PastorData(ctx);
         const FAQData = await FAQComponentData(ctx);
         const donationData = await DonationBannerData(ctx);
 
         return {
             heroData,
-            pastorData,
             FAQData,
             donationData
         };
