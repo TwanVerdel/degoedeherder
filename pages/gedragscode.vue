@@ -53,15 +53,19 @@ export default {
 
         img {
             max-width: 400px;
-            margin-bottom: vw(24px);
+            margin-bottom: desktop-vw(80px);
 
             @media ($tablet-portrait) {
                 max-width: tablet-vw(520px);
+                margin-bottom: tablet-vw(56px);
+                margin-top: tablet-vw(64px);
             }
 
             @media ($phone) {
                 @include Outer;
                 max-width: 100vw;
+                margin-bottom: phone-vw(56px);
+                margin-top: phone-vw(64px);
             }
         }
     }
@@ -91,18 +95,11 @@ export default {
     }
 
     p {
-        margin-bottom: vw(24px);
+        @include Outer;
+        margin-bottom: vw(48px);
         word-wrap: break-word;
         width: 100%;
-
-        // @media ($tablet-portrait) {
-        //     max-width: vw(584px);
-        // }
-
-        // @media ($phone) {
-
-        //     max-width: phone-vw(744px);
-        // }
     }
+
 }
 </style>

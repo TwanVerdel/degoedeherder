@@ -1,17 +1,33 @@
 <template>
     <main class="page">
-        <article-grid />
+        <article-grid :articles="articles" type="nieuws" />
     </main>
 </template>
 
 <script>
-    import ArticleGrid from "@/components/ArticleGrid.vue";
+import ArticlesData from "@/datalayers/newsMessages.js";
 
-    export default {
-        components: {
-            ArticleGrid
+import ArticleGrid from "@/components/ArticleGrid.vue";
+
+export default {
+    components: {
+        ArticleGrid
+    },
+    computed: {
+        articles() {
+            return this.newsArticles.newsMessages;
         }
+    },
+
+    async asyncData(ctx) {
+        const newsArticles = await ArticlesData(ctx);
+        console.log(newsArticles)
+
+        return {
+            newsArticles
+        };
     }
+};
 </script>
 
 <style lang="scss" scoped>

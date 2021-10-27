@@ -8,12 +8,14 @@ export default async ({$graphcms}) => {
             gql`
             {
                 newsMessages{
+                  id,
                   title,
                   date,
-                  image{
+                  thumbnail{
                     id,
                     width,
-                    height
+                    height,
+                    url
                   },
                   text{
                     html

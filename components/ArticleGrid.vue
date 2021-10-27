@@ -12,7 +12,7 @@
                 v-for="(article, index) in allArticle"
                 :key="`article-cell-${index}`"
                 class="thumbnail"
-                :href="'blogs/'+article.id"
+                :href="type + '/' + article.id"
             >
                 <img :src="article.thumbnail.url" alt="Placeholder" />
                 <div class="text">
@@ -30,41 +30,25 @@ export default {
         allArticle() {
             const articles = this.articles || [];
             return this.showThree ? articles.slice(0, 3) : articles;
-        },
-       
-    },
-    methods:{
-         getDateString(dateString){
-            var timestamp = Date.parse(dateString)
-            var dateObject = new Date(timestamp)
-            var month = new Intl.DateTimeFormat('nl-NL', { month: 'long'}).format(dateObject)
-
-            return dateObject.getDate() + " " + month + " " + dateObject.getFullYear()
         }
     },
-    // data() {
-    //     return {
-    //         articles: [
-    //             {
-    //                 title: "Dit zijn de werkgroepen voor 2022",
-    //                 date: "27 juli 2021"
-    //             },
-    //             {
-    //                 title:
-    //                     "Een hele ontzettend lange titel van een artikel die niet op de regel past",
-    //                 date: "27 juli 2021"
-    //             },
-    //             {
-    //                 title: "Titel 3",
-    //                 date: "27 juli 2021"
-    //             },
-    //             {
-    //                 title: "Titel 4",
-    //                 date: "27 juli 2021"
-    //             }
-    //         ]
-    //     };
-    // },
+    methods: {
+        getDateString(dateString) {
+            var timestamp = Date.parse(dateString);
+            var dateObject = new Date(timestamp);
+            var month = new Intl.DateTimeFormat("nl-NL", {
+                month: "long"
+            }).format(dateObject);
+
+            return (
+                dateObject.getDate() +
+                " " +
+                month +
+                " " +
+                dateObject.getFullYear()
+            );
+        }
+    },
     props: {
         showThree: {
             type: Boolean,
@@ -77,6 +61,10 @@ export default {
         articles: {
             type: Array,
             default: []
+        },
+        type: {
+            type: String,
+            default: "blogs"
         }
     }
 };

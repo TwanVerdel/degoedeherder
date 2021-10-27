@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import BlogData from "@/datalayers/blog.js";
+import NewsData from "@/datalayers/newsArticle.js";
 
 import MainArticle from "@/components/MainArticle.vue";
 
@@ -15,13 +15,13 @@ export default {
     },
     computed: {
         title() {
-            return this.blogContent.pastorBlog.title;
+            return this.newsContent.newsMessage.title;
         },
         image() {
-            return this.blogContent.pastorBlog.thumbnail.url;
+            return this.newsContent.newsMessage.thumbnail.url;
         },
         text() {
-            return this.blogContent.pastorBlog.blogText.html;
+            return this.newsContent.newsMessage.text.html;
         }
     },
 
@@ -29,18 +29,18 @@ export default {
 
         const {params, redirect} = ctx
 
-        const blogContent = await BlogData(ctx, ctx.params);
+        const newsContent = await NewsData(ctx, ctx.params);
 
-        if (blogContent.pastorBlog === null) {
+        if (newsContent.newsMessage === null) {
 
-            //TODO redirect naar /blogs
+            //TODO redirect naar /nieuws
             redirect("/blogs")
             ctx.redirect("/blogs")
 
         }
 
         return {
-            blogContent
+            newsContent
         };
     }
 };

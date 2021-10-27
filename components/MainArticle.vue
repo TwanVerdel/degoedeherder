@@ -15,9 +15,9 @@
             <h2>Nog meer artikelen ontdekken?</h2>
 
             <div class="btn-row">
-                <a class="btn">Meer nieuws</a>
+                <a class="btn" href="/nieuws">Meer nieuws</a>
 
-                <a class="scd">Blogs lezen</a>
+                <a class="scd" href="/blogs">Blogs lezen</a>
             </div>
         </div>
     </section>

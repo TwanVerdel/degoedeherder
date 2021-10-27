@@ -2,10 +2,7 @@ import { gql } from 'graphql-request';
 
 export default async ({ $graphcms }, params) => {
   let result = undefined
-
-  // console.log("blog.js")
-  // console.log(params.params)
-
+  
   try {
     result = (await $graphcms.request(
       gql`
