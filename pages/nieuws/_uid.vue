@@ -1,6 +1,8 @@
 <template>
     <main class="page">
-        <main-article :title="title" :imageSrc="image" :text="text" />
+        <template v-if="newsContent.newsMessage">
+            <main-article :title="title" :imageSrc="image" :text="text" />
+        </template>
     </main>
 </template>
 
@@ -13,31 +15,29 @@ export default {
     components: {
         MainArticle
     },
+    mounted() {
+        if (!this.newsContent.newsMessage) {
+            window.location.replace("/nieuws");
+        }
+    },
     computed: {
         title() {
-            return this.newsContent.newsMessage.title;
+            return this.newsContent?.newsMessage.title;
         },
         image() {
-            return this.newsContent.newsMessage.thumbnail.url;
+            return this.newsContent?.newsMessage.thumbnail.url;
         },
         text() {
-            return this.newsContent.newsMessage.text.html;
+            return this.newsContent?.newsMessage.text.html;
         }
     },
 
     async asyncData(ctx) {
-
-        const {params, redirect} = ctx
+        const { params, redirect } = ctx;
 
         const newsContent = await NewsData(ctx, ctx.params);
 
-        if (newsContent.newsMessage === null) {
-
-            //TODO redirect naar /nieuws
-            redirect("/blogs")
-            ctx.redirect("/blogs")
-
-        }
+        console.log(newsContent)
 
         return {
             newsContent

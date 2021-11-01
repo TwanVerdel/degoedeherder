@@ -1,6 +1,8 @@
 <template>
     <main class="page">
-        <main-article :title="title" :imageSrc="image" :text="text" />
+        <template v-if="blogContent.pastorBlog">
+            <main-article :title="title" :imageSrc="image" :text="text" />
+        </template>
     </main>
 </template>
 
@@ -13,31 +15,39 @@ export default {
     components: {
         MainArticle
     },
+    mounted() {
+        if (!this.blogContent.pastorBlog) {
+            window.location.replace("/blogs");
+        }
+    },
     computed: {
         title() {
-            return this.blogContent.pastorBlog.title;
+            return this.blogContent.pastorBlog?.title;
         },
         image() {
-            return this.blogContent.pastorBlog.thumbnail.url;
+            return this.blogContent.pastorBlog?.thumbnail?.url;
         },
         text() {
-            return this.blogContent.pastorBlog.blogText.html;
+            return this.blogContent.pastorBlog?.blogText?.html;
         }
     },
 
     async asyncData(ctx) {
+        const { params, redirect } = ctx;
 
-        const {params, redirect} = ctx
+        let blogContent = undefined;
 
-        const blogContent = await BlogData(ctx, ctx.params);
+        blogContent = await BlogData(ctx, ctx.params);
 
-        if (blogContent.pastorBlog === null) {
+        console.log(blogContent);
 
-            //TODO redirect naar /blogs
-            redirect("/blogs")
-            ctx.redirect("/blogs")
+        //TODO redirect naar /blogs
+        // redirect("/blogs")
+        // ctx.redirect("blogs");
 
-        }
+        // return redirect("/blogs");
+
+        // ctx.$router.push('/')
 
         return {
             blogContent

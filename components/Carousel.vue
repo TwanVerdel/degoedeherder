@@ -95,7 +95,6 @@ export default {
         setVisibility() {
             const carousel = this?.$refs?.carousel;
 
-            //TODO Dit is een tijdelijke fix van carousel.children.forEach
             var arr = Array.prototype.slice.call(carousel.children);
 
             arr.forEach((slide, index) => {
