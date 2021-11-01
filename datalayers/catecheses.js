@@ -10,8 +10,11 @@ export default async ({ $graphcms }) => {
                 catecheses {
                   title,
                   description,
-                  email,
-                  startdate
+                  contact,
+                  startdate,
+                  image{
+                      url
+                  }
                 }
               }
             `,
