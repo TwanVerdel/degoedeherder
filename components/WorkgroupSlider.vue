@@ -8,7 +8,7 @@
                 :key="`container-${index}`"
             >
 
-                <!-- TODO afbeeldingen toevoegen -->
+                <!-- TODO afbeeldingen koppelen uit CMS, afbeeldingen staan nog niet in CMS -->
                 <img src="https://picsum.photos/1000" />
 
                 <div class="text-container">

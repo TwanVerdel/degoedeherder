@@ -6,7 +6,8 @@
                 <img src="https://picsum.photos/1000" />
 
                 <div class="text-container">
-                    <span>Vanaf {{getDateString(catechese.startdate)}}</span>
+                    <!-- TODO Is deze vanaf datum nodig? Deze zijn door de pastoor niet gegeven -->
+                    <!-- <span>Vanaf {{getDateString(catechese.startdate)}}</span> -->
                     <h3>{{catechese.title}}</h3>
                     <p>
                         {{catechese.description}}

@@ -27,9 +27,7 @@ export default async ({ $graphcms }, params) => {
     ))
   }
   catch (e) {
-    console.log(e)
     result = null
   }
-  console.log("Result")
   return result
 }

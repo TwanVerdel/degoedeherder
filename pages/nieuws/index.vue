@@ -21,7 +21,6 @@ export default {
 
     async asyncData(ctx) {
         const newsArticles = await ArticlesData(ctx);
-        console.log(newsArticles)
 
         return {
             newsArticles

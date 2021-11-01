@@ -1,5 +1,12 @@
 <template>
     <main class="page">
+
+        <!-- TODO Titel van de pagina misschien veranderen? -->
+
+        <!-- TODO 2.01 Liturgisch rooster -->
+
+        <!-- TODO 2.02 Gerardus- en Mariaprocessie -->
+
     </main>
 </template>
 

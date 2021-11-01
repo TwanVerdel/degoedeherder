@@ -8,25 +8,24 @@
 <script>
 import PCIData from "@/datalayers/PCI.js";
 
-    export default {
-        computed:{
-            title(){
-                return this.PCIcontent.pcis[0].title;
-            },
-            text(){
-                return this.PCIcontent.pcis[0].text.html
-            }
+export default {
+    computed: {
+        title() {
+            return this.PCIcontent.pcis[0].title;
         },
+        text() {
+            return this.PCIcontent.pcis[0].text.html;
+        }
+    },
 
-        async asyncData(ctx) {
+    async asyncData(ctx) {
         const PCIcontent = await PCIData(ctx);
-        console.log(PCIcontent)
 
         return {
             PCIcontent
         };
     }
-    }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -70,6 +69,5 @@ import PCIData from "@/datalayers/PCI.js";
         word-wrap: break-word;
         width: 100%;
     }
-
 }
 </style>

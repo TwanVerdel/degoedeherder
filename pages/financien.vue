@@ -1,5 +1,14 @@
 <template>
     <main class="page">
+
+        <!-- TODO Tarieven -->
+
+        <!-- TODO Kerkbijdrage + iDeal -->
+
+        <!-- TODO ANBI + jaarrekening download -->
+
+        <!-- TODO Schenken en nalaten -->
+
     </main>
 </template>
 

@@ -71,6 +71,9 @@
                 </span>
             </li>
         </ul>
+
+        <!-- TODO kerkdata koppelen aan CMS, nadenken over CMS schema -->
+
         <div class="church-info">
             <div class="church-details"
                 :class="{ 'selected' : index === selected }"
