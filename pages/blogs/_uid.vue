@@ -39,16 +39,6 @@ export default {
 
         blogContent = await BlogData(ctx, ctx.params);
 
-        console.log(blogContent);
-
-        //TODO redirect naar /blogs
-        // redirect("/blogs")
-        // ctx.redirect("blogs");
-
-        // return redirect("/blogs");
-
-        // ctx.$router.push('/')
-
         return {
             blogContent
         };
