@@ -2,6 +2,7 @@
     <main>
         <church-overview />
 
+        <!-- TODO catecheses koppelen per kerk -->
         <catechesis-slider />
 
         <!-- TODO Werkgroepen koppelen per kerk -->
