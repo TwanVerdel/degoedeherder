@@ -4,22 +4,21 @@
         <carousel>
             <div
                 class="slide"
-                v-for="(e, index) in 6"
+                v-for="(workgroup, index) in workgroups.workgroups"
                 :key="`container-${index}`"
             >
+
+                <!-- TODO afbeeldingen toevoegen -->
                 <img src="https://picsum.photos/1000" />
 
                 <div class="text-container">
-                    <h2>Ouderenzorg | Erica</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Proin facilisis lectus sed nisi iaculis auctor. Donec eu
-                        nibh rhoncus, pulvinar massa eget, gravida purus. Aenean
-                        lobortis sem ex, vel fermentum eros egestas quis.
-                    </p>
+                    <h2>{{workgroup.title}} | {{workgroup.location}}</h2>
+                    <p>{{workgroup.description}}</p>
 
-                    <span>Aanmelden</span>
-                    <a href="mailto:bram@swebble.com"> bram@swebble.com </a>
+                    <div v-if="workgroup.eMail !== null">
+                        <span>Informatie</span>
+                        <a :href="'mailto:'+workgroup.eMail">{{workgroup.eMail}}</a>
+                    </div>
                 </div>
             </div>
         </carousel>
@@ -31,8 +30,14 @@ import Carousel from "./Carousel.vue";
 
 export default {
     components: {
-        Carousel,
+        Carousel
     },
+    props: {
+        workgroups: {
+            type: Object,
+            default: []
+        }
+    }
 };
 </script>
 

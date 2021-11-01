@@ -10,7 +10,11 @@ export default async ({ $graphcms }) => {
                 workgroups {
                   title,
                   location,
-                  description
+                  description,
+                  thumbnail{
+                      url
+                  },
+                  eMail
                 }
               }
             `,

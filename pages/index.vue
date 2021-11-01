@@ -10,8 +10,8 @@
             :imgUrl="hero.image.url"
             :imgAlt="'Mooi beeld'"
         />
-        <article-grid showThree />
-        <article-grid showThree :title="'Pastoorblogs'"/>
+        <article-grid showThree type="nieuws" :articles="news" />
+        <article-grid showThree :title="'Pastoorblogs'" :articles="blogs"/>
         <!-- <faq :title="'Veelgestelde vragen'" :faqs="faq" /> -->
        
 
@@ -27,8 +27,10 @@
 
 <script>
 import HeroComponentData from "@/datalayers/hero.js";
-import FAQComponentData from "@/datalayers/FAQ.js";
-import DonationBannerData from "@/datalayers/churchContributionBanner.js";
+import NewsData from "@/datalayers/newsMessages.js";
+import BlogData from "@/datalayers/blogThumbnails.js";
+// import FAQComponentData from "@/datalayers/FAQ.js";
+// import DonationBannerData from "@/datalayers/churchContributionBanner.js";
 
 import ArticleGrid from "../components/ArticleGrid.vue";
 import PastorsContent from "../components/PastorsContent.vue";
@@ -54,24 +56,24 @@ export default {
         hero() {
             return this.heroData.heroes[0];
         },
-        faq() {
-            return this.FAQData.fAQs;
+        news() {
+            return this.newsData.newsMessages;
         },
-        donationBanner() {
-            return this.donationData.churchContributionBanners[0];
+        blogs() {
+            return this.blogData.pastorBlogs;
         }
     },
     layout: "hero",
 
     async asyncData(ctx) {
         const heroData = await HeroComponentData(ctx);
-        const FAQData = await FAQComponentData(ctx);
-        const donationData = await DonationBannerData(ctx);
+        const newsData = await NewsData(ctx);
+        const blogData = await BlogData(ctx);
 
         return {
             heroData,
-            FAQData,
-            donationData
+            newsData,
+            blogData
         };
     }
 };

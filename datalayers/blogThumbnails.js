@@ -7,7 +7,7 @@ export default async ({ $graphcms }) => {
         result = (await $graphcms.request(
             gql`
             {
-                pastorBlogs {
+                pastorBlogs(orderBy: date_DESC) {
                   id
                   title
                   thumbnail {
