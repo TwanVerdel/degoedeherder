@@ -9,7 +9,7 @@
             >
 
                 <!-- TODO afbeeldingen koppelen uit CMS, afbeeldingen staan nog niet in CMS -->
-                <img src="https://picsum.photos/1000" />
+                <img :src="workgroup.thumbnail.url" />
 
                 <div class="text-container">
                     <h2>{{workgroup.title}} | {{workgroup.location}}</h2>

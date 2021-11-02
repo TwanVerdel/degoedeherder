@@ -4,15 +4,15 @@
     <section class="alternate-content">
         <div class="container">
             <h2>{{title}}</h2>
-            <p>{{description}}</p>
+            <p v-html="description"/>
             <button class="btn">
-                <a :href="buttonURL">{{buttonText}}</a>
+                <a :href="buttonURL" target="_blank">{{buttonText}}</a>
             </button>
         </div>
         <!-- Er moet hier een plaatje -->
         <div class="container image">
             <img
-                src="~/assets/images/01 detailfoto Maria, OLV Onbevlekt Ontvangen.jpg"
+                :src="image"
                 alt="Detailfoto Maria"
                 loading="lazy"
             />
@@ -79,6 +79,10 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        ::v-deep p {
+                margin-bottom: vw(32px);
+            }
 
         h2 {
             @media ($phone) {

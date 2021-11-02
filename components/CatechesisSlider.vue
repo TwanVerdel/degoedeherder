@@ -3,11 +3,9 @@
         <h2>Catecheses.</h2>
         <carousel>
             <div class="slide" v-for="(catechese, index) in catecheses" :key="`container-${index}`">
-                <img src="https://picsum.photos/1000" />
+                <img :src="catechese.image.url" />
 
                 <div class="text-container">
-                    <!-- TODO Is deze vanaf datum nodig? Deze zijn door de pastoor niet gegeven -->
-                    <!-- <span>Vanaf {{getDateString(catechese.startdate)}}</span> -->
                     <h3>{{catechese.title}}</h3>
                     <p>
                         {{catechese.description}}
@@ -15,7 +13,7 @@
 
                     <span>Aanmelden/contact</span>
 
-                    <a :href="'mailto:'+catechese.email">{{catechese.email}}</a>
+                    <a :href="'mailto:'+catechese.contact">{{catechese.contact}}</a>
                 </div>
             </div>
         </carousel>

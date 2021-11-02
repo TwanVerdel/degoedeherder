@@ -12,14 +12,7 @@
         />
         <article-grid showThree type="nieuws" :articles="news" />
         <article-grid showThree :title="'Pastoorblogs'" :articles="blogs"/>
-        <!-- <faq :title="'Veelgestelde vragen'" :faqs="faq" /> -->
-       
 
-        <!-- <donation-banner
-            :title="donationBanner.title"
-            :description="donationBanner.description"
-            :buttonText="donationBanner.buttonText"
-        /> -->
         <alternate-content title="Bisdomnieuws" description="De parochies van Erica, Barger-Oosterveld, Emmerschans en Emmen maken deel uit van het bisdom Groningen-Leeuwarden. Klik hieronder voor het laatste nieuws." buttonText="Bisdomnieuws" buttonURL="https://bisdomgl.nl/categorie/nieuws/"/>
         <!-- <board-banner :hasMembers="true" /> -->
     </main>
@@ -32,25 +25,20 @@ import BlogData from "@/datalayers/blogThumbnails.js";
 // import FAQComponentData from "@/datalayers/FAQ.js";
 // import DonationBannerData from "@/datalayers/churchContributionBanner.js";
 
+//TODO imports bijwerken
 import ArticleGrid from "../components/ArticleGrid.vue";
-import PastorsContent from "../components/PastorsContent.vue";
+// import PastorsContent from "../components/PastorsContent.vue";
 import ANBIBadge from "../components/ANBIBadge.vue";
-import DonationBanner from "../components/DonationBanner.vue";
 import Hero from "../components/Hero.vue";
-import HistoryComponent from "../components/HistoryComponent.vue";
-import BoardBanner from "../components/BoardBanner.vue";
-import FAQ from "../components/FAQ.vue";
+// import HistoryComponent from "../components/HistoryComponent.vue";
+// import BoardBanner from "../components/BoardBanner.vue";
 
 export default {
+    
     components: {
         Hero,
-        HistoryComponent,
-        DonationBanner,
         ANBIBadge,
-        ArticleGrid,
-        BoardBanner,
-        FAQ,
-        PastorsContent
+        ArticleGrid
     },
     computed: {
         hero() {
