@@ -1,125 +1,122 @@
 <template>
-    <section class="costs-list">
-        <div class="content">
-            <h2>Tarieven</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-                ultricies efficitur lacus. Etiam tincidunt magna diam, porta
-                dignissim sapien suscipit quis.
-            </p>
-        </div>
-        <div
-            class="costs-description"
-            v-for="(cost, index) in costs"
-            :key="`costs-${index}`"
-        >
-            <h3>Tariefgroep A</h3>
-
-            <p>
-                Kerkbijdrage van het afgelopen kalenderjaar LAGER dan het
-                drempelbedrag
-            </p>
-
-            <h4>Tarieven</h4>
-
-            <ul class="costs">
-                <li class="cost">
-                    <span>Huwelijk:</span>
-                    <span>$417,50 </span>
-                </li>
-                <li class="cost">
-                    <span>Huwelijk:</span>
-                    <span>$417,50 </span>
-                </li>
-                <li class="cost">
-                    <span>Huwelijk:</span>
-                    <span>$417,50 </span>
-                </li>
-            </ul>
-
-            <h4>Tarieven</h4>
-
-            <ul class="costs">
-                <li class="cost">
-                    <span>Huwelijk:</span>
-                    <span>$417,50 </span>
-                </li>
-                <li class="cost">
-                    <span>Huwelijk:</span>
-                    <span>$417,50 </span>
-                </li>
-                <li class="cost">
-                    <span>Huwelijk:</span>
-                    <span>$417,50 </span>
-                </li>
-            </ul>
-        </div>
-
-        <div
-            v-for="(cost, index) in costs"
-            :key="`costs-mobile-${index}`"
-            class="costs-description mobile"
-            :class="{ 'selected' : index === selected }"
-        >
-            <h3>Tariefgroep A</h3>
-
-            <p>
-                Kerkbijdrage van het afgelopen kalenderjaar LAGER dan het
-                drempelbedrag
-            </p>
-
-            <collapse-ssr :open="selected === index" class="collapse-container">
-                <h4>Tarieven</h4>
-
-                <ul class="costs">
-                    <li class="cost">
-                        <span>Huwelijk:</span>
-                        <span>$417,50 </span>
-                    </li>
-                    <li class="cost">
-                        <span>Huwelijk:</span>
-                        <span>$417,50 </span>
-                    </li>
-                    <li class="cost">
-                        <span>Huwelijk:</span>
-                        <span>$417,50 </span>
-                    </li>
-                </ul>
-
-                <h4>Tarieven</h4>
-
-                <ul class="costs">
-                    <li class="cost">
-                        <span>Huwelijk:</span>
-                        <span>$417,50 </span>
-                    </li>
-                    <li class="cost">
-                        <span>Huwelijk:</span>
-                        <span>$417,50 </span>
-                    </li>
-                    <li class="cost">
-                        <span>Huwelijk:</span>
-                        <span>$417,50 </span>
-                    </li>
-                </ul>
-            </collapse-ssr>
-
-            <svg
-                class="open-icon"
-                @click="open(index)"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+    <main>
+        <section class="costs-list">
+            <div class="content">
+                <h2>{{financeInfo.headerRateGroups}}</h2>
+                <p>{{financeInfo.description}}</p>
+            </div>
+            <div
+                class="costs-description"
+                v-for="(rate, index) in churchRates"
+                :key="`costs-${index}`"
             >
-                <path
-                    d="M7.41 8.58984L12 13.1698L16.59 8.58984L18 9.99984L12 15.9998L6 9.99984L7.41 8.58984Z"
-                    fill="#F4F4F4"
-                />
-            </svg>
-        </div>
-    </section>
+                <h3>Tariefgroep {{rate.rateGroup}}</h3>
+
+                <p>{{rate.description}}</p>
+
+                <h4>Tarieven algemeen</h4>
+
+                <ul class="costs">
+                    <li class="cost">
+                        <span>Huwelijk:</span>
+                        <span>{{rate.marriageCosts}}</span>
+                    </li>
+                    <li class="cost">
+                        <span>Doop:</span>
+                        <span>{{rate.baptismCosts}}</span>
+                    </li>
+                    <li class="cost">
+                        <span>Gebedsintentie:</span>
+                        <span>{{rate.prayerIntentionCosts}}</span>
+                    </li>
+                </ul>
+
+                <h4>Tarieven uitvaart</h4>
+
+                <ul class="costs">
+                    <li class="cost">
+                        <span>Gebedsdienst in aula/crematorium:</span>
+                        <span>{{rate.prayerServiceCosts}}</span>
+                    </li>
+                    <li class="cost">
+                        <span>Uitvaartliturgie in parochiekerk:</span>
+                        <span>{{rate.funeralLiturgyCosts}}</span>
+                    </li>
+                    <li class="cost">
+                        <span>Liturgie in crematorium na kerkdienst:</span>
+                        <span>{{rate.crematoriumLiturgyCosts}}</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div
+                v-for="(rate, index) in churchRates"
+                :key="`costs-mobile-${index}`"
+                class="costs-description mobile"
+                :class="{ 'selected' : index === selected }"
+            >
+                <h3>Tariefgroep {{rate.rateGroup}}</h3>
+
+                <p>{{rate.description}}</p>
+
+                <collapse-ssr :open="selected === index" class="collapse-container">
+                    <h4>Tarieven algemeen</h4>
+
+                    <ul class="costs">
+                        <li class="cost">
+                            <span>Huwelijk:</span>
+                            <span>{{rate.marriageCosts}}</span>
+                        </li>
+                        <li class="cost">
+                            <span>Doop:</span>
+                            <span>{{rate.baptismCosts}}</span>
+                        </li>
+                        <li class="cost">
+                            <span>Gebedsintentie:</span>
+                            <span>{{rate.prayerIntentionCosts}}</span>
+                        </li>
+                    </ul>
+
+                    <h4>Tarieven uitvaart</h4>
+
+                    <ul class="costs">
+                        <li class="cost">
+                            <span>Gebedsdienst in aula/crematorium:</span>
+                            <span>{{rate.prayerServiceCosts}}</span>
+                        </li>
+                        <li class="cost">
+                            <span>Uitvaartliturgie in parochiekerk:</span>
+                            <span>{{rate.funeralLiturgyCosts}}</span>
+                        </li>
+                        <li class="cost">
+                            <span>Liturgie in crematorium na kerkdienst:</span>
+                            <span>{{rate.crematoriumLiturgyCosts}}</span>
+                        </li>
+                    </ul>
+                </collapse-ssr>
+
+                <svg
+                    class="open-icon"
+                    @click="open(index)"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M7.41 8.58984L12 13.1698L16.59 8.58984L18 9.99984L12 15.9998L6 9.99984L7.41 8.58984Z"
+                        fill="#F4F4F4"
+                    />
+                </svg>
+            </div>
+        </section>
+        <section class="rateInfo">
+            <p id="prayerIntention" v-html="financeInfo.explanationPrayerIntention.html" />
+            <h3>{{financeInfo.graveyardHeader}}</h3>
+            <p v-html="financeInfo.graveyardRateInfo.html" />
+        </section>
+    </main>
 </template>
 
 <script>
@@ -127,17 +124,28 @@ import CollapseSSR from "./CollapseSSR.vue";
 
 export default {
     components: {
-        CollapseSSR,
+        CollapseSSR
     },
+
     data() {
         return {
-            selected: 1,
+            selected: 1
         };
+    },
+    props: {
+        churchRates: {
+            type: Array,
+            default: []
+        },
+        financeInfo: {
+            type: Object,
+            default: {}
+        }
     },
     computed: {
         costs() {
             return [0, 0, 0];
-        },
+        }
     },
     methods: {
         open(index) {
@@ -146,8 +154,8 @@ export default {
             } else {
                 this.selected = index;
             }
-        },
-    },
+        }
+    }
 };
 </script>
 
@@ -174,6 +182,8 @@ export default {
             margin-top: vw(24px);
         }
     }
+
+    
 
     .costs-description {
         display: flex;
@@ -245,7 +255,7 @@ export default {
 
         display: none;
 
-        @media($tablet-portrait) {
+        @media ($tablet-portrait) {
             display: flex;
         }
 
@@ -273,9 +283,24 @@ export default {
     .costs-description:not(.mobile) {
         display: block;
 
-        @media($tablet-portrait) {
+        @media ($tablet-portrait) {
             display: none;
         }
     }
 }
+
+.rateInfo {
+        @include Outer(0px, 144px);
+        display: flex;
+        // justify-content: center;
+        flex-direction: column;
+
+        h3{
+            margin-bottom: vw(24px);
+        }
+
+        ::v-deep #prayerIntention{
+            margin-bottom: vw(36px);
+        }
+    }
 </style>
