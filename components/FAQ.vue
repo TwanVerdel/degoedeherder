@@ -1,6 +1,7 @@
 <template>
     <section class="faq">
         <h2 class="underline">{{ title }}</h2>
+        <p class="description" v-if="description !== ''">{{description}}</p>
         <div class="collaps-items">
             <div
                 v-for="(question, index) in faqs"
@@ -9,7 +10,12 @@
                 @click="toggle(index)"
             >
                 <div class="collaps-item-title">
-                    <h3>{{ question.question }}</h3>
+                    <div v-if="type == 'faq'">
+                        <h3>{{ question.question }}</h3>
+                    </div>
+                    <div v-if="type == 'sacrament'">
+                        <h3>{{ question.sacrament }}</h3>
+                    </div>
 
                     <svg
                         :class="{ active: activeIdx === index }"
@@ -26,8 +32,11 @@
                     </svg>
                 </div>
                 <collapse-s-s-r :open="activeIdx === index" :height="'400px'">
-                    <div class="collapse">
+                    <div class="collapse" v-if="type == 'faq'">
                         <p class="answer">{{ question.answer }}</p>
+                    </div>
+                    <div class="collapse" v-if="type == 'sacrament'">
+                        <p class="answer" v-html="question.description.html" />
                     </div>
                 </collapse-s-s-r>
             </div>
@@ -49,6 +58,11 @@ export default {
             type: String,
             required: false
         },
+        description: {
+            type: String,
+            required: false,
+            default: ""
+        },
         faqs: {
             type: Array,
             default: _ => [
@@ -58,7 +72,8 @@ export default {
                         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at dolor sit amet nibh egestas vehicula. Morbi id nibh id lorem tristique bibendum. Donec vel lectus placerat, efficitur neque ut, efficitur nisl. "
                 },
                 {
-                    question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at dolor sit amet nibh egestas vehicula?",
+                    question:
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at dolor sit amet nibh egestas vehicula?",
                     answer:
                         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at dolor sit amet nibh egestas vehicula. Morbi id nibh id lorem tristique bibendum. Donec vel lectus placerat, efficitur neque ut, efficitur nisl. "
                 },
@@ -68,6 +83,10 @@ export default {
                         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at dolor sit amet nibh egestas vehicula. Morbi id nibh id lorem tristique bibendum. Donec vel lectus placerat, efficitur neque ut, efficitur nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at dolor sit amet nibh egestas vehicula. Morbi id nibh id lorem tristique bibendum. Donec vel lectus placerat, efficitur neque ut, efficitur nisl."
                 }
             ]
+        },
+        type: {
+            type: String,
+            default: "faq"
         }
     },
     components: {
@@ -95,6 +114,19 @@ export default {
     padding-bottom: desktop-vw(88px);
 
     background-color: $secondary;
+
+    .description {
+        margin-top: vw(24px);
+        max-width: 75%;
+
+        @media ($tablet-portrait) {
+            max-width: 80%;
+        }
+
+        @media ($phone) {
+            max-width: 100%;
+        }
+    }
 
     @media ($tablet-portrait) {
         padding-top: tablet-vw(80px);
@@ -189,7 +221,7 @@ export default {
 
             .collapse {
                 display: block;
-                width: 100%;                
+                width: 100%;
                 padding-right: desktop-vw(32px);
                 padding-top: desktop-vw(24px);
 
@@ -204,7 +236,7 @@ export default {
                 }
 
                 .answer {
-                    opacity: 0.8;
+                    opacity: 0.9;
                     max-width: 50%;
 
                     @media ($tablet-portrait) {

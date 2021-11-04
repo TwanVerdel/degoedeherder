@@ -21,6 +21,13 @@ export default async ({$graphcms}) => {
                       url
                   }
                 }
+
+                processions{
+                  title,
+                  text{
+                    html
+                  }
+                }
               }
             
             `,

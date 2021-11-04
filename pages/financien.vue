@@ -1,19 +1,27 @@
 <template>
     <main class="page">
         <anbi-badge />
+
+        <!-- Tariefgroepen -->
         <section>
             <finances-list :churchRates="rateGroups" :financeInfo="financeInfo" />
         </section>
+
         <section>
+        <!-- Kerkhof tarieven -->
             <collapsable-wysiwyg>
                 <h3>{{financeInfo.graveyardHeader}}</h3>
             <p v-html="financeInfo.graveyardRateInfo.html" />
             </collapsable-wysiwyg>
+
+            <!-- Kerkbijdrage, giften, rekeningnummers -->
             <collapsable-wysiwyg>
                 <h2>{{churchContributions.title}}</h2>
 
                 <p v-html="churchContributions.text.html" />
             </collapsable-wysiwyg>
+
+            <!-- TODO Jaarrekening, het juiste document moet nog in het CMS -->
             <collapsable-wysiwyg>
                 <h2>{{financialStatements.title}}</h2>
 
@@ -26,6 +34,8 @@
                     <a :href="statement.url">{{statement.fileName}}</a>
                 </div>
             </collapsable-wysiwyg>
+
+            <!-- Schenken en nalaten -->
             <collapsable-wysiwyg>
                 <h2>{{donatingInfo.title}}</h2>
 

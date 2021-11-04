@@ -7,8 +7,6 @@
                 v-for="(workgroup, index) in workgroups.workgroups"
                 :key="`container-${index}`"
             >
-
-                <!-- TODO afbeeldingen koppelen uit CMS, afbeeldingen staan nog niet in CMS -->
                 <img :src="workgroup.thumbnail.url" />
 
                 <div class="text-container">

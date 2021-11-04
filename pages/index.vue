@@ -20,7 +20,6 @@
             :buttonURL="bisdomnieuws.buttonURL"
             :image="bisdomnieuws.image.url"
         />
-        <!-- <board-banner :hasMembers="true" /> -->
 
         
     </main>
@@ -31,17 +30,11 @@ import HeroComponentData from "@/datalayers/hero.js";
 import NewsData from "@/datalayers/newsMessages.js";
 import DioceseData from "@/datalayers/dioceseNews.js";
 import BlogData from "@/datalayers/blogThumbnails.js";
-// import FAQComponentData from "@/datalayers/FAQ.js";
-// import DonationBannerData from "@/datalayers/churchContributionBanner.js";
 
-//TODO imports bijwerken
 import ArticleGrid from "../components/ArticleGrid.vue";
-// import PastorsContent from "../components/PastorsContent.vue";
 import ANBIBadge from "../components/ANBIBadge.vue";
 import Hero from "../components/Hero.vue";
 import CollapsableWYSIWYG from "../components/CollapsableWYSIWYG.vue";
-// import HistoryComponent from "../components/HistoryComponent.vue";
-// import BoardBanner from "../components/BoardBanner.vue";
 
 export default {
     components: {

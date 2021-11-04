@@ -2,7 +2,7 @@
     <main class="page">
         <!-- TODO Titel van de pagina misschien veranderen? -->
 
-        <!-- TODO 2.01 Liturgisch rooster -->
+        <!-- 2.01 Liturgisch rooster -->
         <alternate-content
             :title="title"
             :description="description"
@@ -11,15 +11,23 @@
             :image="image"
         />
 
-        <!-- TODO 2.02 Gerardus- en Mariaprocessie -->
+        <!-- 2.02 Gerardus- en Mariaprocessie -->
+        <collapsable-wysiwyg>
+            <h2>{{procession.title}}</h2>
+            <p v-html="procession.text.html"/>
+        </collapsable-wysiwyg>
     </main>
 </template>
 
 <script>
 import ScheduleData from "@/datalayers/schedule.js";
 
+import CollapsableWYSIWYG from "../../components/CollapsableWYSIWYG.vue";
+
 export default {
-    components: {},
+    components: {
+        CollapsableWYSIWYG
+    },
     computed:{
         title(){
             return this.scheduleData.activitiesSchedules[0]?.title
@@ -35,6 +43,9 @@ export default {
         },
         image(){
             return this.scheduleData.activitiesSchedules[0]?.image?.url
+        },
+        procession(){
+            return this.scheduleData.processions?.[0]
         }
 
     },

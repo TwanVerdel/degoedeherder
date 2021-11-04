@@ -16,7 +16,8 @@ export default {
         MainArticle
     },
     mounted() {
-        console.log("ik kom hier");
+
+        // TODO de redirect fixen bij een niet bestaande taal
 
         if (!this.parishInfoData) {
             console.log("data");
