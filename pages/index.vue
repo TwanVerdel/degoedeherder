@@ -14,10 +14,11 @@
         <article-grid showThree :title="'Pastoorblogs'" :articles="blogs" />
 
         <alternate-content
-            title="Bisdomnieuws"
-            description="De parochies van Erica, Barger-Oosterveld, Emmerschans en Emmen maken deel uit van het bisdom Groningen-Leeuwarden. Klik hieronder voor het laatste nieuws."
-            buttonText="Bisdomnieuws"
-            buttonURL="https://bisdomgl.nl/categorie/nieuws/"
+            :title="bisdomnieuws.title"
+            :description="bisdomnieuws.description"
+            :buttonText="bisdomnieuws.buttonText"
+            :buttonURL="bisdomnieuws.buttonURL"
+            :image="bisdomnieuws.image.url"
         />
         <!-- <board-banner :hasMembers="true" /> -->
 
@@ -28,6 +29,7 @@
 <script>
 import HeroComponentData from "@/datalayers/hero.js";
 import NewsData from "@/datalayers/newsMessages.js";
+import DioceseData from "@/datalayers/dioceseNews.js";
 import BlogData from "@/datalayers/blogThumbnails.js";
 // import FAQComponentData from "@/datalayers/FAQ.js";
 // import DonationBannerData from "@/datalayers/churchContributionBanner.js";
@@ -58,18 +60,23 @@ export default {
         blogs() {
             return this.blogData.pastorBlogs;
         },
+        bisdomnieuws(){
+            return this.dioceseData.dioceseNewsBanners?.[0];
+        }
     },
     layout: "hero",
 
     async asyncData(ctx) {
         const heroData = await HeroComponentData(ctx);
         const newsData = await NewsData(ctx);
+        const dioceseData = await DioceseData(ctx);
         const blogData = await BlogData(ctx);
 
         return {
             heroData,
             newsData,
             blogData,
+            dioceseData
         };
     },
 };
