@@ -30,6 +30,13 @@ export default async ({ $graphcms }) => {
                   baptismCosts,
                   prayerIntentionCosts
                 }
+
+                churchContributions{
+                  title,
+                  text{
+                    html
+                  }
+                }
               }
             
             `,
