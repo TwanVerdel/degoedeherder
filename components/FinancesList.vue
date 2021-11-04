@@ -4,6 +4,7 @@
             <div class="content">
                 <h2>{{financeInfo.headerRateGroups}}</h2>
                 <p>{{financeInfo.description}}</p>
+                <p v-html="financeInfo.explanationPrayerIntention.html" />
             </div>
             <div
                 class="costs-description"
@@ -111,11 +112,7 @@
                 </svg>
             </div>
         </section>
-        <section class="rateInfo">
-            <p id="prayerIntention" v-html="financeInfo.explanationPrayerIntention.html" />
-            <h3>{{financeInfo.graveyardHeader}}</h3>
-            <p v-html="financeInfo.graveyardRateInfo.html" />
-        </section>
+        
     </main>
 </template>
 
@@ -178,6 +175,11 @@ export default {
 
     .content {
         p {
+            max-width: vw(320px);
+            margin-top: vw(24px);
+        }
+
+        ::v-deep p{
             max-width: vw(320px);
             margin-top: vw(24px);
         }
@@ -289,18 +291,4 @@ export default {
     }
 }
 
-.rateInfo {
-        @include Outer(0px, 144px);
-        display: flex;
-        // justify-content: center;
-        flex-direction: column;
-
-        h3{
-            margin-bottom: vw(24px);
-        }
-
-        ::v-deep #prayerIntention{
-            margin-bottom: vw(36px);
-        }
-    }
 </style>

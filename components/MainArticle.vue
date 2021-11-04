@@ -13,7 +13,7 @@
             <div class="content" v-html="text" />
         </article>
 
-        <div class="pre-footer">
+        <div v-if="showFooter" class="pre-footer">
             <h2>Nog meer artikelen ontdekken?</h2>
 
             <div class="btn-row">
@@ -39,6 +39,10 @@ export default {
         text: {
             type: String,
             default: ""
+        },
+        showFooter:{
+            type: Boolean,
+            default: true
         }
     }
 };

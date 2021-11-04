@@ -18,7 +18,7 @@ export default async ({ $graphcms }) => {
                   graveyardRateInfo{
                     html
                   }
-                }
+                },
                 
                 churchRates{
                   rateGroup,
@@ -29,9 +29,27 @@ export default async ({ $graphcms }) => {
                   crematoriumLiturgyCosts,
                   baptismCosts,
                   prayerIntentionCosts
-                }
+                },
 
                 churchContributions{
+                  title,
+                  text{
+                    html
+                  }
+                },
+
+                aNBI_FinancialStatements{
+                  title,
+                  text{
+                    html
+                  },
+                  financialStatements{
+                    url,
+                    fileName      
+                  }
+                },
+
+                donatingInfoTexts{
                   title,
                   text{
                     html
