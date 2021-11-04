@@ -4,6 +4,7 @@
             <div class="content">
                 <h2>{{financeInfo.headerRateGroups}}</h2>
                 <p>{{financeInfo.description}}</p>
+                <p>{{financeInfo.rateInfo}}</p>
                 <p v-html="financeInfo.explanationPrayerIntention.html" />
             </div>
             <div
