@@ -1,6 +1,6 @@
 <template>
     <main class="page">
-        <anbi-badge />
+        
         <hero
             :title="hero.title"
             :paragraph="hero.description.html"

@@ -37,8 +37,6 @@ export default {
 
         const newsContent = await NewsData(ctx, ctx.params);
 
-        console.log(newsContent)
-
         return {
             newsContent
         };

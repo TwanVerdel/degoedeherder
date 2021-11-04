@@ -49,16 +49,16 @@
 
         <ul class="languages">
             <li>
-                <a href="/" dir="ltr" class="arabic">عربى</a>
+                <a href="/parishinfo/arabic" dir="ltr" class="arabic">عربى</a>
             </li>
             <li>
-                <a href="/">Français</a>
+                <a href="/parishinfo/francais">Français</a>
             </li>
             <li>
-                <a href="/">English</a>
+                <a href="/parishinfo/english">English</a>
             </li>
             <li>
-                <a href="/">Polska</a>
+                <a href="/parishinfo/polska">Polska</a>
             </li>
         </ul>
     </section>
