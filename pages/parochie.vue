@@ -1,6 +1,5 @@
 <template>
     <main class="page">
-
         <!-- TODO In het document 1.1 staat meer data die hier op een passende manier moeten worden weergegeven -->
         <pastors-content
             :title="pastorBanner.title"
@@ -22,6 +21,11 @@ Dit doen wij met het sacrament van de doop (meestal aan het begin), het sacramen
         />
 
         <!-- TODO 1.3 Het bestuur en bovenlokale werkgroepen -->
+        <workgroup-slider
+            :workgroups="workgroupsContent"
+            description="Er zijn werkgroepen in onze parochie die alle locaties bestrijken. De Algemene verordening gegevensbescherming (kortweg AVG) staat niet toe de diverse contactpersonen bij naam te noemen. Hebt u belangstelling? Dan kunt u altijd het contact leggen via een van de pastores.
+"
+        />
 
         <!-- parochieblad -->
         <collapsable-wysiwyg>
@@ -45,6 +49,7 @@ import PastorData from "@/datalayers/pastorBanner.js";
 import ParishmagazineData from "@/datalayers/parishMagazine.js";
 import ParishHistoryData from "@/datalayers/history.js";
 import SacramentData from "@/datalayers/sacraments.js";
+import WorkgroupData from "@/datalayers/regionalWorkgroups.js";
 
 import CollapsableWYSIWYG from "../components/CollapsableWYSIWYG.vue";
 import FAQ from "../components/FAQ.vue";
@@ -65,8 +70,10 @@ export default {
             return this.historyData?.histories?.[0];
         },
         sacraments() {
-            console.log(this.sacramentData);
             return this.sacramentData.sacraments;
+        },
+        workgroupsContent() {
+            return this.workgroupData?.workgroups;
         }
     },
 
@@ -75,12 +82,14 @@ export default {
         const magazineData = await ParishmagazineData(ctx);
         const historyData = await ParishHistoryData(ctx);
         const sacramentData = await SacramentData(ctx);
+        const workgroupData = await WorkgroupData(ctx);
 
         return {
             pastorData,
             magazineData,
             historyData,
-            sacramentData
+            sacramentData,
+            workgroupData
         };
     }
 };

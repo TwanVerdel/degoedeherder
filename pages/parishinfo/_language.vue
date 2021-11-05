@@ -18,6 +18,7 @@ export default {
     mounted() {
 
         // TODO de redirect fixen bij een niet bestaande taal
+        // TODO styling toevoegen aan de afbeeldingen in de tekst
 
         if (!this.parishInfoData) {
             console.log("data");

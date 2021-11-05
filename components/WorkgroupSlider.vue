@@ -1,16 +1,17 @@
 <template>
     <section class="container">
         <h1>Werkgroepen voor Diakonie.</h1>
+        <p class="description" v-if="description !== ''">{{description}}</p>
         <carousel>
             <div
                 class="slide"
-                v-for="(workgroup, index) in workgroups.workgroups"
+                v-for="(workgroup, index) in workgroups"
                 :key="`container-${index}`"
             >
                 <img :src="workgroup.thumbnail.url" />
 
                 <div class="text-container">
-                    <h2>{{workgroup.title}} | {{workgroup.location}}</h2>
+                    <h2>{{workgroup.title}} <div v-if="workgroup.location !== null">{{workgroup.location}}</div></h2>
                     <p>{{workgroup.description}}</p>
 
                     <div v-if="workgroup.eMail !== null">
@@ -32,8 +33,12 @@ export default {
     },
     props: {
         workgroups: {
-            type: Object,
+            type: Array,
             default: []
+        },
+        description:{
+            type: String,
+            default: ''
         }
     }
 };
@@ -42,6 +47,25 @@ export default {
 <style lang="scss" scoped>
 .container {
     padding: vw(104px) 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .description {
+        @include Outer;
+        margin-top: vw(24px);
+        margin-bottom: vw(24px);
+        max-width: 75%;
+
+        @media ($tablet-portrait) {
+            max-width: 80%;
+        }
+
+        @media ($phone) {
+            max-width: 100%;
+        }
+    }
 
     h1 {
         @include Outer;

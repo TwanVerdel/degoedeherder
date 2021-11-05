@@ -24,7 +24,7 @@ export default {
     layout: "hero",
     computed:{
         workgroupsContent(){
-            return this.workgroups;
+            return this.workgroups.workgroups;
         }
     },
 

@@ -60,7 +60,6 @@ export default {
     },
     computed: {
         rateGroups() {
-            console.log(typeof this.financesData.churchRates);
             return this.financesData.churchRates;
         },
         financeInfo() {
