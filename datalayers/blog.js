@@ -6,24 +6,25 @@ export default async ({ $graphcms }, params) => {
   try {
     result = (await $graphcms.request(
       gql`
-            query($uid: ID!){
-              pastorBlog( where: {id: $uid}){
-                id
-                title
-                blogText {
-                  html
-                  text
-                }
-                thumbnail {
-                  id
-                  width
-                  height
-                  url
-                }
-                date
-              }
-            }
-            `, {"uid": params.uid}
+      query ($slug: String!) {
+        pastorBlog(where: {slug: $slug}) {
+          id
+          title
+          slug
+          blogText {
+            html
+            text
+          }
+          thumbnail {
+            id
+            width
+            height
+            url
+          }
+          date
+        }
+      }
+            `, {"slug": params.slug}
     ))
   }
   catch (e) {

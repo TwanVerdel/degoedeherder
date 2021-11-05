@@ -6,10 +6,11 @@ export default async ({ $graphcms }, params) => {
   try {
     result = (await $graphcms.request(
       gql`
-      query($uid: ID!){
-        newsMessage( where: {id: $uid}){
+      query($slug: String!){
+        newsMessage( where: {slug: $slug}){
           id
           title
+          slug
           text {
             html
             text
@@ -23,7 +24,7 @@ export default async ({ $graphcms }, params) => {
           date
         }
       }
-            `, { "uid": params.uid }
+            `, { "slug": params.slug }
     ))
   }
   catch (e) {

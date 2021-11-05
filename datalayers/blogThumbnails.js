@@ -10,6 +10,7 @@ export default async ({ $graphcms }) => {
                 pastorBlogs(orderBy: date_DESC) {
                   id
                   title
+                  slug
                   thumbnail {
                     id
                     width

@@ -12,7 +12,7 @@
                 v-for="(article, index) in allArticle"
                 :key="`article-cell-${index}`"
                 class="thumbnail"
-                :href="type + '/' + article.id"
+                :href="type + '/' + article.slug"
             >
                 <img :src="article.thumbnail.url" alt="Placeholder" />
                 <div class="text">

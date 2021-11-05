@@ -11,6 +11,7 @@ export default async ({$graphcms}) => {
                   id,
                   title,
                   date,
+                  slug
                   thumbnail{
                     id,
                     width,
