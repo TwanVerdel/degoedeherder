@@ -11,6 +11,7 @@
                 <img :src="workgroup.thumbnail.url" />
 
                 <div class="text-container">
+                    <!-- TODO Style aanpassen als titel te lang is voor kleine smartphones -->
                     <h2>{{workgroup.title}} <div v-if="workgroup.location !== null">{{workgroup.location}}</div></h2>
                     <p>{{workgroup.description}}</p>
 

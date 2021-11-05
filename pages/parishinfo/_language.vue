@@ -21,7 +21,6 @@ export default {
         // TODO styling toevoegen aan de afbeeldingen in de tekst
 
         if (!this.parishInfoData) {
-            console.log("data");
             window.location.replace("/");
         }
     },
