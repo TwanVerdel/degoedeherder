@@ -4,10 +4,10 @@
         <ul class="chruch-list">
             <li
                 class="church-icon"
-                :class="{ selected: index === selected }"
+                :class="{ selected: index === selectedIndex }"
                 v-for="(church, index) in churches"
                 :key="`church-${index}`"
-                @click="selected = index"
+                @click="selectChurch(index)"
             >
                 <picture v-if="index % 4 === 1">
                     <svg
@@ -76,30 +76,23 @@
 
         <div class="church-info">
             <div class="church-details"
-                :class="{ 'selected' : index === selected }"
+                :class="{ 'selected' : index === selectedIndex }"
                 v-for="(church, index) in churches"
                 :key="`church-info-${index}`">
                 <img :src="church.url"/>
                 <div class="text-container">
-                    <span v-text="church.name"/>
-                    <h2>De grootste kerk.</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Integer at dolor sit amet nibh egestas vehicula. Morbi id
-                        nibh id lorem tristique bibendum. Donec vel lectus placerat,
-                        efficitur neque ut, efficitur nisl. Maecenas dictum massa
-                        volutpat placerat eleifend. Curabitur metus arcu, vehicula
-                        ac ipsum id, fermentum lacinia ipsum. 
-                        <br>
-                        <br>
-                        Integer efficitur
-                        justo vitae maximus faucibus. Pellentesque posuere, ante sed
-                        bibendum volutpat, purus lorem placerat quam, ac semper
-                        lacus nunc tempor massa. Vivamus mi odio, gravida id feugiat
-                        et, porttitor sit amet mauris. Quisque pulvinar augue nec
-                        felis sodales pellentesque. Donec pharetra rutrum facilisis.
-                        Nulla et est id dolor mollis aliquam.
-                    </p>
+                    <h2>H. Bernhardus (van Clairvaux)</h2>
+
+                    <div class="church-info-rows"> 
+                        <template v-for="(info, infoIndex) in sampleChurchInfo">
+                            <div class="name" 
+                                 :key="`info-name-${infoIndex}`" 
+                                 v-html="info.name"/>
+                            <div class="value" 
+                                 :key="`info-value-${infoIndex}`" 
+                                 v-html="info.value"/>
+                        </template>
+                    </div>
                 </div>
             </div>
         </div>
@@ -109,10 +102,21 @@
 
 <script>
 export default {
-    data() {
-        return {
-            selected: 0,
-        };
+    // data() {
+    //     return {
+    //         selected: 0,
+    //     };
+    // },
+    props: {
+        selectedIndex: {
+            type: Number,
+            required: true
+        }
+    },
+    methods: {
+        selectChurch(index) {
+            this.$emit('churchSelected', index);
+        }
     },
     computed: {
         churches() {
@@ -134,9 +138,34 @@ export default {
                     name: "Barger-Oosterveld",
                     url: 'https://picsum.photos/1100'
                 },
-
             ];
         },
+
+        sampleChurchInfo() {
+            return [
+                {
+                    name: 'Loctie',
+                    value: 'Holtingerbrink 62, 7812 EX Emmen'
+                },
+                {
+                    name: 'Openingstijden',
+                    value: 'maandag van 13:30 tot 15:30 en woensdag van 09:30 tot 11:30'
+                },
+                {
+                    name: 'Kosteres',
+                    value: 'holtingerhof@degoedeherderparochie.nl'
+                },
+                {
+                    name: 'Secretariaat',
+                    value: 'Weerdingerstraat 33, 7815 SC Emmen <br> pauluskerk@degoedeherderparochie.nl <br> 0591 – 61 25 04'
+                },
+                
+                {
+                    name: 'Kerkwijding',
+                    value: '3 oktober 1976 <br> door Mgr. Dr. J.B.W.M. Möller, bisschop van Groningen'
+                },
+            ]
+        }
     },
 };
 </script>
@@ -185,8 +214,6 @@ export default {
         position: relative;
         display: flex;
         justify-content: space-between;
-        // align-items: center;
-        // overflow: hidden;
         width: vw(360px);
 
         @media($phone) {
@@ -316,7 +343,6 @@ export default {
                 grid-auto-flow: row;
                 grid-auto-rows: max-content;
                 margin-top: vw(96px);
-                // gap: vw(16px);
             }
 
             &.selected {
@@ -346,19 +372,10 @@ export default {
                 flex-direction: column;
                 margin: auto 0;
 
-                span {
-                    font-weight: bold;
-                    font-size: vw(14px);
-                    opacity: 0.8;
-
-                    @media($tablet-portrait) {
-                        margin-bottom: vw(4px);
-                    }
-                }
-
                 h2 {
                     margin-bottom: vw(24px);
                     font-size: vw(40px);
+                    max-width: vw(360px);
 
                     @media($tablet-portrait) {
                         font-size: vw(32px);
@@ -367,6 +384,22 @@ export default {
 
                     @media($phone) {
                         font-size: vw(28px);
+                    }
+                }
+
+                .church-info-rows {
+                    display: grid;
+                    grid-template-columns: max-content 1fr;
+                    column-gap: vw(40px);
+                    row-gap: vw(16px);
+
+                    .name, .value {
+                        font-size: vw(16px);
+                        line-height: 140%;
+                    }
+
+                    .name {
+                        font-weight: bold;
                     }
                 }
             }

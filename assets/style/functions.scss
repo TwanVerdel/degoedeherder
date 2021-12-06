@@ -1,15 +1,15 @@
 @import '~assets/style/variables.scss';
 
 @function desktop-vw($px: 0px) {   
-    @return 100vw * $px / 1920px;
+    @return math.div(100vw * $px, 1920px);
 }
 
 @function tablet-vw($px: 0px) {   
-    @return 100vw * $px / 800px;
+    @return math.div(100vw * $px, 800px);
 }
 
 @function phone-vw($px: 0px) {   
-    @return 100vw * $px / 360px;
+    @return math.div(100vw * $px, 360px);
 }
 
 
@@ -30,7 +30,7 @@
 }
 
 @function vw($px: 0px) {   
-    $num: $px / ($px * 0 + 1); // cast to number
+    $num: math.div($px, ($px * 0 + 1)); // cast to number
 
     @return calc(#{$num} / var(--factor) * 100vw);
 }

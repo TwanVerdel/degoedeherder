@@ -24,6 +24,7 @@ export default {
 
     styleResources: {
         scss: [
+            '@/assets/style/global-inject.scss',
             '@/assets/style/variables.scss',
             '@/assets/style/mixins.scss',
             '@/assets/style/typography.scss',
