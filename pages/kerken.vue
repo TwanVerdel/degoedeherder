@@ -1,15 +1,17 @@
 <template>
     <main>
-        <church-overview :selectedIndex="selectedChurchIndex" @churchSelected="selectChurch"/>
+        <church-overview 
+            :selectedIndex="selectedChurchIndex" 
+            :churches="churches"
+            :title="selectedChurch.name"
+            @churchSelected="selectChurch"/>
 
         <!-- TODO Werkgroepen koppelen per kerk -->
         <workgroup-slider />
 
+        <donation-banner :title="`Titel voor: ${selectedChurch.name}`"/>
 
-        <donation-banner />
-
-
-        <alternate-content />
+        <alternate-content :title="`Titel voor: ${selectedChurch.name}`"/>
     </main>
 </template>
 
@@ -36,6 +38,32 @@
             DonationBanner,
             AlternateContent
         },
+        computed :{
+            selectedChurch() {
+                return this.churches[this.selectedChurchIndex];
+            },
+            churches() {
+                return [
+                    {
+                        name: "Erica",
+                        url: 'https://picsum.photos/800'
+                    },
+                    {
+                        name: "Emmerschans",
+                        url: 'https://picsum.photos/900'
+                    },
+
+                    {
+                        name: "Emmen",
+                        url: 'https://picsum.photos/1000'
+                    },
+                                    {
+                        name: "Barger-Oosterveld",
+                        url: 'https://picsum.photos/1100'
+                    },
+                ];
+            },
+        }
     };
 </script>
 

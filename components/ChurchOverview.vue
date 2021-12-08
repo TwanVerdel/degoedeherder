@@ -81,7 +81,7 @@
                 :key="`church-info-${index}`">
                 <img :src="church.url"/>
                 <div class="text-container">
-                    <h2>H. Bernhardus (van Clairvaux)</h2>
+                    <h2>{{ church.name }}</h2>
 
                     <div class="church-info-rows"> 
                         <template v-for="(info, infoIndex) in sampleChurchInfo">
@@ -108,9 +108,17 @@ export default {
     //     };
     // },
     props: {
+        title: {
+            type: String,
+            default: () => ''
+        },
         selectedIndex: {
             type: Number,
             required: true
+        },
+        churches: {
+            type: Array,
+            default: () => []
         }
     },
     methods: {
@@ -119,28 +127,6 @@ export default {
         }
     },
     computed: {
-        churches() {
-            return [
-                {
-                    name: "Erica",
-                    url: 'https://picsum.photos/800'
-                },
-                {
-                    name: "Emmerschans",
-                    url: 'https://picsum.photos/900'
-                },
-
-                {
-                    name: "Emmen",
-                    url: 'https://picsum.photos/1000'
-                },
-                                {
-                    name: "Barger-Oosterveld",
-                    url: 'https://picsum.photos/1100'
-                },
-            ];
-        },
-
         sampleChurchInfo() {
             return [
                 {
