@@ -1,7 +1,7 @@
 <template>
     <section class="church-overview">
         <h1>Ontdek de Emmense kerken.</h1>
-        <ul class="chruch-list">
+        <ul class="church-list">
             <li
                 class="church-icon"
                 :class="{ selected: index === selectedIndex }"
@@ -66,41 +66,97 @@
                     </svg>
                 </picture>
 
-                <span>
-                    {{ church.name }}
-                </span>
+                <span>{{ church.name }}</span>
             </li>
         </ul>
 
         <!-- TODO kerkdata koppelen aan CMS, nadenken over CMS schema -->
 
-        <div class="church-info">
-            <div class="church-details"
+        <div class="church-info" v-if="">
+            <div
+                class="church-details"
                 :class="{ 'selected' : index === selectedIndex }"
                 v-for="(church, index) in churches"
-                :key="`church-info-${index}`">
-                <img :src="church.url"/>
+                :key="`church-info-${index}`"
+            >
+                <img :src="church.url" />
                 <div class="text-container">
                     <h2>{{ church.name }}</h2>
 
-                    <div class="church-info-rows"> 
-                        <template v-for="(info, infoIndex) in sampleChurchInfo">
-                            <div class="name" 
-                                 :key="`info-name-${infoIndex}`" 
-                                 v-html="info.name"/>
-                            <div class="value" 
-                                 :key="`info-value-${infoIndex}`" 
-                                 v-html="info.value"/>
+                    <div class="church-info-rows">
+                        <!-- <template v-for="(info, infoIndex) in churchInfo[selectedIndex]"> -->
+                        <template>
+                            <div v-if="churchInfo[selectedIndex].address !=null">
+                                <div
+                                    class="name"
+                                    :key="`info-name-${infoIndex}`"
+                                    v-html="'Locatie'"                                    
+                                />
+                                <div
+                                    class="value"
+                                    :key="`info-value-${infoIndex}`"
+                                    v-html="churchInfo[selectedIndex].address.html"
+                                />
+                            </div>
+                            <div v-if="churchInfo[selectedIndex].openingHours !=null">
+                                <div
+                                    class="name"
+                                    :key="`info-name-${infoIndex}`"
+                                    v-html="'Openingstijden'"                                    
+                                />
+                                <div
+                                    class="value"
+                                    :key="`info-value-${infoIndex}`"
+                                    v-html="churchInfo[selectedIndex].openingHours.html"
+                                />
+                            </div>
+                            <div v-if="churchInfo[selectedIndex].verger !=null">
+                                <div
+                                    class="name"
+                                    :key="`info-name-${infoIndex}`"
+                                    v-html="'Kosteres'"                                    
+                                />
+                                <div
+                                    class="value"
+                                    :key="`info-value-${infoIndex}`"
+                                    v-html="churchInfo[selectedIndex].verger"
+                                />
+                            </div>
+                            <div v-if="churchInfo[selectedIndex].secretariat !=null">
+                                <div
+                                    class="name"
+                                    :key="`info-name-${infoIndex}`"
+                                    v-html="'Secretariaat'"                                    
+                                />
+                                <div
+                                    class="value"
+                                    :key="`info-value-${infoIndex}`"
+                                    v-html="churchInfo[selectedIndex].secretariat.html"
+                                />
+                            </div>
+                            <div v-if="churchInfo[selectedIndex].inauguration !=null">
+                                <div
+                                    class="name"
+                                    :key="`info-name-${infoIndex}`"
+                                    v-html="'Kerkwijding'"                                    
+                                />
+                                <div
+                                    class="value"
+                                    :key="`info-value-${infoIndex}`"
+                                    v-html="churchInfo[selectedIndex].inauguration.html"
+                                />
+                            </div>                                
                         </template>
                     </div>
                 </div>
             </div>
         </div>
-
     </section>
 </template>
 
 <script>
+import ChurchData from "@/datalayers/churches.js";
+
 export default {
     // data() {
     //     return {
@@ -110,7 +166,7 @@ export default {
     props: {
         title: {
             type: String,
-            default: () => ''
+            default: () => ""
         },
         selectedIndex: {
             type: Number,
@@ -123,36 +179,61 @@ export default {
     },
     methods: {
         selectChurch(index) {
-            this.$emit('churchSelected', index);
+            this.$emit("churchSelected", index);
         }
     },
     computed: {
-        sampleChurchInfo() {
-            return [
+        churchInfo() {
+            var data = [
                 {
-                    name: 'Loctie',
-                    value: 'Holtingerbrink 62, 7812 EX Emmen'
+                    title: "Erica",
+                    image: null,
+                    location: "Erica",
+                    address: {
+                        html:
+                            "<p>Onze Lieve Vrouw Onbevlekt Ontvangen, Kerkweg 122, 7887 BJ Erica</p>"
+                    },
+                    openingHours: {
+                        html:
+                            "<p>dinsdag: 09.30 uur tot 11.30 uur<br>donderdag: 09.30 uur tot 11.30 uur</p><p></p>"
+                    },
+                    verger: null,
+                    secretariat: {
+                        html:
+                            '<p>Kerkweg 122, 7887 BJ Erica (ingang tussen parochiekerk en pastorie)<br>Telefoon: 0591 – 30 14 44<br>Email: <a title="mailto:olvonbevlektontvangen@degoedeherderparochie.nl" href="mailto:olvonbevlektontvangen@degoedeherderparochie.nl"><u>olvonbevlektontvangen@degoedeherderparochie.nl</u></a></p>'
+                    },
+                    inauguration: {
+                        html:
+                            "<p>2 mei 1934 door Mgr. J.H.G. Jansen, aartsbisschop van Utrecht</p>"
+                    },
+                    contribution: {
+                        html:
+                            "<p>Betalingen van kerkbijdrage, stipendium of een gift ten gunste van locatie OL Vrouw Onbevlekt Ontvangen kunnen worden voldaan via NL65 RABO 0114 5003 04. Deze rekening staat op naam van RK parochie de Goede Herder.</p>"
+                    }
                 },
                 {
-                    name: 'Openingstijden',
-                    value: 'maandag van 13:30 tot 15:30 en woensdag van 09:30 tot 11:30'
+                    title: "Test"
                 },
                 {
-                    name: 'Kosteres',
-                    value: 'holtingerhof@degoedeherderparochie.nl'
+                    title: "Test"
                 },
                 {
-                    name: 'Secretariaat',
-                    value: 'Weerdingerstraat 33, 7815 SC Emmen <br> pauluskerk@degoedeherderparochie.nl <br> 0591 – 61 25 04'
+                    title: "Test"
                 },
-                
                 {
-                    name: 'Kerkwijding',
-                    value: '3 oktober 1976 <br> door Mgr. Dr. J.B.W.M. Möller, bisschop van Groningen'
-                },
-            ]
+                    title: "Test"
+                }
+            ];
+            return this.churchData.churches;
         }
     },
+    async asyncData(ctx) {
+        const churchData = await ChurchData(ctx);
+        console.log(churchData);
+        return {
+            churchData
+        };
+    }
 };
 </script>
 
@@ -166,14 +247,14 @@ export default {
     height: vw(868px);
     margin-top: vw(112px);
 
-    @media($tablet-portrait) {
+    @media ($tablet-portrait) {
         height: auto;
         padding-top: vw(88px);
         padding-bottom: vw(88px);
         margin-top: vw(72px);
     }
 
-    @media($phone) {
+    @media ($phone) {
         padding-top: vw(56px);
         padding-bottom: vw(72px);
     }
@@ -182,27 +263,26 @@ export default {
         text-align: center;
         font-size: vw(48px);
         margin-bottom: vw(48px);
-        
 
-        @media($tablet-portrait) {
+        @media ($tablet-portrait) {
             font-size: vw(32px);
             margin-bottom: vw(64px);
         }
 
-        @media($phone) {
+        @media ($phone) {
             width: 100%;
             font-size: vw(28px);
             margin-bottom: vw(48px);
         }
     }
 
-    .chruch-list {
+    .church-list {
         position: relative;
         display: flex;
         justify-content: space-between;
         width: vw(360px);
 
-        @media($phone) {
+        @media ($phone) {
             width: 100%;
         }
 
@@ -222,7 +302,7 @@ export default {
             top: vw(22px);
             z-index: -1;
 
-            @media($phone) {
+            @media ($phone) {
                 background: repeating-linear-gradient(
                     to right,
                     $white,
@@ -297,11 +377,11 @@ export default {
         height: vw(400px);
         width: 100%;
 
-        @media($tablet-portrait) {
+        @media ($tablet-portrait) {
             height: auto;
         }
 
-        .church-details{
+        .church-details {
             position: absolute;
             height: max-content;
             width: 100%;
@@ -312,19 +392,19 @@ export default {
             grid-template-columns: 1fr 1fr;
             gap: vw(80px);
             margin-top: vw(112px);
-            
+
             opacity: 0;
             transform: translateY(vw(32px));
             pointer-events: none;
-            
+
             transition: opacity 0.4s, transform 0.6s;
 
-            @media($tablet-portrait) {
+            @media ($tablet-portrait) {
                 gap: vw(48px);
                 margin-top: vw(88px);
             }
 
-            @media($phone) {
+            @media ($phone) {
                 grid-template-columns: 100%;
                 grid-auto-flow: row;
                 grid-auto-rows: max-content;
@@ -338,7 +418,6 @@ export default {
                 position: static;
             }
 
-
             img {
                 width: 100%;
                 height: vw(400px);
@@ -347,7 +426,7 @@ export default {
 
                 box-shadow: 0 0 vw(16px) rgba($black, 0.2);
 
-                @media($phone) {
+                @media ($phone) {
                     height: vw(200px);
                     margin-bottom: vw(24px);
                 }
@@ -363,23 +442,24 @@ export default {
                     font-size: vw(40px);
                     max-width: vw(360px);
 
-                    @media($tablet-portrait) {
+                    @media ($tablet-portrait) {
                         font-size: vw(32px);
                         margin-bottom: vw(16px);
                     }
 
-                    @media($phone) {
+                    @media ($phone) {
                         font-size: vw(28px);
                     }
                 }
 
                 .church-info-rows {
                     display: grid;
-                    grid-template-columns: max-content 1fr;
+                    grid-template-rows: max-content 1fr;
                     column-gap: vw(40px);
                     row-gap: vw(16px);
 
-                    .name, .value {
+                    .name,
+                    .value {
                         font-size: vw(16px);
                         line-height: 140%;
                     }

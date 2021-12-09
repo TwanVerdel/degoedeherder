@@ -2,7 +2,7 @@
     <section class="container">
         <h1>Werkgroepen voor Diakonie.</h1>
         <p class="description" v-if="description !== ''">{{description}}</p>
-        <carousel>
+        <carousel ref="carousel">
             <div
                 class="slide"
                 v-for="(workgroup, index) in workgroups"
@@ -40,6 +40,12 @@ export default {
         description:{
             type: String,
             default: ''
+        }
+    },
+    watch:{
+        workgroups: function(val) {
+            this.$refs.carousel.setVisibility()
+            this.$refs.carousel.current = 1
         }
     }
 };

@@ -4,7 +4,7 @@
   <section class="donation-banner">
       <h2>{{title}}</h2>
       <p>{{description}}</p>
-      <button class="btn">{{buttonText}}</button>
+      <button v-if="hasButton" class="btn">{{buttonText}}</button>
   </section>
 </template>
 
@@ -20,6 +20,10 @@ export default {
         description:{
             type: String,
             default: "Iets over de kerkbijdrage"
+        },
+        hasButton:{
+            type: Boolean,
+            default: true
         },
         buttonText:{
             type: String,
