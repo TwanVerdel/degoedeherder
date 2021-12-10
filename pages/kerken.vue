@@ -1,27 +1,32 @@
 <template>
     <main>
+        <!-- TODO: deze gebruiken ipv de onderstaande -->
         <church-overview
             :selectedIndex="selectedChurchIndex"
-            :churches="churches"
-            :title="selectedChurch.name"
+            :churches="churchData.churches"
             @churchSelected="selectChurch"
         />
 
-        <!-- <pre>
-            {{workgroupByChurchIndex}}
-        </pre> -->
+        <!-- Dummydata -->
+        <!-- <church-overview
+            :selectedIndex="selectedChurchIndex"
+            :churches="churches"
+            @churchSelected="selectChurch"
+        /> -->
+
 
         <!-- TODO Werkgroepen koppelen per kerk -->
         <workgroup-slider :workgroups="workgroupByChurchIndex" />
 
-        <donation-banner :title="`Titel voor: ${selectedChurch.name}`" />
+        <donation-banner :title="`Titel voor: ${selectedChurch.title}`" />
 
-        <alternate-content :title="`Titel voor: ${selectedChurch.name}`" />
+        <alternate-content :title="`Titel voor: ${selectedChurch.title}`" />
     </main>
 </template>
 
 <script>
 import WorkgroupsByChurchData from "@/datalayers/workgroupsByChurch.js";
+import ChurchData from "@/datalayers/churches.js";
 
 import AlternateContent from "../components/AlternateContent.vue";
 import ChurchOverview from "../components/ChurchOverview.vue";
@@ -31,7 +36,7 @@ import WorkgroupSlider from "../components/WorkgroupSlider.vue";
 export default {
     data() {
         return {
-            selectedChurchIndex: 2
+            selectedChurchIndex: 0
         };
     },
     methods: {
@@ -50,7 +55,7 @@ export default {
             return this.churches[this.selectedChurchIndex];
         },
         workgroupByChurchIndex() {
-            var location = this.churches[this.selectedChurchIndex].name;
+            var location = this.churches[this.selectedChurchIndex].title;
 
             switch (location) {
                 case "Erica":
@@ -73,36 +78,43 @@ export default {
                     return null
             }
         },
+
+
+
+        // Dummy data
         churches() {
             return [
                 {
-                    name: "Erica",
-                    url: "https://picsum.photos/800"
+                    title: "Erica",
+                    image: "https://picsum.photos/800"
                 },
                 {
-                    name: "Emmerschans",
-                    url: "https://picsum.photos/900"
+                    title: "Emmerschans",
+                    image: "https://picsum.photos/900"
                 },
 
                 {
-                    name: "Emmen",
-                    url: "https://picsum.photos/1000"
+                    title: "Emmen",
+                    image: "https://picsum.photos/1000"
                 },
                 {
-                    name: "Barger-Oosterveld",
-                    url: "https://picsum.photos/1100"
+                    title: "Barger-Oosterveld",
+                    image: "https://picsum.photos/1100"
                 },
                 {
-                    name: "Holtingerhof",
-                    url: "https://picsum.photos/1100"
+                    title: "Holtingerhof",
+                    image: "https://picsum.photos/1200"
                 }
             ];
-        }
+        },
     },
     async asyncData(ctx) {
+        const churchData = await ChurchData(ctx);
         const workgroupData = await WorkgroupsByChurchData(ctx);
+        
         return {
-            workgroupData
+            workgroupData,
+            churchData
         };
     }
 };

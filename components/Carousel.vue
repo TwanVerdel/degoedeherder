@@ -57,18 +57,23 @@ export default {
             return this.amount - 1;
         }
     },
+    updated() {
+        this.init()
+    },
     methods: {
         scrollTo(idx) {
-            const carousel = this.$refs.carousel;
-            const slide = carousel.children[idx];
-            const amount = slide.offsetLeft - slide.offsetWidth;
+            if(idx < this.amount) {
+                const carousel = this.$refs.carousel;
+                const slide = carousel.children[idx];
+                const amount = slide.offsetLeft - slide.offsetWidth;
 
-            this.current = idx;
+                this.current = idx;
 
-            carousel.scrollTo({
-                left: amount,
-                behavior: "smooth"
-            });
+                carousel.scrollTo({
+                    left: amount,
+                    behavior: "smooth"
+                });
+            }
         },
         getVisibility(i) {
             const idx = this.current;
@@ -84,7 +89,9 @@ export default {
         },
         next() {
             if (this.current < this.amount - 2) {
-                this.current++;
+                console.log(this.current, this.amount, this.current < this.amount - 2)
+
+                this.current = this.current + 1
             }
         },
         previous() {
@@ -104,7 +111,19 @@ export default {
                     slide.classList.remove("show");
                 }
             });
-        }
+        },
+        init() {
+            const carousel = this?.$refs?.carousel;
+            const slides = carousel?.children;
+
+            this.amount = slides?.length;
+
+            this.setVisibility();
+
+            if (this.current > this.amount - 2) {
+                this.current = 0
+            }
+        } 
     },
     watch: {
         current: function(val) {

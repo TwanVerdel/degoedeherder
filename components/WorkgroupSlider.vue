@@ -42,12 +42,6 @@ export default {
             default: ''
         }
     },
-    watch:{
-        workgroups: function(val) {
-            this.$refs.carousel.setVisibility()
-            this.$refs.carousel.current = 1
-        }
-    }
 };
 </script>
 

@@ -66,87 +66,72 @@
                     </svg>
                 </picture>
 
-                <span>{{ church.name }}</span>
+                <span>{{ church.title }}</span>
             </li>
         </ul>
 
-        <!-- TODO kerkdata koppelen aan CMS, nadenken over CMS schema -->
-
-        <div class="church-info" v-if="">
+        <div class="church-info">
             <div
                 class="church-details"
                 :class="{ 'selected' : index === selectedIndex }"
                 v-for="(church, index) in churches"
                 :key="`church-info-${index}`"
             >
-                <img :src="church.url" />
+                <img :src="church.image" />
                 <div class="text-container">
-                    <h2>{{ church.name }}</h2>
+                    <h2>{{ church.title }}</h2>
 
                     <div class="church-info-rows">
-                        <!-- <template v-for="(info, infoIndex) in churchInfo[selectedIndex]"> -->
-                        <template>
-                            <div v-if="churchInfo[selectedIndex].address !=null">
-                                <div
-                                    class="name"
-                                    :key="`info-name-${infoIndex}`"
-                                    v-html="'Locatie'"                                    
-                                />
-                                <div
-                                    class="value"
-                                    :key="`info-value-${infoIndex}`"
-                                    v-html="churchInfo[selectedIndex].address.html"
-                                />
-                            </div>
-                            <div v-if="churchInfo[selectedIndex].openingHours !=null">
-                                <div
-                                    class="name"
-                                    :key="`info-name-${infoIndex}`"
-                                    v-html="'Openingstijden'"                                    
-                                />
-                                <div
-                                    class="value"
-                                    :key="`info-value-${infoIndex}`"
-                                    v-html="churchInfo[selectedIndex].openingHours.html"
-                                />
-                            </div>
-                            <div v-if="churchInfo[selectedIndex].verger !=null">
-                                <div
-                                    class="name"
-                                    :key="`info-name-${infoIndex}`"
-                                    v-html="'Kosteres'"                                    
-                                />
-                                <div
-                                    class="value"
-                                    :key="`info-value-${infoIndex}`"
-                                    v-html="churchInfo[selectedIndex].verger"
-                                />
-                            </div>
-                            <div v-if="churchInfo[selectedIndex].secretariat !=null">
-                                <div
-                                    class="name"
-                                    :key="`info-name-${infoIndex}`"
-                                    v-html="'Secretariaat'"                                    
-                                />
-                                <div
-                                    class="value"
-                                    :key="`info-value-${infoIndex}`"
-                                    v-html="churchInfo[selectedIndex].secretariat.html"
-                                />
-                            </div>
-                            <div v-if="churchInfo[selectedIndex].inauguration !=null">
-                                <div
-                                    class="name"
-                                    :key="`info-name-${infoIndex}`"
-                                    v-html="'Kerkwijding'"                                    
-                                />
-                                <div
-                                    class="value"
-                                    :key="`info-value-${infoIndex}`"
-                                    v-html="churchInfo[selectedIndex].inauguration.html"
-                                />
-                            </div>                                
-                        </template>
+                        <div v-if="church.address !=null">
+                            <div
+                                class="name"
+                                v-html="'Locatie'"                                    
+                            />
+                            <div
+                                class="value"
+                                v-html="church.address.html"
+                            />
+                        </div>
+                        <div v-if="church.openingHours !=null">
+                            <div
+                                class="name"
+                                v-html="'Openingstijden'"                                    
+                            />
+                            <div
+                                class="value"
+                                v-html="church.openingHours.html"
+                            />
+                        </div>
+                        <div v-if="church.verger !=null">
+                            <div
+                                class="name"
+                                v-html="'Kosteres'"                                    
+                            />
+                            <div
+                                class="value"
+                                v-html="church.verger"
+                            />
+                        </div>
+                        <div v-if="church.secretariat !=null">
+                            <div
+                                class="name"
+                                v-html="'Secretariaat'"                                    
+                            />
+                            <div
+                                class="value"
+                                v-html="church.secretariat.html"
+                            />
+                        </div>
+                        <div v-if="church.inauguration !=null">
+                            <div
+                                class="name"
+                                v-html="'Kerkwijding'"                                    
+                            />
+                            <div
+                                class="value"
+                                v-html="church.inauguration.html"
+                            />
+                        </div>                                
                     </div>
                 </div>
             </div>
@@ -155,19 +140,10 @@
 </template>
 
 <script>
-import ChurchData from "@/datalayers/churches.js";
+
 
 export default {
-    // data() {
-    //     return {
-    //         selected: 0,
-    //     };
-    // },
     props: {
-        title: {
-            type: String,
-            default: () => ""
-        },
         selectedIndex: {
             type: Number,
             required: true
@@ -182,58 +158,6 @@ export default {
             this.$emit("churchSelected", index);
         }
     },
-    computed: {
-        churchInfo() {
-            var data = [
-                {
-                    title: "Erica",
-                    image: null,
-                    location: "Erica",
-                    address: {
-                        html:
-                            "<p>Onze Lieve Vrouw Onbevlekt Ontvangen, Kerkweg 122, 7887 BJ Erica</p>"
-                    },
-                    openingHours: {
-                        html:
-                            "<p>dinsdag: 09.30 uur tot 11.30 uur<br>donderdag: 09.30 uur tot 11.30 uur</p><p></p>"
-                    },
-                    verger: null,
-                    secretariat: {
-                        html:
-                            '<p>Kerkweg 122, 7887 BJ Erica (ingang tussen parochiekerk en pastorie)<br>Telefoon: 0591 – 30 14 44<br>Email: <a title="mailto:olvonbevlektontvangen@degoedeherderparochie.nl" href="mailto:olvonbevlektontvangen@degoedeherderparochie.nl"><u>olvonbevlektontvangen@degoedeherderparochie.nl</u></a></p>'
-                    },
-                    inauguration: {
-                        html:
-                            "<p>2 mei 1934 door Mgr. J.H.G. Jansen, aartsbisschop van Utrecht</p>"
-                    },
-                    contribution: {
-                        html:
-                            "<p>Betalingen van kerkbijdrage, stipendium of een gift ten gunste van locatie OL Vrouw Onbevlekt Ontvangen kunnen worden voldaan via NL65 RABO 0114 5003 04. Deze rekening staat op naam van RK parochie de Goede Herder.</p>"
-                    }
-                },
-                {
-                    title: "Test"
-                },
-                {
-                    title: "Test"
-                },
-                {
-                    title: "Test"
-                },
-                {
-                    title: "Test"
-                }
-            ];
-            return this.churchData.churches;
-        }
-    },
-    async asyncData(ctx) {
-        const churchData = await ChurchData(ctx);
-        console.log(churchData);
-        return {
-            churchData
-        };
-    }
 };
 </script>
 
@@ -425,6 +349,8 @@ export default {
                 margin: auto 0;
 
                 box-shadow: 0 0 vw(16px) rgba($black, 0.2);
+
+                background: #666666;
 
                 @media ($phone) {
                     height: vw(200px);
