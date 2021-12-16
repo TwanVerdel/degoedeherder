@@ -28,7 +28,18 @@ export default async ({ $graphcms }) => {
                 },
                 contribution{
                   html
+                },
+                masses{
+                  html
+                },
+                massImage{
+                  url
+                },
+                locationCouncilTitle,
+                locationCouncil{
+                  html
                 }
+                
               }
 
               wg_emmen: workgroups( where:{churches_contains_some: Emmen}){

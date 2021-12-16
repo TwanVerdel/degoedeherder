@@ -6,7 +6,8 @@
             <h2>{{title}}</h2>
             <p v-html="description"/>
             <button class="btn">
-                <a :href="buttonURL" target="_blank">{{buttonText}}</a>
+                <a v-if="openInNewTab == true"  target="_blank" :href="buttonURL" >{{buttonText}}</a>
+                <a v-else  :href="buttonURL">{{buttonText}}</a>
             </button>
         </div>
         <!-- Er moet hier een plaatje -->
@@ -36,7 +37,7 @@ export default {
         image: {
             type: String,
             default:
-                "~/assets/images/01 detailfoto Maria, OLV Onbevlekt Ontvangen.jpg"
+                "assets/images/01 detailfoto Maria, OLV Onbevlekt Ontvangen.jpg"
         },
         buttonText: {
             type: String,
@@ -45,6 +46,11 @@ export default {
         buttonURL: {
             type: String,
             default: ""
+        },
+
+        openInNewTab:{
+            type: Boolean,
+            default: true
         }
     }
 };

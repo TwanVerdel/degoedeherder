@@ -15,12 +15,17 @@
         /> -->
 
 
-        <!-- TODO Werkgroepen koppelen per kerk -->
-        <workgroup-slider :workgroups="workgroupByChurchIndex" />
+        <!-- Werkgroepen -->
+        <workgroup-slider v-if="workgroupByChurchIndex.length > 0" :workgroups="workgroupByChurchIndex" />
 
-        <donation-banner :title="`Titel voor: ${selectedChurch.title}`" />
+        <donation-banner title="Kerkbijdrage of gift" :description="selectedChurch.contribution.html" />
 
-        <alternate-content :title="`Titel voor: ${selectedChurch.title}`" />
+        <alternate-content title="Vieringen" :description="selectedChurch.masses.html" buttonText="Bekijk alle vieringen" buttonURL="/evenementen" :openInNewTab="false" />
+        <!-- Onderstaande regel moet worden toegevoegd als er een afbeelding beschikbaar is. -->
+        <!-- :image="selectedChurch.massImage.url"  -->
+        
+        <!-- Locatieraad -->
+        <donation-banner :title="selectedChurch.locationCouncilTitle" :description="selectedChurch.locationCouncil.html" :hasButton="false"/>
     </main>
 </template>
 
@@ -52,7 +57,7 @@ export default {
     },
     computed: {
         selectedChurch() {
-            return this.churches[this.selectedChurchIndex];
+            return this.churchData.churches[this.selectedChurchIndex];
         },
         workgroupByChurchIndex() {
             var location = this.churches[this.selectedChurchIndex].title;

@@ -3,7 +3,7 @@
 <template>
   <section class="donation-banner">
       <h2>{{title}}</h2>
-      <p>{{description}}</p>
+      <p v-html="description"/>
       <button v-if="hasButton" class="btn">{{buttonText}}</button>
   </section>
 </template>
