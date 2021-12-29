@@ -28,10 +28,10 @@ Dit doen wij met het sacrament van de doop (meestal aan het begin), het sacramen
         />
 
         <!-- parochieblad -->
-        <collapsable-wysiwyg>
+        <CollapsableWYSIWYG>
             <h2>{{parishMagazine.title}}</h2>
             <p v-html="parishMagazine.text.html" />
-        </collapsable-wysiwyg>
+        </CollapsableWYSIWYG>
 
         <!-- parochiële geschiedenis -->
         <alternate-content

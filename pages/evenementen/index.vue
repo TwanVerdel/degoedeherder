@@ -12,10 +12,10 @@
         />
 
         <!-- 2.02 Gerardus- en Mariaprocessie -->
-        <collapsable-wysiwyg>
+        <CollapsableWYSIWYG>
             <h2>{{procession.title}}</h2>
             <p v-html="procession.text.html"/>
-        </collapsable-wysiwyg>
+        </CollapsableWYSIWYG>
     </main>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
     <main class="page">
-        <template v-if="parishInfoData.parishIntroduction">
-            <main-article :title="title" :text="text" :imageSrc="banner" :showFooter="false" />
+        <template v-if="parishInfoData">
+            <main-article v-if="parishInfoData.parishIntroduction" :title="title" :text="text" :imageSrc="banner" :showFooter="false" />
         </template>
     </main>
 </template>
@@ -14,15 +14,6 @@ import MainArticle from "@/components/MainArticle.vue";
 export default {
     components: {
         MainArticle
-    },
-    mounted() {
-
-        // TODO de redirect fixen bij een niet bestaande taal
-        // TODO styling toevoegen aan de afbeeldingen in de tekst
-
-        if (!this.parishInfoData) {
-            window.location.replace("/");
-        }
     },
     computed: {
         title() {
@@ -39,11 +30,20 @@ export default {
     async asyncData(ctx) {
         const { params, redirect } = ctx;
 
-        const parishInfoData = await ParishInfoData(ctx, ctx.params);
+        try 
+        {
+            const parishInfoData = await ParishInfoData(ctx, params);
 
-        return {
-            parishInfoData
-        };
+            if(!parishInfoData) redirect('/')
+
+            return {
+                parishInfoData
+            };
+        } 
+        catch(e) 
+        {
+            redirect('/');
+        }
     }
 };
 </script>
