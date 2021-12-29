@@ -34,6 +34,11 @@
             :hasButton="false"
         />
 
+        <CollapsableWYSIWYG v-if="selectedChurch.workgroups !== null">
+            <h3>De werkgroepen in en rond locatie {{selectedChurch.title}}</h3>
+            <p v-html="selectedChurch.workgroups.html" />
+        </CollapsableWYSIWYG>
+        
         <CollapsableWYSIWYG v-if="selectedChurch.graveyard !== null">
             <h3>Kerkhof</h3>
             <p v-html="selectedChurch.graveyard.html" />

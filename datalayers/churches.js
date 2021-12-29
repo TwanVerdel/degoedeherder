@@ -43,6 +43,10 @@ export default async ({ $graphcms }) => {
                 graveyard{
                   html
                 }
+
+                workgroups{
+                  html
+                }
                 
               }
 
