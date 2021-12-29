@@ -7,14 +7,6 @@
             @churchSelected="selectChurch"
         />
 
-        <!-- Dummydata -->
-        <!-- <church-overview
-            :selectedIndex="selectedChurchIndex"
-            :churches="churches"
-            @churchSelected="selectChurch"
-        /> -->
-
-
         <!-- Werkgroepen -->
         <workgroup-slider v-if="workgroupByChurchIndex.length > 0" :workgroups="workgroupByChurchIndex" />
 
