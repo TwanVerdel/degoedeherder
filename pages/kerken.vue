@@ -96,29 +96,22 @@ export default {
             }
         },
 
-        // Dummy data
         churches() {
             return [
                 {
-                    title: "Erica",
-                    image: "https://picsum.photos/800"
+                    title: "Erica"
                 },
                 {
-                    title: "Emmerschans",
-                    image: "https://picsum.photos/900"
-                },
-
-                {
-                    title: "Emmen",
-                    image: "https://picsum.photos/1000"
+                    title: "Emmerschans"
                 },
                 {
-                    title: "Barger-Oosterveld",
-                    image: "https://picsum.photos/1100"
+                    title: "Emmen"
                 },
                 {
-                    title: "Holtingerhof",
-                    image: "https://picsum.photos/1200"
+                    title: "Barger-Oosterveld"
+                },
+                {
+                    title: "Holtingerhof"
                 }
             ];
         }
