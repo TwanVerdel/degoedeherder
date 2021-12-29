@@ -39,6 +39,10 @@ export default async ({ $graphcms }) => {
                 locationCouncil{
                   html
                 }
+
+                graveyard{
+                  html
+                }
                 
               }
 
