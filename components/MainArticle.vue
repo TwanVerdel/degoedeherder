@@ -9,7 +9,6 @@
                 alt="Header afbeelding voor een blog van de Goede Herder Parochie"
             />
 
-            <!-- TODO plaatjes centreren -->
             <div class="content" v-html="text" />
         </article>
 

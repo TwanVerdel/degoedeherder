@@ -2,10 +2,7 @@
     <main class="main" ref="main">
         <div class="text-container" ref="textcontainer">
             <h2 class="title">{{title}}</h2>
-            <p class="text">
-               {{description}}
-            </p>
-
+            <p class="text" v-html="description.html"/>
             <button class="discover" @click="scrollToNext()">
                 Ontdek meer
                 <svg
