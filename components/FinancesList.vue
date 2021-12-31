@@ -199,6 +199,7 @@ export default {
         border-radius: vw(16px);
         padding: vw(48px);
         padding-bottom: vw(72px);
+        height: 100%;
 
         @media ($tablet-portrait) {
             max-width: vw(360px);

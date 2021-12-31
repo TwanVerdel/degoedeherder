@@ -1,31 +1,48 @@
 <template>
     <main>
-        <!-- TODO: deze gebruiken ipv de onderstaande -->
         <church-overview
             :selectedIndex="selectedChurchIndex"
             :churches="churchData.churches"
             @churchSelected="selectChurch"
         />
 
-        <!-- Dummydata -->
-        <!-- <church-overview
-            :selectedIndex="selectedChurchIndex"
-            :churches="churches"
-            @churchSelected="selectChurch"
-        /> -->
-
-
         <!-- Werkgroepen -->
-        <workgroup-slider v-if="workgroupByChurchIndex.length > 0" :workgroups="workgroupByChurchIndex" />
+        <workgroup-slider
+            v-if="workgroupByChurchIndex.length > 0"
+            :workgroups="workgroupByChurchIndex"
+        />
 
-        <donation-banner title="Kerkbijdrage of gift" :description="selectedChurch.contribution.html" />
+        <donation-banner
+            title="Kerkbijdrage of gift"
+            :description="selectedChurch.contribution.html"
+        />
 
-        <alternate-content title="Vieringen" :description="selectedChurch.masses.html" buttonText="Bekijk alle vieringen" buttonURL="/evenementen" :openInNewTab="false" />
+        <alternate-content
+            title="Vieringen"
+            :description="selectedChurch.masses.html"
+            buttonText="Bekijk alle vieringen"
+            buttonURL="/evenementen"
+            :openInNewTab="false"
+        />
         <!-- Onderstaande regel moet worden toegevoegd als er een afbeelding beschikbaar is. -->
         <!-- :image="selectedChurch.massImage.url"  -->
-        
+
         <!-- Locatieraad -->
-        <donation-banner :title="selectedChurch.locationCouncilTitle" :description="selectedChurch.locationCouncil.html" :hasButton="false"/>
+        <donation-banner
+            :title="selectedChurch.locationCouncilTitle"
+            :description="selectedChurch.locationCouncil.html"
+            :hasButton="false"
+        />
+
+        <CollapsableWYSIWYG v-if="selectedChurch.workgroups !== null">
+            <h3>De werkgroepen in en rond locatie {{selectedChurch.title}}</h3>
+            <p v-html="selectedChurch.workgroups.html" />
+        </CollapsableWYSIWYG>
+        
+        <CollapsableWYSIWYG v-if="selectedChurch.graveyard !== null">
+            <h3>Kerkhof</h3>
+            <p v-html="selectedChurch.graveyard.html" />
+        </CollapsableWYSIWYG>
     </main>
 </template>
 
@@ -64,59 +81,50 @@ export default {
 
             switch (location) {
                 case "Erica":
-                    return this.workgroupData.wg_erica
+                    return this.workgroupData.wg_erica;
                     break;
                 case "Emmerschans":
                     // code block
-                    return this.workgroupData.wg_emmerschans
+                    return this.workgroupData.wg_emmerschans;
                     break;
                 case "Emmen":
-                    return this.workgroupData.wg_emmen
+                    return this.workgroupData.wg_emmen;
                     break;
                 case "Barger-Oosterveld":
-                    return this.workgroupData.wg_barger_oosterveld
+                    return this.workgroupData.wg_barger_oosterveld;
                     break;
                 case "Holtingerhof":
-                    return this.workgroupData.wg_holtingerhof
+                    return this.workgroupData.wg_holtingerhof;
                     break;
                 default:
-                    return null
+                    return null;
             }
         },
 
-
-
-        // Dummy data
         churches() {
             return [
                 {
-                    title: "Erica",
-                    image: "https://picsum.photos/800"
+                    title: "Erica"
                 },
                 {
-                    title: "Emmerschans",
-                    image: "https://picsum.photos/900"
-                },
-
-                {
-                    title: "Emmen",
-                    image: "https://picsum.photos/1000"
+                    title: "Emmerschans"
                 },
                 {
-                    title: "Barger-Oosterveld",
-                    image: "https://picsum.photos/1100"
+                    title: "Emmen"
                 },
                 {
-                    title: "Holtingerhof",
-                    image: "https://picsum.photos/1200"
+                    title: "Barger-Oosterveld"
+                },
+                {
+                    title: "Holtingerhof"
                 }
             ];
-        },
+        }
     },
     async asyncData(ctx) {
         const churchData = await ChurchData(ctx);
         const workgroupData = await WorkgroupsByChurchData(ctx);
-        
+
         return {
             workgroupData,
             churchData

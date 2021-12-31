@@ -1,8 +1,5 @@
 <template>
     <main class="page">
-
-        <!-- TODO voor Bram, styling controleren -->
-
         <h1>{{codeOfConduct.title}}</h1>
         <div class="logo">
             <img src="@/static/images/meldpunt.png" alt />

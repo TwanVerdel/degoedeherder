@@ -9,20 +9,20 @@
 
         <section>
         <!-- Kerkhof tarieven -->
-            <collapsable-wysiwyg>
+            <CollapsableWYSIWYG>
                 <h3>{{financeInfo.graveyardHeader}}</h3>
             <p v-html="financeInfo.graveyardRateInfo.html" />
-            </collapsable-wysiwyg>
+            </CollapsableWYSIWYG>
 
             <!-- Kerkbijdrage, giften, rekeningnummers -->
-            <collapsable-wysiwyg>
+            <CollapsableWYSIWYG>
                 <h2>{{churchContributions.title}}</h2>
 
                 <p v-html="churchContributions.text.html" />
-            </collapsable-wysiwyg>
+            </CollapsableWYSIWYG>
 
             <!-- TODO Jaarrekening, het juiste document moet nog in het CMS -->
-            <collapsable-wysiwyg>
+            <CollapsableWYSIWYG>
                 <h2>{{financialStatements.title}}</h2>
 
                 <p v-html="financialStatements.text.html" />
@@ -33,14 +33,14 @@
                 >
                     <a :href="statement.url">{{statement.fileName}}</a>
                 </div>
-            </collapsable-wysiwyg>
+            </CollapsableWYSIWYG>
 
             <!-- Schenken en nalaten -->
-            <collapsable-wysiwyg>
+            <CollapsableWYSIWYG>
                 <h2>{{donatingInfo.title}}</h2>
 
                 <p v-html="donatingInfo.text.html" />
-            </collapsable-wysiwyg>
+            </CollapsableWYSIWYG>
         </section>
     </main>
 </template>

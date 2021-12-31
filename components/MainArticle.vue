@@ -9,7 +9,6 @@
                 alt="Header afbeelding voor een blog van de Goede Herder Parochie"
             />
 
-            <!-- TODO plaatjes centreren -->
             <div class="content" v-html="text" />
         </article>
 
@@ -168,8 +167,10 @@ export default {
             }
             
             ::v-deep img {
-                max-width: 100%;
-                height: auto;
+                height: vw(320px);
+                width: 100%;
+                object-fit: contain;
+                margin: vw(24px) 0;
             }
 
             > *:last-child {

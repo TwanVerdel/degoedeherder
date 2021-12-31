@@ -9,7 +9,12 @@ export default async ({$graphcms}) => {
             {
                 pastorBanners{
                   title,
-                  description,
+                  description{
+                    html
+                  },
+                  extraInformation{
+                    html
+                  },
                   leftPastorName,
                   leftPastorImage{
                     width,

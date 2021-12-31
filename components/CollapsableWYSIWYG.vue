@@ -175,7 +175,6 @@ export default {
 .container.show {
     .content {
         max-height: var(--grow-height);
-        // max-height: vw(1000px);
 
         &::before {
             opacity: 0;
