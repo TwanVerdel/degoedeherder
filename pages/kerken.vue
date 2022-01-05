@@ -15,6 +15,7 @@
         <donation-banner
             title="Kerkbijdrage of gift"
             :description="selectedChurch.contribution.html"
+            :buttonURL="selectedChurch.paymentURL"
         />
 
         <alternate-content
@@ -23,9 +24,8 @@
             buttonText="Bekijk alle vieringen"
             buttonURL="/evenementen"
             :openInNewTab="false"
+            :image="selectedChurch.massImage.url"
         />
-        <!-- Onderstaande regel moet worden toegevoegd als er een afbeelding beschikbaar is. -->
-        <!-- :image="selectedChurch.massImage.url"  -->
 
         <!-- Locatieraad -->
         <donation-banner

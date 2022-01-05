@@ -47,6 +47,8 @@ export default async ({ $graphcms }) => {
                 workgroups{
                   html
                 }
+
+                paymentURL
                 
               }
 
