@@ -7,7 +7,7 @@ export default async ({ $graphcms }) => {
         result = (await $graphcms.request(
             gql`
             {
-                workgroups(where: {bovenlokaal: false}) {
+                workgroups {
                   title
                   location
                   description

@@ -11,13 +11,13 @@
                         Initiatieven
                     </li>
                     <li>
-                        <a href="#">PCI</a>
+                        <a href="/pci">PCI</a>
                     </li>
                     <li>
-                        <a href="#">Diakonie</a>
+                        <a href="/diakonie">Diakonie</a>
                     </li>
                     <li>
-                        <a href="#">Catecheses</a>
+                        <a href="/catecheses">Catecheses</a>
                     </li>
                 </ul>
             </div>
@@ -27,10 +27,10 @@
                         Overig
                     </li>
                     <li>
-                        <a href="#">Gedragscode</a>
+                        <a href="/gedragscode">Gedragscode</a>
                     </li>
                     <li>
-                        <a href="#">Financiën</a>
+                        <a href="/financien">Financiën</a>
                     </li>
                 </ul>
             </div>
@@ -52,7 +52,7 @@
                         <a href="/nieuws">Nieuws</a>
                     </li>
                     <li>
-                        <a href="#">Evenementen</a>
+                        <a href="/vieringen">Vieringen</a> <!--Veranderd naar vieringen, aangezien dit beter past bij de inhoud -->
                     </li>
                 </ul>
             </div>
@@ -62,16 +62,16 @@
                         Introductie
                     </li>
                     <li>
-                        <a class="arabic" href="#">عربى</a>
+                        <a class="arabic" href="/parishinfo/arabic">عربى</a>
                     </li>
                     <li>
-                        <a href="#">Français</a>
+                        <a href="/parishinfo/francais">Français</a>
                     </li>
                     <li>
-                        <a href="#">English</a>
+                        <a href="/parishinfo/english">English</a>
                     </li>
                     <li>
-                        <a href="#">Polska</a>
+                        <a href="/parishinfo/polska">Polska</a>
                     </li>
                 </ul>
             </div>

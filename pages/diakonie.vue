@@ -1,14 +1,6 @@
 <template>
     <main>
-        <hero
-            :title="'Vindplaats voor het christelijk geloof.'"
-            :paragraph="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis lectus sed nisi iaculis auctor. Donec eu nibh rhoncus, pulvinar massa eget, gravida purus. Aenean lobortis sem ex, vel fermentum eros egestas quis. '"
-            :buttonUrl="'https://nu.nl'"
-            :buttonText="'Meld je aan'"
-            :discoverMore="true"
-            :imgUrl="'/images/beeld.png'"
-            :imgAlt="'Mooi beeld'"
-        /><workgroup-slider :workgroups="workgroupsContent" />
+        <workgroup-slider :workgroups="workgroupsContent" />
     </main>
 </template>
 
@@ -21,7 +13,6 @@ export default {
     components: {
         WorkgroupSlider
     },
-    layout: "hero",
     computed:{
         workgroupsContent(){
             return this.workgroups.workgroups;

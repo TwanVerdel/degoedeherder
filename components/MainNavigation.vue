@@ -75,7 +75,7 @@
                     <a href="/nieuws">Nieuws</a>
                 </li>
                 <li>
-                    <a href="/evenementen">Evenementen</a>
+                    <a href="/vieringen">Vieringen</a>
                 </li>
             </ul>
         </div>
