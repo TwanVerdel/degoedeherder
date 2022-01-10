@@ -7,7 +7,7 @@ export default async ({$graphcms}) => {
         result = (await $graphcms.request(
             gql`
             {
-                newsMessages{
+                newsMessages(orderBy: date_DESC){
                   id,
                   title,
                   date,
