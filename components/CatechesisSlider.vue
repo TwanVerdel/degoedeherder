@@ -13,7 +13,7 @@
 
                     <span>Aanmelden/contact</span>
 
-                    <a :href="'mailto:'+catechese.contact">{{catechese.contact}}</a>
+                    <a>{{catechese.contact}}</a>
                 </div>
             </div>
         </carousel>
