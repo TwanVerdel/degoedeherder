@@ -170,7 +170,7 @@
                     align-items: center;
 
                     a {
-                        font-size: desktop-vw(12px);
+                        font-size: desktop-vw(14px); //was 12px
                         font-weight: bold;
                         color: $white;
                         transition: opacity 0.2s;
@@ -284,7 +284,7 @@
                 }
 
                 a {
-                    font-size: desktop-vw(18px);
+                    font-size: desktop-vw(20px); //was 18px
                     transition: opacity 0.2s;
 
                     &:hover {
