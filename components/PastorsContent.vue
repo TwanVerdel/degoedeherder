@@ -127,7 +127,8 @@ export default {
             padding-top: vw(24px);
             padding-bottom: vw(24px);
             max-width: vw(568px);
-
+            word-break: break-all;
+            
             @media ($phone) {
                 max-width: unset;
             }

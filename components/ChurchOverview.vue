@@ -388,6 +388,7 @@ export default {
                     .value {
                         font-size: vw(16px);
                         line-height: 140%;
+                        word-break: break-all;
                     }
 
                     .name {
