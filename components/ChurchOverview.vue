@@ -204,7 +204,7 @@ export default {
         position: relative;
         display: flex;
         justify-content: space-between;
-        width: vw(360px);
+        width: vw(394px);
 
         @media ($phone) {
             width: 100%;
