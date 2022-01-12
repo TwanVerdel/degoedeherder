@@ -77,13 +77,15 @@ export default {
         @media ($tablet-portrait) {
             margin-top: tablet-vw(24px);
             margin-bottom: tablet-vw(32px);
-            max-width: tablet-vw(664px);
+            max-width: tablet-vw(664px);            
         }
 
         @media ($phone) {
             margin-top: phone-vw(24px);
             margin-bottom: phone-vw(32px);
             max-width: phone-vw(664px);
+            word-break: break-all;
+            
         }
     }
 }

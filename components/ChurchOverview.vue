@@ -230,9 +230,9 @@ export default {
                 background: repeating-linear-gradient(
                     to right,
                     $white,
-                    $white vw(8px),
-                    $primary vw(8px),
-                    $primary vw(16px)
+                    $white vw(4px),
+                    $primary vw(4px),
+                    $primary vw(8px)
                 );
             }
         }
@@ -276,6 +276,12 @@ export default {
                 font-weight: bold;
                 opacity: 0.8;
                 padding-top: vw(8px);
+            }
+
+            @media ($phone) {
+                span{
+                    font-size: vw(9px);
+                }
             }
         }
 
