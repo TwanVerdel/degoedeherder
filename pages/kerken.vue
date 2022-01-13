@@ -22,7 +22,7 @@
             title="Vieringen"
             :description="selectedChurch.masses.html"
             buttonText="Bekijk alle vieringen"
-            buttonURL="/evenementen"
+            buttonURL="/vieringen"
             :openInNewTab="false"
             :image="selectedChurch.massImage.url"
         />
