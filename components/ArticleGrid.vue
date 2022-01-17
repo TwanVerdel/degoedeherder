@@ -21,6 +21,19 @@
                 </div>
             </a>
         </div>
+        <div v-if="showThree" class="show-more-container">
+            <a v-if="type == 'blogs'" href="/blogs">Toon meer</a>
+            <a v-if="type == 'nieuws'" href="/nieuws">Toon meer</a>
+            <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" fill="black" />
+            </svg>
+        </div>
     </section>
 </template>
 
@@ -56,7 +69,7 @@ export default {
         },
         title: {
             type: String,
-            default: "Nieuws vanuit de parochie."
+            default: "Nieuws vanuit de parochie"
         },
         articles: {
             type: Array,
@@ -257,6 +270,65 @@ section {
         .thumbnail:hover {
             img {
                 transform: scale(1.05);
+            }
+        }
+    }
+
+    .show-more-container {
+        @include Outer;
+        height: 100%;
+        display: grid;
+        grid-auto-flow: column;
+                grid-auto-rows: max-content;
+                width: max-content;
+        margin-top: desktop-vw(32px);
+        gap: desktop-vw(24px);
+        place-items: center;
+
+        @media ($tablet-portrait) {
+            margin-top: tablet-vw(32px);
+            gap: tablet-vw(24px);
+        }
+
+        @media ($phone) {
+            margin-top: phone-vw(32px);
+            gap: phone-vw(24px);
+        }
+
+        a {
+            font-weight: bold;
+            opacity: 0.8;
+
+            font-size: desktop-vw(18px);
+
+            @media ($tablet-portrait) {
+                font-size: tablet-vw(18px);
+            }
+
+            @media ($phone) {
+                font-size: phone-vw(18px);
+            }
+        }
+
+        svg {
+            transition: transform 0.2s;
+            height: desktop-vw(24px);
+            aspect-ratio: 1 / 1;
+
+            opacity: 0.8;
+
+            @media ($tablet-portrait) {
+                height: tablet-vw(24px);
+            }
+
+            @media ($phone) {
+                height: phone-vw(24px);
+            }
+        }
+
+        &:hover {
+            svg {
+                transform: translateX(0.4em);
             }
         }
     }

@@ -44,7 +44,7 @@ export default {
             default: "De Goede Herder Parochie"
         },
         description:{
-            type: String,
+            type: Object,
             default: ""
         },
         leftPastorName:{
