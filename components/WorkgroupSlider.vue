@@ -12,7 +12,8 @@
 
                 <div class="text-container">
                     <!-- TODO Style aanpassen als titel te lang is voor kleine smartphones -->
-                    <h2>{{workgroup.title}} <div v-if="workgroup.location !== null">{{workgroup.location}}</div></h2>
+                    <h2>{{workgroup.title}}</h2>
+                    <p v-if="workgroup.location !== null"><strong>{{workgroup.location}}</strong> </p>
                     <p>{{workgroup.description}}</p>
 
                     <div v-if="workgroup.eMail !== null">

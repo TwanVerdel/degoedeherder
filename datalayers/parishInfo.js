@@ -12,6 +12,7 @@ export default async ({ $graphcms }, params) => {
               text {
                 html
               },
+              language,
               banner{
                 url
               }

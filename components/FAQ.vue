@@ -50,7 +50,7 @@ import CollapseSSR from "@/components/CollapseSSR";
 export default {
     data: function() {
         return {
-            activeIdx: 0
+            activeIdx: null
         };
     },
     props: {

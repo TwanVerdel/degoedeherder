@@ -1,7 +1,7 @@
 <template>
     <main class="page">
         <template v-if="parishInfoData">
-            <main-article v-if="parishInfoData.parishIntroduction" :title="title" :text="text" :imageSrc="banner" :showFooter="false" />
+            <main-article v-if="parishInfoData.parishIntroduction" :title="title" :text="text" :class="{ arabic: language === 'arabic' }" :imageSrc="banner"  :showFooter="false" />
         </template>
     </main>
 </template>
@@ -24,6 +24,9 @@ export default {
         },
         banner(){
             return this.parishInfoData?.parishIntroduction?.banner?.url
+        },
+        language(){
+            return this.parishInfoData?.parishIntroduction?.language
         }
     },
 
@@ -51,5 +54,9 @@ export default {
 <style lang="scss" scoped>
 .page {
     min-height: 100vh;
+
+    .arabic{
+        direction: rtl;
+    }
 }
 </style>
