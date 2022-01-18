@@ -4,7 +4,7 @@
         <hero
             :title="hero.title"
             :paragraph="hero.description.html"
-            :buttonUrl="'https://nu.nl'"
+            :buttonUrl="hero.urlRoundedButton"
             :buttonText="hero.textLeftButton"
             :discoverMore="true"
             :imgUrl="hero.image.url"

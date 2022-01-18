@@ -7,12 +7,13 @@ export default async ({$graphcms}) => {
         result = (await $graphcms.request(
             gql`
             {
-              fAQs {
+              fAQS {
                 question
-                answer
+                answer{
+                  html
+                }
               }
             }
-            
             `,
         ))
     }

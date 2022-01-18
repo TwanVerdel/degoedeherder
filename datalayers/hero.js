@@ -21,9 +21,7 @@ export default async ({$graphcms}) => {
                   },
                   buttonsVisible,
                   urlRoundedButton,
-                  textLeftButton,
-                  urlRightButton,
-                  textRightButton
+                  textLeftButton
                 }
               }
             `,

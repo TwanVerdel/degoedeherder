@@ -6,15 +6,8 @@
         <section>
             <finances-list :churchRates="rateGroups" :financeInfo="financeInfo" />
         </section>
-
         <section>
 
-        <!-- Doneren algemene kas -->
-        <!-- <donation-banner
-            title="Kerkbijdrage of gift"
-            :description="contribution.html"
-            :buttonURL="paymentURL"
-        /> -->
         <!-- Kerkhof tarieven -->
             <CollapsableWYSIWYG>
                 <h3>{{financeInfo.graveyardHeader}}</h3>

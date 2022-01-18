@@ -33,7 +33,7 @@
                 </div>
                 <collapse-s-s-r :open="activeIdx === index" :height="'400px'">
                     <div class="collapse" v-if="type == 'faq'">
-                        <p class="answer">{{ question.answer }}</p>
+                        <p v-html="question.answer.html" class="answer"/>
                     </div>
                     <div class="collapse" v-if="type == 'sacrament'">
                         <p class="answer" v-html="question.description.html" />
@@ -183,13 +183,14 @@ export default {
                     }
 
                     @media ($phone) {
-                        font-size: phone-vw(20px);
+                        font-size: phone-vw(16px);
                     }
                 }
 
                 svg {
                     margin-left: auto;
                     width: desktop-vw(32px);
+                    min-width: fit-content;
                     height: desktop-vw(32px);
                     transition: transform 0.2s ease-out;
                     object-fit: contain;

@@ -37,6 +37,9 @@
                 <li>
                     <a href="/financien">Fincanciën</a>
                 </li>
+                <li>
+                    <a href="/faq">FAQ</a>
+                </li>
             </ul>
         </div> 
         <div class="primary">
