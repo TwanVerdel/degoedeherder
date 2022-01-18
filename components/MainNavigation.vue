@@ -32,7 +32,7 @@
                     <a href="/diakonie">Diakonie</a>
                 </li>
                 <li>
-                    <a href="/catecheses">Catecheses</a>
+                    <a href="/catechese">Catechese</a>
                 </li>
                 <li>
                     <a href="/financien">Fincanciën</a>

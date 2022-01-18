@@ -1,6 +1,6 @@
 <template>
     <section class="container">
-        <h2>Catecheses.</h2>
+        <h2>Catechese</h2>
         <carousel>
             <div class="slide" v-for="(catechese, index) in catecheses" :key="`container-${index}`">
                 <img :src="catechese.image.url" />
