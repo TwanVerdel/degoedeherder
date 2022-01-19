@@ -14,7 +14,7 @@
             >
                 <h3>Tariefgroep {{rate.rateGroup}}</h3>
 
-                <p>{{rate.description}}</p>
+                <p class="lead">{{rate.description}}</p>
 
                 <h4>Tarieven algemeen</h4>
 
@@ -59,9 +59,9 @@
             >
                 <h3>Tariefgroep {{rate.rateGroup}}</h3>
 
-                <p>{{rate.description}}</p>
+                <p class="lead">{{rate.description}}</p>
 
-                <collapse-ssr :open="selected === index" class="collapse-container">
+                <CollapseSSR :open="selected === index" class="collapse-container">
                     <h4>Tarieven algemeen</h4>
 
                     <ul class="costs">
@@ -95,7 +95,7 @@
                             <span>{{rate.crematoriumLiturgyCosts}}</span>
                         </li>
                     </ul>
-                </collapse-ssr>
+                </CollapseSSR>
 
                 <svg
                     class="open-icon"
@@ -205,21 +205,14 @@ export default {
             max-width: vw(360px);
         }
 
+
+
+
+
         h3 {
             font-size: vw(28px);
             text-align: center;
             margin-bottom: vw(24px);
-        }
-
-        h4 {
-            font-size: vw(14px);
-            font-family: roboto;
-            opacity: 0.5;
-            margin-bottom: vw(8px);
-
-            &:not(:first-of-type) {
-                margin-top: vw(40px);
-            }
         }
 
         p {
@@ -229,6 +222,23 @@ export default {
             font-weight: bold;
             opacity: 0.8;
             margin-bottom: vw(48px);
+        }
+
+        .lead {
+            margin-bottom: auto;
+        }
+        
+
+        h4 {
+            font-size: vw(14px);
+            font-family: roboto;
+            opacity: 0.5;
+            margin-bottom: vw(8px);
+            margin-right: auto;
+
+            &:not(:first-of-type) {
+                margin-top: vw(40px);
+            }
         }
 
         .costs {
@@ -285,7 +295,7 @@ export default {
     }
 
     .costs-description:not(.mobile) {
-        display: block;
+        display: flex;
 
         @media ($tablet-portrait) {
             display: none;

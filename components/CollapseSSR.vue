@@ -23,6 +23,8 @@ export default {
     methods: {
         setHeight() {
             this.height = this.$refs.drawer ? this.$refs.drawer.scrollHeight : this.height;
+
+            console.log(this.height)
         },
     },
     mounted() {
