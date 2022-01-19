@@ -200,6 +200,9 @@ export default {
                     transition: transform 0.2s;
                     transform: rotate(180deg);
 
+                    max-width: desktop-vw(32px);
+                    max-height: desktop-vw(32px);
+
                     &.active {
                         transform: rotate(0);
                     }
@@ -209,6 +212,9 @@ export default {
                         height: tablet-vw(40px);
                         border-radius: tablet-vw(40px);
                         padding: tablet-vw(8px);
+
+                        max-width: tablet-vw(40px);
+                        max-height: tablet-vw(40px);
                     }
 
                     @media ($phone) {
@@ -216,6 +222,9 @@ export default {
                         height: phone-vw(40px);
                         border-radius: phone-vw(40px);
                         padding: phone-vw(8px);
+
+                        max-width: phone-vw(40px);
+                        max-height: phone-vw(40px);
                     }
                 }
             }
