@@ -8,6 +8,10 @@
     padding: 0;
     margin: 0;
     color: $black;
+
+    @media($tablet-landscape) {
+        word-break: break-word;
+    }
 }
 
 html {
