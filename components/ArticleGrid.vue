@@ -31,7 +31,18 @@
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
             >
-                <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" fill="black" />
+                <a v-if="type == 'blogs'" href="/blogs">
+                    <path
+                        d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z"
+                        fill="black"
+                    />
+                </a>
+                <a v-if="type == 'nieuws'" href="/nieuws">
+                    <path
+                        d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z"
+                        fill="black"
+                    />
+                </a>
             </svg>
         </div>
     </section>
@@ -279,8 +290,8 @@ section {
         height: 100%;
         display: grid;
         grid-auto-flow: column;
-                grid-auto-rows: max-content;
-                width: max-content;
+        grid-auto-rows: max-content;
+        width: max-content;
         margin-top: desktop-vw(32px);
         gap: desktop-vw(24px);
         place-items: center;
