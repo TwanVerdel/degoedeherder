@@ -32,5 +32,9 @@
 
     .page {
         margin-top: vw(112px);
+
+        @media($tablet-portrait) {
+            margin-top: 0;
+        }
     }
 </style>
