@@ -14,7 +14,7 @@
                 class="thumbnail"
                 :to="'/' + type + '/' + article.slug"
             >
-                <img :src="article.thumbnail.url" alt="Placeholder" />
+                <img :src="article.thumbnail.url" alt="Placeholder" v-lazy-load/>
                 <div class="text">
                     <div class="date">{{ getDateString(article.date) }}</div>
                     <h3 class="title">{{article.title}}</h3>
@@ -22,28 +22,21 @@
             </nuxt-link>
         </div>
         <div v-if="showThree" class="show-more-container">
-            <nuxt-link v-if="type == 'blogs'" to="/blogs">Toon meer</nuxt-link>
-            <nuxt-link v-if="type == 'nieuws'" to="/nieuws">Toon meer</nuxt-link>
-            <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <nuxt-link v-if="type == 'blogs'" to="/blogs">
+            <a :href="type == 'blogs' ? '/blogs' : '/nieuws'">
+                Toon meer
+                <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
                     <path
                         d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z"
                         fill="black"
                     />
-                </nuxt-link>
-                <nuxt-link v-if="type == 'nieuws'" to="/nieuws">
-                    <path
-                        d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z"
-                        fill="black"
-                    />
-                </nuxt-link>
-            </svg>
+                </svg>
+            </a>
         </div>
     </section>
 </template>
@@ -265,6 +258,13 @@ section {
                     line-height: 140%;
                     width: desktop-vw(368px);
                     font-family: Roboto;
+                    max-height: 2.8em;
+
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+
 
                     @media ($tablet-portrait) {
                         font-size: tablet-vw(24px);
@@ -287,59 +287,52 @@ section {
 
     .show-more-container {
         @include Outer;
-        height: 100%;
-        display: grid;
-        grid-auto-flow: column;
-        grid-auto-rows: max-content;
-        width: max-content;
-        margin-top: desktop-vw(32px);
-        gap: desktop-vw(24px);
-        place-items: center;
-
-        @media ($tablet-portrait) {
-            margin-top: tablet-vw(32px);
-            gap: tablet-vw(24px);
-        }
-
-        @media ($phone) {
-            margin-top: phone-vw(32px);
-            gap: phone-vw(24px);
-        }
 
         a {
+            height: 100%;
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-rows: max-content;
+            width: max-content;
+            margin-top: desktop-vw(32px);
+            gap: desktop-vw(16px);
+            place-items: center;
             font-weight: bold;
             opacity: 0.8;
-
             font-size: desktop-vw(18px);
 
             @media ($tablet-portrait) {
+                margin-top: tablet-vw(32px);
+                gap: tablet-vw(16px);
                 font-size: tablet-vw(18px);
             }
 
             @media ($phone) {
+                margin-top: phone-vw(32px);
+                gap: phone-vw(16px);
                 font-size: phone-vw(18px);
             }
-        }
 
-        svg {
-            transition: transform 0.2s;
-            height: desktop-vw(24px);
-            aspect-ratio: 1 / 1;
-
-            opacity: 0.8;
-
-            @media ($tablet-portrait) {
-                height: tablet-vw(24px);
-            }
-
-            @media ($phone) {
-                height: phone-vw(24px);
-            }
-        }
-
-        &:hover {
             svg {
-                transform: translateX(0.4em);
+                transition: transform 0.2s;
+                height: desktop-vw(24px);
+                aspect-ratio: 1 / 1;
+
+                opacity: 0.8;
+
+                @media ($tablet-portrait) {
+                    height: tablet-vw(24px);
+                }
+
+                @media ($phone) {
+                    height: phone-vw(24px);
+                }
+            }
+
+            &:hover {
+                svg {
+                    transform: translateX(0.4em);
+                }
             }
         }
     }
