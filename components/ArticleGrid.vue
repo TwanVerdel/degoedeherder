@@ -8,18 +8,18 @@
         </template>
 
         <div class="article-container">
-            <a
+            <nuxt-link
                 v-for="(article, index) in allArticle"
                 :key="`article-cell-${index}`"
                 class="thumbnail"
-                :href="type + '/' + article.slug"
+                :to="'/' + type + '/' + article.slug"
             >
                 <img :src="article.thumbnail.url" alt="Placeholder" v-lazy-load/>
                 <div class="text">
                     <div class="date">{{ getDateString(article.date) }}</div>
                     <h3 class="title">{{article.title}}</h3>
                 </div>
-            </a>
+            </nuxt-link>
         </div>
         <div v-if="showThree" class="show-more-container">
             <a :href="type == 'blogs' ? '/blogs' : '/nieuws'">
