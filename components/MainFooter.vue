@@ -3,7 +3,7 @@
         <a href="/" class="logo">
             <img src="../assets/images/logo.svg" 
                 alt="Logo" 
-                loading="lazy"/>
+                v-lazy-load/>
         </a>
         <div class="lists-container">
             <div class="list">

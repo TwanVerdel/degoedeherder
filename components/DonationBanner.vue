@@ -66,6 +66,11 @@ export default {
         padding-bottom: phone-vw(72px);
     }
 
+    h2 {
+        max-width: vw(560px);
+        text-align: center;
+    }
+
     p {
         text-align: center;
 

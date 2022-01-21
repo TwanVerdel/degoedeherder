@@ -15,7 +15,7 @@
             <img
                 :src="image"
                 alt="Detailfoto Maria"
-                loading="lazy"
+                v-lazy-load
             />
         </div>
     </section>

@@ -7,7 +7,7 @@
                 class="banner-image"
                 :src="imageSrc"
                 alt="Header afbeelding voor een blog van de Goede Herder Parochie"
-                loading="lazy"
+                v-lazy-load
             />
 
             <div class="content" v-html="text" />

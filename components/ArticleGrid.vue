@@ -14,7 +14,7 @@
                 class="thumbnail"
                 :href="type + '/' + article.slug"
             >
-                <img :src="article.thumbnail.url" alt="Placeholder" loading="lazy" />
+                <img :src="article.thumbnail.url" alt="Placeholder" v-lazy-load/>
                 <div class="text">
                     <div class="date">{{ getDateString(article.date) }}</div>
                     <h3 class="title">{{article.title}}</h3>
@@ -265,6 +265,13 @@ section {
                     line-height: 140%;
                     width: desktop-vw(368px);
                     font-family: Roboto;
+                    max-height: 2.8em;
+
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+
 
                     @media ($tablet-portrait) {
                         font-size: tablet-vw(24px);

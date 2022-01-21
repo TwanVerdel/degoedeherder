@@ -22,7 +22,7 @@
         <picture>
             <img :src="imgUrl" 
                  :alt="imgAlt"
-                 loading="lazy"/>
+                 v-lazy-load/>
         </picture>
     </header>
 </template>
