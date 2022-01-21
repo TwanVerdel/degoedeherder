@@ -10,13 +10,8 @@
                 @click="toggle(index)"
             >
                 <div class="collaps-item-title">
-                    <div v-if="type == 'faq'">
-                        <h3>{{ question.question }}</h3>
-                    </div>
-                    <div v-if="type == 'sacrament'">
-                        <h3>{{ question.sacrament }}</h3>
-                    </div>
-
+                    <h3 v-if="type == 'faq'">{{ question.question }}</h3>
+                    <h3 v-if="type == 'sacrament'">{{ question.sacrament }}</h3>
                     <svg
                         :class="{ active: activeIdx === index }"
                         width="24"

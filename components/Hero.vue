@@ -61,7 +61,9 @@
         },
         methods: {
             scrollToNext() {
-                var dist = this.$refs.hero.offsetHeight
+                var dist = this.$refs.hero.offsetHeight || 640
+
+                console.log('click')
 
                 window.scrollTo({
                     top: dist,

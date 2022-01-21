@@ -276,11 +276,12 @@ export default {
                 font-weight: bold;
                 opacity: 0.8;
                 padding-top: vw(8px);
+                word-break: keep-all;
             }
 
             @media ($phone) {
                 span{
-                    font-size: vw(9px);
+                    font-size: vw(10px);
                 }
             }
         }

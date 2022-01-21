@@ -107,17 +107,24 @@
             }
         },
         mounted() {
-            window.onscroll = () => {
+            this.mobileMenuIsOpen = false
+
+            window.addEventListener('scroll', () => {
                 var scroll = window.scrollY
 
                 this.atTop = scroll < 64
-            }
+            }) 
         },
         methods: {
             openMobileMenu() {
                 this.mobileMenuIsOpen = true
 
                 this.$refs.mobileMenu.open()
+            }
+        },
+        watch: {
+            '$route.path'() {
+                this.mobileMenuIsOpen = false
             }
         }
     }

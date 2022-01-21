@@ -31,6 +31,6 @@
     }
 
     .page {
-        margin-top: vw(112px);
+        padding-top: vw(112px);
     }
 </style>
