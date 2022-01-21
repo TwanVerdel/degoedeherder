@@ -8,22 +8,22 @@
         </template>
 
         <div class="article-container">
-            <a
+            <nuxt-link
                 v-for="(article, index) in allArticle"
                 :key="`article-cell-${index}`"
                 class="thumbnail"
-                :href="type + '/' + article.slug"
+                :to="'/' + type + '/' + article.slug"
             >
                 <img :src="article.thumbnail.url" alt="Placeholder" />
                 <div class="text">
                     <div class="date">{{ getDateString(article.date) }}</div>
                     <h3 class="title">{{article.title}}</h3>
                 </div>
-            </a>
+            </nuxt-link>
         </div>
         <div v-if="showThree" class="show-more-container">
-            <a v-if="type == 'blogs'" href="/blogs">Toon meer</a>
-            <a v-if="type == 'nieuws'" href="/nieuws">Toon meer</a>
+            <nuxt-link v-if="type == 'blogs'" to="/blogs">Toon meer</nuxt-link>
+            <nuxt-link v-if="type == 'nieuws'" to="/nieuws">Toon meer</nuxt-link>
             <svg
                 width="16"
                 height="16"
@@ -31,18 +31,18 @@
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
             >
-                <a v-if="type == 'blogs'" href="/blogs">
+                <nuxt-link v-if="type == 'blogs'" to="/blogs">
                     <path
                         d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z"
                         fill="black"
                     />
-                </a>
-                <a v-if="type == 'nieuws'" href="/nieuws">
+                </nuxt-link>
+                <nuxt-link v-if="type == 'nieuws'" to="/nieuws">
                     <path
                         d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z"
                         fill="black"
                     />
-                </a>
+                </nuxt-link>
             </svg>
         </div>
     </section>
