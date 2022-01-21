@@ -2,6 +2,9 @@
     <div>
         <main-navigation />
         <Nuxt/>
+        <pre>
+            test
+        </pre>
         <main-footer/>
         <post-footer />
     </div>

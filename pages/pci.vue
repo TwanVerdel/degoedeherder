@@ -34,6 +34,7 @@ export default {
     @include Outer;
     display: flex;
     flex-direction: column;
+    margin-top: vw(112px);
 
     ::v-deep .text > p {
         margin-bottom: vw(24px);
