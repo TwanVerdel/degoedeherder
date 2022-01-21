@@ -22,12 +22,12 @@
         <div class="pastors-container">
             <div class="pastors-content">
                 <div class="pastor margin-top">
-                    <img :src="leftPastorImage" alt="Pastoor" />
+                    <img :src="leftPastorImage" alt="Pastoor" loading="lazy"/>
                     <h3>{{leftPastorName}}</h3>
                     <p class="desc">Pastoor</p>
                 </div>
                 <div class="pastor">
-                    <img :src="rightPastorImage" alt="Pastoor" />
+                    <img :src="rightPastorImage" alt="Pastoor" loading="lazy"/>
                     <h3>{{rightPastorName}}</h3>
                     <p class="desc">Pastores</p>
                 </div>

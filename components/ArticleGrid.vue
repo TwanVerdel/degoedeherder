@@ -14,7 +14,7 @@
                 class="thumbnail"
                 :href="type + '/' + article.slug"
             >
-                <img :src="article.thumbnail.url" alt="Placeholder" />
+                <img :src="article.thumbnail.url" alt="Placeholder" loading="lazy" />
                 <div class="text">
                     <div class="date">{{ getDateString(article.date) }}</div>
                     <h3 class="title">{{article.title}}</h3>

@@ -2,7 +2,8 @@
     <footer>
         <a href="/" class="logo">
             <img src="../assets/images/logo.svg" 
-                alt="Logo" />
+                alt="Logo" 
+                loading="lazy"/>
         </a>
         <div class="lists-container">
             <div class="list">
