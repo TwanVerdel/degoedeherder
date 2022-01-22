@@ -112,7 +112,7 @@
             window.addEventListener('scroll', () => {
                 var scroll = window.scrollY
 
-                this.atTop = scroll < 64
+                this.atTop = scroll == undefined ? true : scroll < 64
             }) 
         },
         methods: {
