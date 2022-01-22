@@ -106,13 +106,15 @@
                 mobileMenuIsOpen: false,
             }
         },
-        mounted() {
+        beforeMount () {
             this.mobileMenuIsOpen = false
+
+            var scroll = window.scrollY
+            this.atTop = scroll == undefined ? false : scroll < 64
 
             window.addEventListener('scroll', () => {
                 var scroll = window.scrollY
-
-                this.atTop = scroll < 64
+                this.atTop = scroll == undefined ? false : scroll < 64
             }) 
         },
         methods: {
@@ -122,11 +124,6 @@
                 this.$refs.mobileMenu.open()
             }
         },
-        watch: {
-            '$route.path'() {
-                this.mobileMenuIsOpen = false
-            }
-        }
     }
 </script>
 
