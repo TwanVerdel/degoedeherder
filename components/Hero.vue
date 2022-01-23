@@ -22,7 +22,7 @@
         <picture>
             <img :src="imgUrl" 
                  :alt="imgAlt"
-                 loading="lazy"/>
+                 v-lazy-load/>
         </picture>
     </header>
 </template>
@@ -61,7 +61,9 @@
         },
         methods: {
             scrollToNext() {
-                var dist = this.$refs.hero.offsetHeight
+                var dist = this.$refs.hero.offsetHeight || 640
+
+                console.log('click')
 
                 window.scrollTo({
                     top: dist,
@@ -139,7 +141,7 @@
                 @include fadeUpAnimation(0.4s, 0.4s);
                 display: grid;
                 grid-auto-flow: column;
-                grid-auto-rows: max-content;
+                grid-auto-columns: max-content;
                 width: max-content;
                 margin-top: desktop-vw(32px);
                 gap: desktop-vw(24px);
@@ -151,7 +153,17 @@
 
                 @media($phone) {
                     margin-top: phone-vw(32px);
-                    gap: phone-vw(24px);
+                    gap: phone-vw(16px);
+                    width: 100%;
+                    grid-template-columns: 1fr max-content;
+                }
+
+                .btn {
+                    @media($phone) {
+                        font-size: phone-vw(16px);
+                        padding: 0;
+                        width: 100%;
+                    }
                 }
 
                 .discover {
@@ -172,7 +184,7 @@
                     }
 
                     @media($phone) {
-                        font-size: phone-vw(18px);
+                        font-size: phone-vw(16px);
                         gap: phone-vw(8px);
                     }
 

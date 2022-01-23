@@ -14,7 +14,7 @@
                 :key="`history-row-${idx}`"
                 :class="{ 'lr' : idx % 2 == 1 }"
             >               
-                <img src="https://picsum.photos/800">
+                <img src="https://picsum.photos/800" alt="De Goede Herder" v-lazy-load/>
                 <div class="text-container">
                     <h3>Het onstaan van de kerk.</h3>
                     <p>

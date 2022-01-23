@@ -32,5 +32,6 @@ export default {
 <style lang="scss" scoped>
 .page {
     min-height: 100vh;
+    margin-top: vw(112px);
 }
 </style>

@@ -29,8 +29,4 @@
         padding: 0;
         margin: 0;
     }
-
-    .page {
-        margin-top: vw(112px);
-    }
 </style>

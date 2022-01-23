@@ -77,7 +77,7 @@
                 v-for="(church, index) in churches"
                 :key="`church-info-${index}`"
             >
-                <img :src="church.image.url" />
+                <img :src="church.image.url" alt="De Goede Herder" v-lazy-load/>
                 <div class="text-container">
                     <h2>{{ church.title }}</h2>
 
@@ -276,11 +276,12 @@ export default {
                 font-weight: bold;
                 opacity: 0.8;
                 padding-top: vw(8px);
+                word-break: keep-all;
             }
 
             @media ($phone) {
                 span{
-                    font-size: vw(9px);
+                    font-size: vw(10px);
                 }
             }
         }

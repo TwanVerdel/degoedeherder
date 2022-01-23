@@ -3,7 +3,7 @@
         <h2>Catechese</h2>
         <carousel>
             <div class="slide" v-for="(catechese, index) in catecheses" :key="`container-${index}`">
-                <img :src="catechese.image.url" />
+                <img :src="catechese.image.url" alt="De Goede Herder" v-lazy-load />
 
                 <div class="text-container">
                     <h3>{{catechese.title}}</h3>
