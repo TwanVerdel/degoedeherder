@@ -10,8 +10,7 @@ export default async ({$graphcms}) => {
                 heroes{
                   title,
                   description{
-                    html,
-                    text
+                    html
                   },
                   image {
                     id,
