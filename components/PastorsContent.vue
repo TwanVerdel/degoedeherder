@@ -29,7 +29,7 @@
                 <div class="pastor">
                     <img :src="rightPastorImage" alt="Pastoor" v-lazy-load/>
                     <h3>{{rightPastorName}}</h3>
-                    <p class="desc">Pastores</p>
+                    <p class="desc">Pastor</p>
                 </div>
             </div>
         </div>
