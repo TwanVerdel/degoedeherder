@@ -1,6 +1,6 @@
 <template>
     <main class="page">
-        
+       
         <hero
             :title="hero.title"
             :paragraph="hero.description.html"
@@ -8,7 +8,7 @@
             :buttonText="hero.textLeftButton"
             :discoverMore="true"
             :imgUrl="hero.image.url"
-            :imgAlt="'Mooi beeld'"
+            :imgAlt="'Stenen beeld'"
         />
         <article-grid showThree type="nieuws" :articles="news" />
         <article-grid showThree :title="'Pastoorblogs'" :articles="blogs" />

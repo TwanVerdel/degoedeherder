@@ -1,5 +1,5 @@
 <template>
-    <header class="hero" ref="hero">
+    <div class="hero" ref="hero">
         <div class="text-container">
             <h1 v-text="title" />
             <p v-html="paragraph" />
@@ -24,7 +24,7 @@
                  :alt="imgAlt"
                  v-lazy-load/>
         </picture>
-    </header>
+    </div>
 </template>
 
 <script>

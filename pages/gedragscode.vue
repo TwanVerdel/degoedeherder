@@ -43,6 +43,13 @@ export default {
     display: flex;
     flex-direction: column;
 
+    margin-top: vw(112px);
+
+    @media($tablet-portrait) {
+        margin-top: vw(72px);
+    }
+
+
     ::v-deep .text > p {
         margin-bottom: vw(24px);
     }

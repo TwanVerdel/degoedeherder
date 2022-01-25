@@ -11,7 +11,6 @@
 <script>
 import faqData from "@/datalayers/FAQ.js";
 
-
 export default {
     components: {},
 
@@ -36,11 +35,14 @@ export default {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    margin-top: vw(112px);
 
     ::v-deep .text > p {
         margin-bottom: vw(24px);
     }
 
-    
+    @media ($tablet-portrait) {
+        margin-top: vw(72px);
+    }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
     <section class="container">
-        <h1>Werkgroepen voor Diakonie.</h1>
+        <h1>Werkgroepen voor Diakonie</h1>
         <p class="description" v-if="description !== ''">{{description}}</p>
         <carousel ref="carousel">
             <div
