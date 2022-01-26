@@ -14,7 +14,9 @@
         <div class="container image">
             <img
                 :src="image"
-                alt="Detailfoto Maria"
+                :width="imageWidth"
+                :height="imageHeight"
+                alt="Detailfoto De Goede Herder"
                 v-lazy-load
             />
         </div>
@@ -39,6 +41,15 @@ export default {
             default:
                 "assets/images/01 detailfoto Maria, OLV Onbevlekt Ontvangen.jpg"
         },
+        imageHeight: {
+            type: Number,
+            default: 200
+        },
+        imageWidth: {
+            type: Number,
+            default: 200
+        },
+
         buttonText: {
             type: String,
             default: ""

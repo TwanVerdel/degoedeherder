@@ -25,7 +25,7 @@
             </ul>
         </div>
         <div v-if="!hasMembers" class="member-container">
-            <img src="~assets/images/double-quote.svg" alt="Quote" v-lazy-load />
+            <img src="~assets/images/double-quote.svg" alt="Quote" width="26" height="20" v-lazy-load />
             <div class="text">
                 <p>
                     <span>{{ text }}</span>

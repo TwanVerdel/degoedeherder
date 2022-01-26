@@ -36,6 +36,8 @@ export default async ({ $graphcms }) => {
                 description,
                 thumbnail{
                   url
+                  height
+                  width
                 },
                 eMail
               }
@@ -45,6 +47,8 @@ export default async ({ $graphcms }) => {
                 description,
                 thumbnail{
                   url
+                  height
+                  width
                 },
                 eMail
               }
@@ -54,6 +58,8 @@ export default async ({ $graphcms }) => {
                 description,
                 thumbnail{
                   url
+                  height
+                  width
                 },
                 eMail
               }
@@ -63,6 +69,8 @@ export default async ({ $graphcms }) => {
                 description,
                 thumbnail{
                   url
+                  height
+                  width
                 },
                 eMail
               }
@@ -72,6 +80,8 @@ export default async ({ $graphcms }) => {
                 description,
                 thumbnail{
                   url
+                  height
+                  width
                 },
                 eMail
               }

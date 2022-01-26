@@ -8,7 +8,9 @@
             :buttonText="hero.textLeftButton"
             :discoverMore="true"
             :imgUrl="hero.image.url"
-            :imgAlt="'Stenen beeld'"
+            :imgAlt="'Header afbeelding De Goede Herder'"
+            :imgWidth="hero.image.width"
+            :imgHeight="hero.image.height"
         />
         <article-grid showThree type="nieuws" :articles="news" />
         <article-grid showThree :title="'Pastoorblogs'" :articles="blogs" />
@@ -19,9 +21,9 @@
             :buttonText="bisdomnieuws.buttonText"
             :buttonURL="bisdomnieuws.buttonURL"
             :image="bisdomnieuws.image.url"
-        />
-
-        
+            :imageWidth="bisdomnieuws.image.width"
+            :imageHeight="bisdomnieuws.image.height"
+        />      
     </main>
 </template>
 

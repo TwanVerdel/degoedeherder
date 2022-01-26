@@ -13,6 +13,8 @@ export default async ({$graphcms}) => {
                   buttonText
                   image {
                     url
+                    width
+                    height
                   }
                   historyPDF {
                     url

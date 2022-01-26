@@ -11,6 +11,8 @@ export default async ({ $graphcms }) => {
                 title,
                 image{
                   url
+                  height
+                  width
                 },
                 location,
                 address{
@@ -34,6 +36,8 @@ export default async ({ $graphcms }) => {
                 },
                 massImage{
                   url
+                  height
+                  width
                 },
                 locationCouncilTitle,
                 locationCouncil{
@@ -57,6 +61,8 @@ export default async ({ $graphcms }) => {
                 description,
                 thumbnail{
                   url
+                  height
+                  width
                 },
                 eMail
               }
@@ -66,6 +72,8 @@ export default async ({ $graphcms }) => {
                 description,
                 thumbnail{
                   url
+                  height
+                  width
                 },
                 eMail
               }
@@ -75,6 +83,8 @@ export default async ({ $graphcms }) => {
                 description,
                 thumbnail{
                   url
+                  height
+                  width
                 },
                 eMail
               }
@@ -84,6 +94,8 @@ export default async ({ $graphcms }) => {
                 description,
                 thumbnail{
                   url
+                  height
+                  width
                 },
                 eMail
               }
@@ -93,6 +105,8 @@ export default async ({ $graphcms }) => {
                 description,
                 thumbnail{
                   url
+                  height
+                  width
                 },
                 eMail
               }
