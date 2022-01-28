@@ -3,6 +3,8 @@
         <a href="/" class="logo">
             <img src="../assets/images/logo.svg" 
                 alt="Logo" 
+                width="108" 
+                height="34"
                 v-lazy-load/>
         </a>
         <div class="lists-container">

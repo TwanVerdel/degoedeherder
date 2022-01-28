@@ -6,8 +6,10 @@
             <h2>{{title}}</h2>
             <p v-html="description"/>
             <button class="btn">
-                <a v-if="openInNewTab == true"  target="_blank" :href="buttonURL" >{{buttonText}}</a>
-                <a v-else  :href="buttonURL">{{buttonText}}</a>
+                <span>
+                    <a v-if="openInNewTab == true"  target="_blank" :href="buttonURL" >{{buttonText}}</a>
+                    <a v-else  :href="buttonURL">{{buttonText}}</a>
+                </span>
             </button>
         </div>
         <!-- Er moet hier een plaatje -->
@@ -129,11 +131,15 @@ export default {
             }
         }
 
+        .btn span {
+            color: $white;
+        }
+
         a,
         a:visited,
         a:hover,
         a:active {
-            color: white;
+            color: $white;
         }
     }
 

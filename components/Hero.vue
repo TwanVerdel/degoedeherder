@@ -7,9 +7,8 @@
                 <a v-if="buttonUrl && buttonText"
                     class="btn" 
                     :href="buttonUrl"
-                    target="_blank"
-                >
-                    {{ buttonText }}
+                    target="_blank">
+                    <span>{{ buttonText }}</span>
                 </a>
                 <button class="discover" @click="scrollToNext()">
                     Ontdek meer
@@ -174,6 +173,10 @@
                         font-size: phone-vw(16px);
                         padding: 0;
                         width: 100%;
+                    }
+
+                    span {
+                        color: $white;
                     }
                 }
 
