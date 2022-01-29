@@ -263,7 +263,7 @@ export default {
                 .desc {
                     font-family: Roboto Slab;
                     font-weight: bold;
-                    opacity: 0.6;
+                    opacity: 0.8;
                     padding-left: vw(8px);
                     font-size: vw(16px);
                 }

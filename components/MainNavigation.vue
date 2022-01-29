@@ -134,7 +134,7 @@
         flex-direction: column;
         position: fixed;
         top: 0;
-        z-index: 4;
+        z-index: 10;
         width: 100%;     
         background: $white;
         transition: background-color 0.2s, transform 0.2s;
@@ -308,7 +308,7 @@
         box-shadow: none;
 
         .secondary {
-            background: rgba(31, 35, 38, 0.5);
+            background: rgba(31, 35, 38, 0.66);
         }
 
         .primary {

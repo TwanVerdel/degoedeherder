@@ -1,6 +1,5 @@
 <template>
     <main class="page">
-       
         <hero
             :title="hero.title"
             :paragraph="hero.description.html"

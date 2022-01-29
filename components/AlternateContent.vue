@@ -5,12 +5,14 @@
         <div class="container">
             <h2>{{title}}</h2>
             <p v-html="description"/>
-            <button class="btn">
-                <span>
-                    <a v-if="openInNewTab == true"  target="_blank" :href="buttonURL" >{{buttonText}}</a>
-                    <a v-else  :href="buttonURL">{{buttonText}}</a>
-                </span>
-            </button>
+            <a v-if="openInNewTab == true"  
+                class="btn" 
+                target="_blank" 
+                rel="noreferrer" 
+                :href="buttonURL">
+                {{buttonText}}
+            </a>
+            <a class="btn" v-else rel="noreferrer" :href="buttonURL">{{buttonText}}</a>
         </div>
         <!-- Er moet hier een plaatje -->
         <div class="container image">
@@ -131,8 +133,14 @@ export default {
             }
         }
 
-        .btn span {
+        .btn {
             color: $white;
+            // height: 100%;
+            // width: 100%;
+
+            // display: flex;
+            // align-items: center;
+            // justify-content: center;
         }
 
         a,

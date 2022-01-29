@@ -2,12 +2,14 @@
     <div class="hero" ref="hero">
         <div class="text-container">
             <h1 v-text="title" />
-            <p v-html="paragraph" />
+            <div class="paragraph" v-html="paragraph" />
             <div class="btn-row">
                 <a v-if="buttonUrl && buttonText"
                     class="btn" 
                     :href="buttonUrl"
-                    target="_blank">
+                    target="_blank"
+                    rel="noreferrer"
+                >
                     <span>{{ buttonText }}</span>
                 </a>
                 <button class="discover" @click="scrollToNext()">
@@ -131,7 +133,7 @@
                 }
             }
 
-            p {
+            .paragraph {
                 @include fadeUpAnimation(0.4s, 0.2s);
                 margin-top: desktop-vw(40px);
                 max-width: desktop-vw(544px);
