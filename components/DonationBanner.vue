@@ -4,8 +4,8 @@
     <section class="donation-banner">
         <h2>{{title}}</h2>
         <p v-html="description" />
-        <a :href="buttonURL" target="_blank">
-            <button v-if="hasButton" class="btn">{{buttonText}}</button>
+        <a v-if="hasButton" :href="buttonURL" target="_blank" rel="noreferrer">
+            <button class="btn">{{buttonText}}</button>
         </a>
     </section>
 </template>

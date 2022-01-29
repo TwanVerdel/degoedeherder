@@ -121,7 +121,7 @@ export default {
                 display: block;
                 font-size: vw(14px);
                 font-weight: bold;
-                opacity: 0.6;
+                opacity: 0.8;
                 line-height: 150%;
             }
 

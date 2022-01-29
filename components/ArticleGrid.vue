@@ -1,10 +1,10 @@
 <template>
     <section :class="{ 'showThree' : showThree }">
         <template v-if="showThree">
-            <h2>{{title}}</h2>
+            <h2 class="h2-title">{{title}}</h2>
         </template>
         <template v-else>
-            <h1>{{title}}</h1>
+            <h1 class="h1-title">{{title}}</h1>
         </template>
 
         <div class="article-container">
@@ -14,10 +14,15 @@
                 class="thumbnail"
                 :to="'/' + type + '/' + article.slug"
             >
-                <img :src="article.thumbnail.url" alt="Placeholder" :height="article.thumbnail.height" :width="article.thumbnail.width" v-lazy-load/>
+                <img :src="article.thumbnail.url" 
+                    alt="Placeholder" 
+                    :height="article.thumbnail.height" 
+                    :width="article.thumbnail.width" 
+                    v-lazy-load/>
                 <div class="text">
                     <div class="date">{{ getDateString(article.date) }}</div>
-                    <h3 class="title">{{article.title}}</h3>
+                    <h3 v-if="showThree" class="title">{{article.title}}</h3>
+                    <h2 v-else class="title">{{article.title}}</h2>
                 </div>
             </nuxt-link>
         </div>
@@ -93,7 +98,7 @@ section {
     display: flex;
     flex-direction: column;
 
-    h1 {
+    .h1-title {
         @include Outer;
         margin: 0 auto;
         font-size: desktop-vw(64px);
@@ -117,7 +122,7 @@ section {
         }
     }
 
-    h2 {
+    .h2-title {
         @include Outer;
         margin-bottom: desktop-vw(48px);
         margin-top: desktop-vw(128px);
