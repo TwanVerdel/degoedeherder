@@ -25,6 +25,8 @@
             buttonURL="/vieringen"
             :openInNewTab="false"
             :image="selectedChurch.massImage.url"
+            :imageWidth="selectedChurch.massImage.width"
+            :imageHeight="selectedChurch.massImage.height"
         />
 
         <!-- Locatieraad -->

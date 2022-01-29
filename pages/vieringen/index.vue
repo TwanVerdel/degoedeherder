@@ -9,6 +9,8 @@
             :buttonText="buttonText"
             :buttonURL="schedule"
             :image="image"
+            :imageHeight="imageHeight"
+            :imageWidth="imageWidth"
         />
 
         <!-- 2.02 Gerardus- en Mariaprocessie -->
@@ -43,6 +45,12 @@ export default {
         },
         image(){
             return this.scheduleData.activitiesSchedules[0]?.image?.url
+        },
+        imageWidth(){
+            return this.scheduleData.activitiesSchedules[0]?.image?.width
+        },
+        imageHeight(){
+            return this.scheduleData.activitiesSchedules[0]?.image?.height
         },
         procession(){
             return this.scheduleData.processions?.[0]

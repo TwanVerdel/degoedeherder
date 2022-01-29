@@ -14,7 +14,7 @@
                 class="thumbnail"
                 :to="'/' + type + '/' + article.slug"
             >
-                <img :src="article.thumbnail.url" alt="Placeholder" v-lazy-load/>
+                <img :src="article.thumbnail.url" alt="Placeholder" :height="article.thumbnail.height" :width="article.thumbnail.width" v-lazy-load/>
                 <div class="text">
                     <div class="date">{{ getDateString(article.date) }}</div>
                     <h3 class="title">{{article.title}}</h3>

@@ -19,6 +19,8 @@ export default async ({$graphcms}) => {
                   buttonText,
                   image{
                       url
+                      height
+                      width
                   }
                 }
 

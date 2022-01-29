@@ -1,7 +1,11 @@
 <template>
     <main class="page">
         <template v-if="newsContent.newsMessage">
-            <main-article :title="title" :imageSrc="image" :text="text" />
+            <main-article :title="title" 
+                        :imageSrc="image" 
+                        :imageWidth="imageWidth" 
+                        :imageHeight="imageHeight" 
+                        :text="text" />
         </template>
     </main>
 </template>
@@ -26,6 +30,12 @@ export default {
         },
         image() {
             return this.newsContent?.newsMessage.thumbnail.url;
+        },
+        imageWidth() {
+            return this.newsContent?.newsMessage.thumbnail.width;
+        },
+        imageHeight() {
+            return this.newsContent?.newsMessage.thumbnail.height;
         },
         text() {
             return this.newsContent?.newsMessage.text.html;

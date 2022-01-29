@@ -7,9 +7,8 @@
                 <a v-if="buttonUrl && buttonText"
                     class="btn" 
                     :href="buttonUrl"
-                    target="_blank"
-                >
-                    {{ buttonText }}
+                    target="_blank">
+                    <span>{{ buttonText }}</span>
                 </a>
                 <button class="discover" @click="scrollToNext()">
                     Ontdek meer
@@ -22,6 +21,8 @@
         <picture>
             <img :src="imgUrl" 
                  :alt="imgAlt"
+                 :height="imgHeight"
+                 :width="imgWidth"
                  v-lazy-load/>
         </picture>
     </div>
@@ -50,6 +51,7 @@
                 type: Boolean,
                 default: false
             },
+
             imgUrl: {
                 type: String,
                 default: ''
@@ -58,6 +60,14 @@
                 type: String,
                 default: 'Dit is een afbeelding op de site van de Goede Herder Parochie Emmen'
             },
+            imgHeight: {
+                type: Number,
+                default: 200
+            },
+            imgWidth: {
+                type: Number,
+                default: 200
+            }
         },
         methods: {
             scrollToNext() {
@@ -163,6 +173,10 @@
                         font-size: phone-vw(16px);
                         padding: 0;
                         width: 100%;
+                    }
+
+                    span {
+                        color: $white;
                     }
                 }
 

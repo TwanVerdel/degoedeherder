@@ -6,15 +6,19 @@
             <h2>{{title}}</h2>
             <p v-html="description"/>
             <button class="btn">
-                <a v-if="openInNewTab == true"  target="_blank" :href="buttonURL" >{{buttonText}}</a>
-                <a v-else  :href="buttonURL">{{buttonText}}</a>
+                <span>
+                    <a v-if="openInNewTab == true"  target="_blank" :href="buttonURL" >{{buttonText}}</a>
+                    <a v-else  :href="buttonURL">{{buttonText}}</a>
+                </span>
             </button>
         </div>
         <!-- Er moet hier een plaatje -->
         <div class="container image">
             <img
                 :src="image"
-                alt="Detailfoto Maria"
+                :width="imageWidth"
+                :height="imageHeight"
+                alt="Detailfoto De Goede Herder"
                 v-lazy-load
             />
         </div>
@@ -39,6 +43,15 @@ export default {
             default:
                 "assets/images/01 detailfoto Maria, OLV Onbevlekt Ontvangen.jpg"
         },
+        imageHeight: {
+            type: Number,
+            default: 200
+        },
+        imageWidth: {
+            type: Number,
+            default: 200
+        },
+
         buttonText: {
             type: String,
             default: ""
@@ -118,11 +131,15 @@ export default {
             }
         }
 
+        .btn span {
+            color: $white;
+        }
+
         a,
         a:visited,
         a:hover,
         a:active {
-            color: white;
+            color: $white;
         }
     }
 

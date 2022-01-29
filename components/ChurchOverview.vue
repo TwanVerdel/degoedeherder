@@ -77,7 +77,11 @@
                 v-for="(church, index) in churches"
                 :key="`church-info-${index}`"
             >
-                <img :src="church.image.url" alt="De Goede Herder" v-lazy-load/>
+                <img :src="church.image.url" 
+                    :height="church.image.height" 
+                    :width="church.image.width" 
+                    alt="De Goede Herder"
+                    v-lazy-load/>
                 <div class="text-container">
                     <h2>{{ church.title }}</h2>
 

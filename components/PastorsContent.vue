@@ -22,12 +22,20 @@
         <div class="pastors-container">
             <div class="pastors-content">
                 <div class="pastor margin-top">
-                    <img :src="leftPastorImage" alt="Pastoor" v-lazy-load/>
+                    <img :src="leftPastorImage"
+                        :height="leftPastorImageHeight" 
+                        :width="leftPastorImageWidth" 
+                        alt="Pastoor" 
+                        v-lazy-load/>
                     <h3>{{leftPastorName}}</h3>
                     <p class="desc">Pastoor</p>
                 </div>
                 <div class="pastor">
-                    <img :src="rightPastorImage" alt="Pastoor" v-lazy-load/>
+                    <img :src="rightPastorImage" 
+                        :height="rightPastorImageHeight" 
+                        :width="rightPastorImageWidth" 
+                        alt="Pastoor" 
+                        v-lazy-load/>
                     <h3>{{rightPastorName}}</h3>
                     <p class="desc">Pastor</p>
                 </div>
@@ -55,6 +63,15 @@ export default {
              type: String,
             default: ""
         },
+        leftPastorImageHeight:{
+            type: Number,
+            default: 200
+        },
+        leftPastorImageWidth:{
+            type: Number,
+            default: 200
+        },
+
         rightPastorName:{
              type: String,
             default: ""
@@ -62,7 +79,15 @@ export default {
         rightPastorImage:{
              type: String,
             default: ""
-        }
+        },
+        rightPastorImageHeight:{
+            type: Number,
+            default: 200
+        },
+        rightPastorImageWidth:{
+            type: Number,
+            default: 200
+        },
     },
     methods: {
         scrollToNext() {
