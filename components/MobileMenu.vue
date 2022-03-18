@@ -43,7 +43,7 @@
                 <a href="/catechese">Catechese</a>
             </li>
             <li>
-                <a href="/financien">Fincanciën</a>
+                <a href="/financien">Financiën</a>
             </li>
             <li>
                 <a href="/faq">FAQ</a>
@@ -62,6 +62,9 @@
             </li>
             <li>
                 <a href="/parishinfo/polska">Polska</a>
+            </li>
+            <li>
+                    <a href="/parishinfo/український">український</a>
             </li>
         </ul>
     </section>

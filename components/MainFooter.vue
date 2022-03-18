@@ -77,6 +77,9 @@
                     <li>
                         <a href="/parishinfo/polska">Polska</a>
                     </li>
+                    <li>
+                    <a href="/parishinfo/український">український</a>
+                    </li>
                 </ul>
             </div>
         </div>
