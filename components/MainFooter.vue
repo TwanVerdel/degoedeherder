@@ -80,7 +80,7 @@
                         <a href="/parishinfo/polska">Polska</a>
                     </li>
                     <li>
-                    <a href="/parishinfo/український">український</a>
+                    <a href="/parishinfo/ukrainian">український</a>
                     </li>
                 </ul>
             </div>
