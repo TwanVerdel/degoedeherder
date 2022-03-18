@@ -8,7 +8,12 @@
                 v-for="(workgroup, index) in workgroups"
                 :key="`container-${index}`"
             >
-                <img :src="workgroup.thumbnail.url" alt="Thumbnail op de website van De Goede Herder Parochie" v-lazy-load/>
+                <img :src="workgroup.thumbnail.url" 
+                    :height="workgroup.thumbnail.height" 
+                    :width="workgroup.thumbnail.width" 
+                    alt="Thumbnail op de website van De Goede Herder Parochie" 
+                    loading="lazy"
+                    v-lazy-load/>
 
                 <div class="text-container">
                     <!-- TODO Style aanpassen als titel te lang is voor kleine smartphones -->
@@ -133,7 +138,7 @@ export default {
                 display: block;
                 font-size: vw(14px);
                 font-weight: bold;
-                opacity: 0.6;
+                opacity: 0.8;
                 line-height: 150%;
             }
 

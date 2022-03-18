@@ -241,7 +241,6 @@ export default {
                 }
 
                 .answer {
-                    opacity: 0.9;
                     max-width: 50%;
                     min-height: min-content;
 

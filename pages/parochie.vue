@@ -5,8 +5,12 @@
             :title="pastorBanner.title"
             :description="pastorBanner.description"
             :leftPastorImage="pastorBanner.leftPastorImage.url"
+            :leftPastorImageWidth="pastorBanner.leftPastorImage.width"
+            :leftPastorImageHeight="pastorBanner.leftPastorImage.height"
             :leftPastorName="pastorBanner.leftPastorName"
             :rightPastorImage="pastorBanner.rightPastorImage.url"
+            :rightPastorImageHeight="pastorBanner.rightPastorImage.height"
+            :rightPastorImageWidth="pastorBanner.rightPastorImage.width"
             :rightPastorName="pastorBanner.rightPastorName"
         />
 
@@ -51,6 +55,8 @@ Dit doen wij met het sacrament van de doop (meestal aan het begin), het sacramen
             :buttonText="history.buttonText"
             :buttonURL="history.historyPDF.url"
             :image="history.image.url"
+            :imageWidth="history.image.width"
+            :imageHeight="history.image.height"
         />
     </main>
 </template>

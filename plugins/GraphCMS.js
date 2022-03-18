@@ -9,6 +9,8 @@ const graphcmsClient = new GraphQLClient(
     }
 )
 
+export let graphClient = graphcmsClient;
+
 export default (_, inject) => {
     inject('graphcms', graphcmsClient)
 }

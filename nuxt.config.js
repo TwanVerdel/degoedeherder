@@ -1,3 +1,5 @@
+import sitemapData from "./datalayers/sitemap.js";
+
 export default {
     // Target (https://go.nuxtjs.dev/config-target)
     target: 'static',
@@ -49,10 +51,24 @@ export default {
         '@nuxtjs/axios',
         '@nuxtjs/svg',
         'nuxt-compress',
+        '@nuxtjs/sitemap'
     ],
 
     axios: {
         baseURL: 'http://localhost:3000', // Used as fallback if no runtime config is provided
+    },
+
+    sitemap: async function() {
+        let data = await sitemapData();
+
+        return {
+            hostname: 'https://degoedeherderparochie.nl',
+            gzip: true,
+            routes: [
+                ...data.newsMessages.map(page => `/nieuws/${page.slug}`),
+                ...data.pastorBlogs.map(page => `/blogs/${page.slug}`)
+            ]
+        }
     },
 
     publicRuntimeConfig: {

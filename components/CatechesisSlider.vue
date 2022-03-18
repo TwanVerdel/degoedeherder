@@ -3,7 +3,11 @@
         <h2>Catechese</h2>
         <carousel>
             <div class="slide" v-for="(catechese, index) in catecheses" :key="`container-${index}`">
-                <img :src="catechese.image.url" alt="De Goede Herder" v-lazy-load />
+                <img :src="catechese.image.url" 
+                    :height="catechese.image.height" 
+                    :width="catechese.image.width" 
+                    alt="De Goede Herder" 
+                    v-lazy-load />
 
                 <div class="text-container">
                     <h3>{{catechese.title}}</h3>
@@ -117,7 +121,7 @@ export default {
                 display: block;
                 font-size: vw(14px);
                 font-weight: bold;
-                opacity: 0.6;
+                opacity: 0.8;
                 line-height: 150%;
             }
 

@@ -6,6 +6,8 @@
             <img
                 class="banner-image"
                 :src="imageSrc"
+                :height="imageHeight"
+                :width="imageWidth"
                 alt="Header afbeelding voor een blog van de Goede Herder Parochie"
                 v-lazy-load
             />
@@ -35,6 +37,14 @@ export default {
         imageSrc: {
             type: String,
             default: ""
+        },
+        imageHeight: {
+            type: Number,
+            default: 200
+        },
+        imageWidth: {
+            type: Number,
+            default: 200
         },
         text: {
             type: String,

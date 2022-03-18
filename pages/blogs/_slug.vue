@@ -1,7 +1,11 @@
 <template>
     <main class="page">
         <template v-if="blogContent.pastorBlog">
-            <main-article :title="title" :imageSrc="image" :text="text" />
+            <main-article :title="title" 
+                        :imageSrc="image" 
+                        :imageHeight="imageHeight" 
+                        :imageWidth="imageWidth" 
+                        :text="text" />
         </template>
     </main>
 </template>
@@ -26,6 +30,12 @@ export default {
         },
         image() {
             return this.blogContent.pastorBlog?.thumbnail?.url;
+        },
+        imageWidth() {
+            return this.blogContent.pastorBlog?.thumbnail?.width;
+        },
+        imageHeight() {
+            return this.blogContent.pastorBlog?.thumbnail?.height;
         },
         text() {
             return this.blogContent.pastorBlog?.blogText?.html;

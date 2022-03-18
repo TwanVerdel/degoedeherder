@@ -14,6 +14,8 @@ export default async ({ $graphcms }) => {
                   startdate,
                   image{
                       url
+                      height
+                      width
                   }
                 }
               }

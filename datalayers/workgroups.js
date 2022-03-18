@@ -13,6 +13,8 @@ export default async ({ $graphcms }) => {
                   description
                   thumbnail {
                     url
+                    height
+                    width
                   }
                   eMail
                 }
