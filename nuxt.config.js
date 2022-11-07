@@ -108,7 +108,11 @@ export default {
         }
     },
 
-    plugins: ['~/plugins/GraphCMS.js']
+    plugins: ['~/plugins/GraphCMS.js'],
+
+    generate: {
+        interval: 200, // Hygraph/GraphCMS has a rate limit of 5 requests per second, 1000 ms / 5 = 200ms
+    }
 };
 
 
