@@ -7,6 +7,15 @@
     </div>
 </template>
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NEWPZTLRD6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NEWPZTLRD6');
+</script>
+
 <script>
     import MainFooter from "../components/MainFooter.vue";
     import MainNavigation from '../components/MainNavigation.vue';
